@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>蓝牙设备检测</title>
+		<script type="text/javascript" src="./js/common.js"></script>
+		<script type="text/javascript" src="./js/test.js"></script>
+		<script type="text/javascript">
+		document.addEventListener('plusready',function(){
+		
+		plus.key.addEventListener('backbutton',function(){
+				plus.runtime.quit();
+		},false);
+		},false);
+
+  		
+        function startActivity(type)
+        {
+           var Intent = plus.android.importClass("android.content.Intent");
+           var Bundle = plus.android.importClass("android.os.Bundle");
+           var main = plus.android.runtimeMainActivity();
+           var TodoActivity = plus.android.importClass("com.cnnet.otc.health.activities.DetectBle3Activity");
+           //血氧蓝牙4.0设备
+           if(type=='3'){
+             TodoActivity = plus.android.importClass("com.cnnet.otc.health.activities.DetectBle4Activity");
+           }
+           var intent = new Intent(main, TodoActivity.class);
+		   var bundle = new Bundle();
+		   //传设备类型和会员号
+		   bundle.putString("DEIVCE_TYPE",type);
+		   bundle.putString("EXTRA_MEMBER_UNIQUEKEY",document.getElementById("memid").value);
+           intent.putExtras(bundle);
+			main.startActivity(intent);
+
+        }
+		</script>
+		<link rel="stylesheet" href="./css/common.css" type="text/css" charset="utf-8"/>
+	</head>
+	<body>
+		<header>
+			<div class="nvbt" onclick="back();"><div class="iback"></div></div>
+			<div class="nvtt">蓝牙检测H5页面</div>
+		</header>
+		 
+		<div id="dcontent" class="dcontent">
+			<br/>
+			会员号：<input id="memid" type="text" value="13601812485"/>
+			<br/>
+			<div class="button" onclick="startActivity('0')">血糖</div>
+            <div class="button" onclick="startActivity('1')">血压</div>
+            <div class="button" onclick="startActivity('2')">体温</div>
+            <div class="button" onclick="startActivity('3')">血氧</div>
+            <div class="button" onclick="startActivity('4')">血脂</div>
+            <div class="button" onclick="startActivity('5')">体重</div>
+            <div class="button" onclick="startActivity('6')">尿酸</div>
+			<br/>
+		</div>
+	</body>
+</html>

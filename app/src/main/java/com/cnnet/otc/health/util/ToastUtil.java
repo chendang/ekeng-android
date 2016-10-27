@@ -20,7 +20,7 @@ public class ToastUtil {
 	 * @param duration
 	 */
 	public static void ImageToast(Context context, int ImageResourceId,
-								  CharSequence text, int duration) {
+			CharSequence text, int duration) {
 		// 创建一个Toast提示消息
 		toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
 		// 设置Toast提示消息在屏幕上的位置
@@ -51,7 +51,7 @@ public class ToastUtil {
 	 * @param duration
 	 */
 	public static void TextToast(Context context, CharSequence text,
-								 int duration) {
+			int duration) {
 		if(toast != null) {
 			toast.cancel();
 			toast = null;

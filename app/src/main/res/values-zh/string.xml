@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--<string name="app_name">稳和云健康</string>-->
+    <string name="app_name">稳和云健康</string>
 
     <string name="USER">用户</string>
     <string name="USER_NAME">用户：</string>
@@ -127,12 +127,16 @@
     <string name="dialog_delete_wait_ins_record">确定要删除这条待检记录吗？</string>
     <string name="dialog_exit_add_member">确定要退出添加会员吗？</string>
     <string name="dialog_delete_record_item">确定要删除这条检查项吗？</string>
+    <string name="dialog_glu_no_testitem_set">接收到血糖数据，但你没有选择检查项目</string>
+    <string name="dialog_glu_select_testitem">请选择血糖检查项目</string>
     <string name="device_un_register_info">确定要注销当前账号吗？</string>
     <string name="dialog_input_height_waist_title">请输入身高和腰围</string>
     <string name="dialog_input_bp_title">请输入血压值</string>
     <string name="dialog_input_chol_trig_title">请输入总胆固醇和甘油三酯</string>
     <string name="dialog_input_ua_title">请输入尿酸值</string>
     <string name="dialog_server_setting">确定要修改服务器URL地址吗？</string>
+    <string name="title_activity_detect_ble2">DetectBle2Activity</string>
+    <string name="action_settings">Settings</string>
 
     <!-- 更新部分 -->
     <string name="dialog_update_title">更新</string>
@@ -168,10 +172,12 @@
     <string name="devices_title">设备</string>
     <string name="device_info_title">%1$s：设备列表</string>
     <string name="server_setting_title">服务器设置</string>
+    <string name="url">URL</string>
 
     <!--add member-->
     <string name="with_doctor">所属医生</string>
     <string name="name">姓名</string>
+    <string name="nickname">登录名</string>
     <string name="gender">性别</string>
     <string name="mobile">手机号码</string>
     <string name="birthday">出生日期</string>
@@ -189,7 +195,7 @@
     <string name="no_permission">暂无权限</string>
     <string name="cloud_add_member_failed">提交会员信息失败，请重新再试</string>
     <string name="native_add_member_failed">本地生成会员信息失败，请重新再试</string>
-    <string name="native_add_member_has_same">添加会员失败，存在相同手机号的会员</string>
+    <string name="native_add_member_has_same">添加会员失败，存在相同手机号的同名会员</string>
     <string name="native_update_member_failed">本地生成修改会员信息失败，请刷新会员列表</string>
     <string name="network_error">网络异常，请检查网络是否通畅或联系客服</string>
     <string name="doctor_is_not_null">请选择所属医生</string>
@@ -237,5 +243,6 @@
     <string name="device_uric_acid_analyzer">尿酸仪</string>
     <string name="male">男</string>
     <string name="female">女</string>
+
 
 </resources>

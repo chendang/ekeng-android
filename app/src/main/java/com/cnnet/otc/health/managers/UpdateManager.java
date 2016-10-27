@@ -1,5 +1,15 @@
 package com.cnnet.otc.health.managers;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +21,8 @@ import android.util.Log;
 
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
+import com.cnnet.otc.health.services.InstallSelfService;
 import com.cnnet.otc.health.util.NetUtil;
-
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 /**
@@ -250,8 +251,8 @@ public class UpdateManager {
 
 	public void update() {
 
-		mContext.startService(new Intent("com.cnnet.otc.health.APP_UPDATE_SERVICE"));
-
+	//	mContext.startService(new Intent("com.cnnet.otc.health.APP_UPDATE_SERVICE"));
+		mContext.startService(new Intent(mContext, InstallSelfService.class));
 	}
 
 }

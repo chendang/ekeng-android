@@ -6,11 +6,12 @@ import android.util.Log;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
-import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
+
+import com.cnnet.otc.health.db.DBHelper;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import de.greenrobot.event.EventBus;
  * 血脂
  * Created by SZ512 on 2016/1/6.
  */
+
 public class LipidData implements MyCommData {
 
     private final String TAG = "LipidData";
@@ -32,17 +34,7 @@ public class LipidData implements MyCommData {
     private Context context;
 
     private long nativeRecordId;
-
-    /**
-     * 总胆固醇数据字段
-     */
-    public static final String DATA_CHOLESTEROL = "CHOL";
-
-    /**
-     * 甘油三酯数据字段
-     */
-    public static final String DATA_TRIGLYCERIDES = "TG";
-
+    private String mUniqueKey = null;
     private String allDatas = null;
     private int dateLength = 0;
 
@@ -51,10 +43,13 @@ public class LipidData implements MyCommData {
     private final int END_LENGTH = 10;
     private final String END_DIGIT = "220A0A4E0A";
 
-    public LipidData(Context context, MyLineChartView myLineChartView, long nativeRecordId) {
+    LipidTest my_test=new LipidTest();
+
+    public LipidData(Context context, MyLineChartView myLineChartView, long nativeRecordId,String mUniqueKey) {
         this.context = context;
         this.myLineChartView = myLineChartView;
         this.nativeRecordId = nativeRecordId;
+        this.mUniqueKey=mUniqueKey;
     }
 
     @Override
@@ -85,7 +80,7 @@ public class LipidData implements MyCommData {
                 }
                 if (isPacket && dateLength >= END_LENGTH) {
                     if (allDatas.endsWith(END_DIGIT)) {
-                        checkeResult = new String(StringUtil.hexStringToBytes(allDatas));
+                        checkeResult = hexStringToString(allDatas);
                     } else {
                         isPacket = false;
                     }
@@ -127,10 +122,54 @@ public class LipidData implements MyCommData {
                 N
 
                  */
-
+            my_test=new LipidTest();
+            int cnt=0;
             if (isPacket && checkeResult != null) {
                 Log.d(TAG, "allDatas str : " + allDatas);
                 Log.d(TAG, "resultStr str : " + checkeResult);
+                String results[] = checkeResult.split("\n");
+                for (String resultStr : results) {
+                    if ((cnt++) < 6)
+                        continue;
+                    String s = resultStr.trim();
+                    String unitStr = "";
+                    if (s.startsWith("A60")) {
+                        int idx1 = s.indexOf("\"");
+                        int idx2 = s.indexOf(":");
+                        if (idx1 < 0 || idx2 < 0) {
+                            continue;
+                        }
+                        String typStr = s.substring(idx1 + 1, idx2).trim();
+                        String valStr = s.substring(idx2 + 1, s.length() - 1).trim();
+
+                        if (cnt == 7)                                                          //检测类型实际是在第7行，即Index=6， 但由于前面已执行cnt++,因此当cnt==7时解析检查类型一行。
+                        {
+                            if (!my_test.set_test_type(valStr.trim().substring(0, 1))) {
+                                return;
+                            } else {
+                                continue;
+                            }
+                        }
+                        if (!my_test.getTest_descr().equals("")) {
+                            my_test.parse_value(typStr, valStr);
+                        }
+                    }
+                }
+                boolean bFound = false;
+                for (LipidDataItem itm : my_test.getLipid_data_items().values()) {
+                    if (itm.val != LipidDataItem.NONE_VALUE) {
+                        bFound = true;
+                        SysApp.getMyDBManager().addRecordItemWithDescr(nativeRecordId, itm.typeStr, itm.val, itm.getDescr(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+                    }
+                }
+                dateLength = 0;
+                allDatas = null;
+                if (bFound) {
+                    EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, my_test.getTest_descr()));
+                    EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
+                }
+            }
+               /*
                 //总胆固醇
                 String CHOL = "\"CHOL";  //
                 final int CHOL_LENGTH = 5;
@@ -158,7 +197,7 @@ public class LipidData implements MyCommData {
                 }
                 Log.i(TAG, CHOL + ":  " + str_dgc + "  " + TRIG + ":  " + str_gysz);
                 float cholValue = Float.parseFloat(StringUtil.getFirstFloatStr(str_dgc));
-                float randomFloat = (float) Math.random() * 0.5f;
+                float randomFloat = (float)Math.random() * 0.5f;
                 if(str_dgc.startsWith("<")) {
                     cholValue = cholValue - randomFloat;
                 } else if(str_dgc.startsWith(">")) {
@@ -173,9 +212,38 @@ public class LipidData implements MyCommData {
                 dateLength = 0;
                 allDatas = null;
                 EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
-            }
+            }*/
         }catch (Exception e) {
-            e.printStackTrace();;
+            e.printStackTrace();
+        }
+    }
+
+     String hexStringToString(String hexStr)
+    {
+        StringBuilder str_builder=new StringBuilder("");
+        int cnt=hexStr.length()/2;
+        for(int i=0;i<cnt;i++)
+        {
+            String hex_str=hexStr.substring(i*2,(i+1)*2);
+            str_builder.append((char)(Integer.parseInt(hex_str,16)));
+        }
+        return str_builder.toString();
+    }
+
+    void update_lipid_db()
+    {
+        boolean bFound=false;
+        if(!my_test.getTest_descr().equals(""))
+        {
+            for(LipidDataItem itm:my_test.getLipid_data_items().values())
+            {
+                if(itm.val!=9999) {
+                    bFound=true;
+                    SysApp.getMyDBManager().addRecordItem(nativeRecordId, itm.typeStr, itm.val, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+                }
+            }
+            if(bFound)
+                EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, my_test.getTest_descr()));
         }
     }
 
@@ -202,30 +270,33 @@ public class LipidData implements MyCommData {
 
     @Override
     public List<RecordItem>[] getRecordList(String mUniqueKey) {
-        List<RecordItem>[] lists = new List[2];
-        lists[0] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_CHOLESTEROL);
-        lists[1] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_TRIGLYCERIDES);
+        List<RecordItem>[] lists = new List[4];
+        lists[0] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, LipidTest.DATA_CHOLESTEROL);
+        lists[1] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, LipidTest.DATA_TRIGLYCERIDES);
+        lists[2] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, LipidTest.DATA_HDL);
+        lists[3] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, LipidTest.DATA_LDL);
         return lists;
     }
 
     @Override
     public List<RecordItem> getRecordAllList(String mUniqueKey) {
-        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_CHOLESTEROL, DATA_TRIGLYCERIDES);
+        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, LipidTest.DATA_CHOLESTEROL, LipidTest.DATA_TRIGLYCERIDES,LipidTest.DATA_HDL,LipidTest.DATA_LDL);
     }
 
     @Override
     public String[] getInsName() {
-        return new String[]{"总胆固醇","甘油三酯"};
+        return new String[]{"总胆固醇\n\r(mmol/L)","甘油三酯\n\r(mmol/L)","高密度脂蛋白\n\r(mmol/L)","低密度脂蛋白\n\r(mmol/L)"};
     }
 
     @Override
     public String[] getInsUnit() {
-        return new String[]{"mmol/L", "mmol/L"};
+        //return new String[]{"mmol/L", "mmol/L","mmol/L","mmol/L"};
+        return new String[]{"", "","",""};
     }
 
     @Override
     public int[] getInsRange() {
-        return new int[]{2, 2};
+        return new int[]{2, 2,2,2};
     }
 
     @Override

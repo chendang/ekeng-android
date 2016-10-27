@@ -35,7 +35,7 @@ public class OximetryData implements MyCommData {
      * 本地检查记录ID
      */
     private long nativeRecordId;
-
+    private String mUniqueKey = null;
     /**
      * 血氧数据字段: 血氧饱和度
      */
@@ -57,10 +57,11 @@ public class OximetryData implements MyCommData {
     private int todoDisconnected_failed, todoDisconnected ;
     private boolean cloudSample = false;
 
-    public OximetryData(Context ctx, MyLineChartView myLineView, long nativeRecordId) {
+    public OximetryData(Context ctx, MyLineChartView myLineView, long nativeRecordId,String mUniqueKey) {
         this.myLineView = myLineView;
         this.ctx = ctx;
         this.nativeRecordId = nativeRecordId;
+        this.mUniqueKey=mUniqueKey;
     }
 
     @Override
@@ -130,12 +131,12 @@ public class OximetryData implements MyCommData {
 
     @Override
     public String[] getInsName() {
-        return new String[]{"血氧饱和度", "灌注指数", "脉率"};
+        return new String[]{"血氧饱和度(%)", "灌注指数(%)", "脉率(bpm)"};
     }
 
     @Override
     public String[] getInsUnit() {
-        return new String[]{"%", "%", "bpm"};
+        return new String[]{"", "", ""};
     }
 
     @Override
@@ -213,6 +214,7 @@ public class OximetryData implements MyCommData {
         if(cloudSample) {
             int checkType = SysApp.check_type.ordinal();
             MyDBManager dbManager = SysApp.getMyDBManager();
+            dbManager.addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
             dbManager.addRecordItem(nativeRecordId, DATA_SPO2, getSpo2(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);
             dbManager.addRecordItem(nativeRecordId, DATA_PI, (getPi() / 10), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);
             dbManager.addRecordItem(nativeRecordId, DATA_PR, getPr(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);

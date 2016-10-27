@@ -56,11 +56,13 @@ public class TemperatureData implements MyCommData {
 	private boolean inserted = false;
 
 	private long nativeRecordId;
-	
-	public TemperatureData(Context ctx, MyLineChartView myLineChartView, long nativeRecordId){
+	private String mUniqueKey = null;
+	public TemperatureData(Context ctx, MyLineChartView myLineChartView, long nativeRecordId,String mUniqueKey){
 		this.myLineChartView = myLineChartView;
 		this.context = ctx;
 		this.nativeRecordId = nativeRecordId;
+		this.mUniqueKey=mUniqueKey;
+
 	}
 
 	@Override
@@ -129,6 +131,7 @@ public class TemperatureData implements MyCommData {
 			if (temperatureStatus == TempState.NORMAL) {
 				text = modeText + temperature + unitText;
 				Log.d(DATA_TEMP, " result : " + text + "   ;   id=" + nativeRecordId);
+				SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
 				SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_TEMP, temperature, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
 			} else if (temperatureStatus == TempState.MEASURING_TEMP_LOW) {
 				text = context.getString(R.string.TEMPERATURE_LOW);
@@ -184,17 +187,17 @@ public class TemperatureData implements MyCommData {
 
 	@Override
 	public List<RecordItem> getRecordAllList(String mUniqueKey) {
-		return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_TEMP);
+		return SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_TEMP);
 	}
 
 	@Override
 	public String[] getInsName() {
-		return new String[]{"体温"};
+		return new String[]{"体温(℃)"};
 	}
 
 	@Override
 	public String[] getInsUnit() {
-		return new String[]{"℃"};
+		return new String[]{""};
 	}
 
 	@Override

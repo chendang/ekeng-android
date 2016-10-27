@@ -17,6 +17,7 @@ public class Member extends IUser {
     private String mSSN; //社保卡号
     private String mCreatePersion;    //添加会员的人员名称
     private String mAnamnesis; //既往病史
+    private String mNickname; //用户昵称或登录帐户名
     private long mCreateTime; //创建时间 (long 长整形时间戳)
     private long mUpdateTime; // 更新时间 (lon 长整形时间戳)
     private int recordCount; //检查次数
@@ -25,6 +26,7 @@ public class Member extends IUser {
     private int state; //当前会员状态：0为上传，1已经上传(当为1时，后面两个字段无用)
     private String addUniqueKey; //添加会员的账号Key（目前仅在新增会员时，使用）
     private String withDoctor;  //护士登录新增会员时，保存（目前仅在新增会员时，使用）
+    private String token;       //注册用户时，可用于传递身份验证相关信息
 
     private String message;  //验证手机号时，发送的验证码（目前仅在新增会员时，使用）
     private long native_record_id;  //本地中待检记录ID
@@ -206,5 +208,21 @@ public class Member extends IUser {
 
     public void setIsSuperClinic(boolean isSuperClinic) {
         this.isSuperClinic = isSuperClinic;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getmNickname() {
+        return mNickname;
+    }
+
+    public void setmNickname(String mNickname) {
+        this.mNickname = mNickname;
     }
 }

@@ -6,9 +6,9 @@ import android.util.Log;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.cnnet.otc.health.comm.CommConst;
+import com.cnnet.otc.health.interfaces.IUser;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.events.LoginEvent;
-import com.cnnet.otc.health.interfaces.IUser;
 import com.cnnet.otc.health.managers.JsonManager;
 import com.cnnet.otc.health.managers.RequestManager;
 import com.cnnet.otc.health.util.AppCheckUtil;
@@ -128,10 +128,10 @@ public class LoginRequest {
     public static void backgroundLogin(Context ctx, IUser user) {
         if (user != null && StringUtil.isNotEmpty(user.getUsername())
                 && StringUtil.isNotEmpty(user.getPassword())) {
-                    String password = DESUtil.decrypt(user.getPassword());
-                    if(password != null) {
-                        doLogin(ctx, user.getUsername(), password);
-                        return;
+            String password = DESUtil.decrypt(user.getPassword());
+            if(password != null) {
+                doLogin(ctx, user.getUsername(), password);
+                return;
             }
         }
         EventBus.getDefault().post(new LoginEvent(CommConst.FLAG_USER_STATUS_OFF_LINE));

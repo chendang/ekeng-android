@@ -4,14 +4,15 @@ import android.content.Context;
 import android.util.Log;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
+import com.android.volley.Response.ErrorListener;
 import com.android.volley.toolbox.Volley;
 import com.cnnet.otc.health.bean.FormImage;
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.bean.MemberRecord;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.RoleUser;
+import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.comm.volleyRequest.JsonStringRequest;
 import com.cnnet.otc.health.comm.volleyRequest.PostUploadRequest;
@@ -19,7 +20,9 @@ import com.cnnet.otc.health.comm.volleyRequest.PostUploadRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -184,8 +187,8 @@ public class RequestManager {
      * @param searchIdNumber
      */
     public static void searchMemberBySuperClinic(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
-                                                 String faUniqueKey, String searchName, String searchMobile,
-                                                 String searchIdNumber) {
+                                               String faUniqueKey, String searchName, String searchMobile,
+                                               String searchIdNumber) {
         StringBuilder sb = new StringBuilder();
         sb.append(SysApp.getSpManager().getServerUrl());
         sb.append("/action/client/searchMemberBySuperClinic");
@@ -207,7 +210,7 @@ public class RequestManager {
      * @param nurseUniqueKey  所属当前护士KEY列表
      */
     public static void addMemberByNurse(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
-                                        Member member, String nurseUniqueKey) {
+                                         Member member, String nurseUniqueKey) {
         StringBuilder sb = new StringBuilder();
         sb.append(SysApp.getSpManager().getServerUrl());
         sb.append("/action/client/addMember");
@@ -252,6 +255,36 @@ public class RequestManager {
     }
 
     /**
+     * 医生账号登录时，新增会员
+     * @param ctx
+     * @param listener    请求成功回调对象
+     * @param errorListener  请求失败回调对象
+     * @param member   //需要新增的会员信息列表
+     * @param doctorUniqueKey   //传参医生的值
+     */
+    public static void addMember(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
+                                         Member member, String doctorUniqueKey) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SysApp.getSpManager().getServerUrl());
+        sb.append("/action/client/addMemberBySelf");
+        JSONObject jsonByMaps = JsonManager.getAddMemberBySelf(member);
+        /*try {
+            if(jsonByMaps != null) {
+                jsonByMaps.put("nurse", JsonManager.getNurseJSONArrByList(nurseLists));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }*/
+        String url = sb.toString();
+        Log.d(TAG, "addMemberBySelf: url(" + url + ")");
+        String paramsStr = (jsonByMaps==null)?null:jsonByMaps.toString();
+        Log.d(TAG, "params: " + paramsStr);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, paramsStr, listener, errorListener);
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
+    }
+
+    /**
      * 添加健康检查记录
      * @param ctx
      * @param listener
@@ -266,6 +299,36 @@ public class RequestManager {
         sb.append(SysApp.getSpManager().getServerUrl());
         sb.append("/action/client/addMemberRecord");
         JSONObject jsonByMaps = JsonManager.getAddMemberRecordJson(record, nurseUniqueKey);
+        try {
+            if(jsonByMaps != null) {
+                jsonByMaps.put("items", JsonManager.getRecordInfoJSONArrByList(items));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String url = sb.toString();
+        Log.d(TAG, "addMemberRecord: url(" + url + ")");
+        String paramsStr = (jsonByMaps==null)?null:jsonByMaps.toString();
+        Log.d(TAG, "params: " + paramsStr);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, paramsStr, listener, errorListener);
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
+    }
+
+    /**
+     * 添加健康检查记录
+     * @param ctx
+     * @param listener
+     * @param errorListener
+     * @param errorListener
+     * @param record   检查记录对象
+     */
+    public static void addMemberRecordBySelf(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
+                                             List<RecordItem> items, MemberRecord record) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SysApp.getSpManager().getServerUrl());
+        sb.append("/action/client/addMemberRecord");
+        JSONObject jsonByMaps = JsonManager.getAddMemberRecordJsonBySelf(record);
         try {
             if(jsonByMaps != null) {
                 jsonByMaps.put("items", JsonManager.getRecordInfoJSONArrByList(items));
@@ -445,8 +508,18 @@ public class RequestManager {
      * 预留接口
      */
     public static void addMemberBySelf(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
-                                       String... paramsStr) {
-
+                                       Member member) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SysApp.getSpManager().getServerUrl());
+        sb.append("/action/client/addMemberBySelf");
+        JSONObject jsonByMaps = JsonManager.getAddMemberBySelf(member);
+        String url = sb.toString();
+        Log.d(TAG, "addMemberBySelf: url(" + url + ")");
+        String paramsStr = (jsonByMaps==null)?null:jsonByMaps.toString();
+        Log.d(TAG, "params: " + paramsStr);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, paramsStr, listener, errorListener);
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
     }
 
     /**
@@ -461,6 +534,36 @@ public class RequestManager {
                                         String... paramsStr) {
 
     }
+    /**
+     * 获取乐心设备信息
+     * @param ctx
+     * @param listener
+     * @param errorListener
+     * @param paramsStr
+     */
+    public static void getLSDeviceInfo(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,Map parammap,
+                                        String... paramsStr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("http://open.lifesense.com/deviceopenapi_service/device/api");
+//        sb.append("http://qa.sports.lifesense.com/operators_service/v1/api");
+        sb.append("/getDeviceinfo?");
+        if (paramsStr.length == 4) {
+            sb.append("appid=");
+            sb.append(paramsStr[0]);
+            sb.append("&timestamp=");
+            sb.append(paramsStr[1]);
+            sb.append("&nonce=");
+            sb.append(paramsStr[2]);
+            sb.append("&checksum=");
+            sb.append(paramsStr[3]);
+        }
+        String url = sb.toString();
+        Log.d(TAG, "getLSDeviceInfo: url(" + url + ")");
+        JSONObject params=new JSONObject(parammap);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, params.toString(), listener, errorListener);
 
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
+    }
 
 }

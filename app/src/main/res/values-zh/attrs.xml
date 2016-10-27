@@ -11,8 +11,22 @@
         <item>尿酸</item>
     </string-array>
 
+    <string-array name="device_codes">
+        <item>血糖</item>
+        <item>血压</item>
+        <item>体温</item>
+        <item>血氧</item>
+        <item>血脂</item>
+        <item>体重</item>
+        <item>尿酸</item>
+    </string-array>
+
     <string-array name="gender_text">
         <item>男</item>
         <item>女</item>
+    </string-array>
+    <string-array name="gender_value">
+        <item>M</item>
+        <item>F</item>
     </string-array>
 </resources>

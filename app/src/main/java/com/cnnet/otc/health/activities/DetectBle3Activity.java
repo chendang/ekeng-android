@@ -20,6 +20,7 @@ import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.BloodPressureData;
 import com.cnnet.otc.health.bean.data.LipidData;
+import com.cnnet.otc.health.bean.data.LipidTest;
 import com.cnnet.otc.health.bean.data.UricacidData;
 import com.cnnet.otc.health.bean.data.WeightData;
 import com.cnnet.otc.health.bluetooth.DeviceDialog;
@@ -41,8 +42,8 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.lang.reflect.Field;
+import java.util.Date;
 import java.util.List;
-
 import de.greenrobot.event.EventBus;
 
 
@@ -81,21 +82,28 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detect);
         mUniqueKey = getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_MEMBER_UNIQUEKEY);
-        nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, 0);
+        nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, new Date().getTime());
         Log.d(TAG, "mUniqueKey = " + mUniqueKey);
         hasReal = getIntent().getBooleanExtra(CommConst.INTENT_EXTRA_KEY_HAS_REAL, false);
         initCheckType( Integer.parseInt(getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_DEVICE_TYPE)));
+        try {
+ 
         initLineView();
         initBlue();
 
         // add data
         setData();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     private void initBlue() {
         //注册EventBus
         EventBus.getDefault().register(this);
-        btNormalManager = new BtNormalManager(this, myLineView, nativeRecordId);
+        btNormalManager = new BtNormalManager(this, myLineView, nativeRecordId,mUniqueKey);
 
         findViewById(R.id.bt_detect_connect).setOnClickListener(this);
     }
@@ -108,8 +116,8 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
             devices = getResources().getStringArray(R.array.devices);
         }
         title = (TextView) findViewById(R.id.tv_detect_title);
-        title.setText(devices[ SysApp.check_type.ordinal()]);
-        LinearLayout drawLinear = (LinearLayout) findViewById(R.id.detect_draw_linear);
+        title.setText(devices[SysApp.check_type.ordinal()]);
+       LinearLayout drawLinear = (LinearLayout) findViewById(R.id.detect_draw_linear);
         myLineView = new MyLineChartView(this, this);
         myLineView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -239,6 +247,10 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
                                     if (lValue >= 0 && lValue <= 350) {
                                         SysApp.getMyDBManager().addRecordItem(nativeRecordId, bpData.DATA_BP_HIGHT, hValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
                                         SysApp.getMyDBManager().addRecordItem(nativeRecordId, bpData.DATA_BP_LOW, lValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
+                                        if(hValue>lValue)
+                                        {
+                                            SysApp.getMyDBManager().addRecordItem(nativeRecordId, bpData.DATA_BP_PULSE,hValue- lValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
+                                        }
                                         setDialogState(bpWDialog, true);
                                         EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
                                         return;
@@ -281,8 +293,8 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
                                 if (StringUtil.isNotEmpty(trigStr)) {
                                     float trigValue = Float.parseFloat(trigStr.toString());
                                     if (trigValue >= 0 && trigValue <= 50) {
-                                        SysApp.getMyDBManager().addRecordItem(nativeRecordId, lipidData.DATA_CHOLESTEROL, cholValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
-                                        SysApp.getMyDBManager().addRecordItem(nativeRecordId, lipidData.DATA_TRIGLYCERIDES, trigValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
+                                        SysApp.getMyDBManager().addRecordItem(nativeRecordId, LipidTest.DATA_CHOLESTEROL, cholValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
+                                        SysApp.getMyDBManager().addRecordItem(nativeRecordId, LipidTest.DATA_TRIGLYCERIDES, trigValue, DBHelper.RI_SOURCE_MANAUAL, null, SysApp.check_type.ordinal());
                                         setDialogState(lipidWDialog, true);
                                         EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
                                         return;

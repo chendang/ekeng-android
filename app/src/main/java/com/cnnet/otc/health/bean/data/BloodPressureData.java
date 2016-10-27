@@ -35,9 +35,15 @@ public class BloodPressureData implements MyCommData {
 	 */
 	public static final String DATA_BP_LOW = "BPLow";
 	/**
+	 * 血压：脉压差字段
+	 */
+	public static final String DATA_BP_PULSE = "BPC";
+	/**
 	 * 血压争对的图表对象
 	 */
 	//private MyLineChartView myLineChartView;
+
+	public static final String DATA_BP_PR = "BPPR";
 
 	/**
 	 * 值的类型：1整形，2浮点型
@@ -47,10 +53,11 @@ public class BloodPressureData implements MyCommData {
 	private Context ctx;
 
 	private long nativeRecordId;
-	
-	public BloodPressureData(Context ctx, long nativeRecordId){
+	private String mUniqueKey = null;
+	public BloodPressureData(Context ctx, long nativeRecordId,String mUniqueKey){
 		this.nativeRecordId = nativeRecordId;
 		this.ctx = ctx;
+		this.mUniqueKey=mUniqueKey;
 	}
 	
 
@@ -86,6 +93,9 @@ public class BloodPressureData implements MyCommData {
 			System.out.println("血压数据：" + data);
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_HIGHT, highPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_LOW, lowPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_PULSE, highPressure-lowPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_PR, heartRate, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+
 			//DisplayView.fa.hander.sendEmptyMessage(5);
 			EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, data));
 			/*if (DisplayView.fa != null) {
@@ -119,30 +129,32 @@ public class BloodPressureData implements MyCommData {
 
 	@Override
 	public List<RecordItem>[] getRecordList(String mUniqueKey) {
-		List<RecordItem>[] lists = new List[2];
+		List<RecordItem>[] lists = new List[4];
 		lists[0] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BP_HIGHT);
 		lists[1] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BP_LOW);
+		lists[2] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BP_PULSE);
+		lists[3] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BP_PR);
 		return lists;
 	}
 
 	@Override
 	public List<RecordItem> getRecordAllList(String mUniqueKey) {
-		return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_BP_HIGHT, DATA_BP_LOW);
+		return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_BP_HIGHT, DATA_BP_LOW,DATA_BP_PULSE,DATA_BP_PR);
 	}
 
 	@Override
 	public String[] getInsName() {
-		return new String[]{"收缩压", "舒张压"};
+		return new String[]{"收缩压\n\r(mmHg)", "舒张压\n\r(mmHg)","脉压差\n\r(mmHg)","心率\n\r(bpm)"};
 	}
 
 	@Override
 	public String[] getInsUnit() {
-		return new String[]{"mmHg", "mmHg"};
+		return new String[]{"","","",""};
 	}
 
 	@Override
 	public int[] getInsRange() {
-		return new int[]{1, 1};
+		return new int[]{1, 1, 1,1};
 	}
 
 	@Override

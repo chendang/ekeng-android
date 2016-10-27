@@ -1,6 +1,7 @@
 package com.cnnet.otc.health.tasks;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.android.volley.Response;
@@ -12,11 +13,14 @@ import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.comm.volleyRequest.PostUploadRequest;
+import com.cnnet.otc.health.db.MyDBManager;
 import com.cnnet.otc.health.interfaces.SubmitServerListener;
 import com.cnnet.otc.health.managers.JsonManager;
 import com.cnnet.otc.health.managers.RequestManager;
+import com.cnnet.otc.health.util.AppCheckUtil;
 import com.cnnet.otc.health.util.NetUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.util.ToastUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -227,7 +231,7 @@ public class UploadAllNewInfoTask {
      */
     private static void submitOneRecord(final Context ctx, final List<MemberRecord> recordsLists, int position, final String addUniquKey, final SubmitServerListener l) {
         final MemberRecord record = recordsLists.get(position);
-        List<RecordItem> lists = SysApp.getMyDBManager().getListByRecordId(record.getId());
+        List<RecordItem> lists = SysApp.getMyDBManager().getSubmitedListByRecordId(record.getId());
         RequestManager.addMemberRecord(ctx, new Response.Listener<JSONObject>(){
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -264,7 +268,7 @@ public class UploadAllNewInfoTask {
         if(StringUtil.isNotEmpty(addUniquKey) && nativeRecordId > 0) {
             final MemberRecord record = SysApp.getMyDBManager().getWaitInspectorRecord(addUniquKey, nativeRecordId);
             if(record != null) {
-                List<RecordItem> lists = SysApp.getMyDBManager().getListByRecordId(record.getId());
+                List<RecordItem> lists = SysApp.getMyDBManager().getSubmitedListByRecordId(record.getId());
                 if(lists != null && lists.size() > 0) {
                     SysApp.getMyDBManager().submitRecordInfo(addUniquKey, record.getId());
                     RequestManager.addMemberRecord(ctx, new Response.Listener<JSONObject>() {

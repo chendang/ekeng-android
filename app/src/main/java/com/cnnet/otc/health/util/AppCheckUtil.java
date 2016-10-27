@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.comm.CommConst;
+import com.cnnet.otc.health.comm.SysApp;
 
 import java.util.List;
 

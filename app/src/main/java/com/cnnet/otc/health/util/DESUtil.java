@@ -4,6 +4,7 @@ import com.cnnet.otc.health.comm.CommConst;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -262,6 +263,26 @@ public class DESUtil {
         return rawKeyData;
     }
 
+
+    /**
+     * sha1加密算法
+     * @param val
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public static String getSHA(String val) throws NoSuchAlgorithmException{
+        MessageDigest md5 = MessageDigest.getInstance("SHA-1");
+        md5.update(val.getBytes());
+        byte[] m = md5.digest();//加密
+        return getString(m);
+    }
+    private static String getString(byte[] b){
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < b.length; i ++){
+            sb.append(b[i]);
+        }
+        return sb.toString();
+    }
     public static void main(String[] args) {
         String base = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();

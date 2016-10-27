@@ -1,5 +1,8 @@
 package com.cnnet.otc.health.bluetooth;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,21 +11,23 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.HBuilder.integrate.R;
+import com.cnnet.otc.health.bean.DeviceListItem;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
+import com.cnnet.otc.health.comm.CheckType;
+import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.managers.BleManager;
 import com.cnnet.otc.health.util.StringUtil;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class TaixinDialog extends Dialog implements
 		View.OnClickListener {
@@ -41,10 +46,10 @@ public class TaixinDialog extends Dialog implements
 	private BleManager mBleManager;
 	private ListView mListView;
 	private DeviceListAdapter mAdapter;
-	private ArrayList<MyBlueToothDevice> list;
+	private ArrayList<MyBlueToothDevice>list;
 	private String Sharepare;
 
-	public TaixinDialog(Context context, int theme, String sharepare, BleManager mBle) {
+	public TaixinDialog(Context context, int theme,String sharepare, BleManager mBle) {
 		super(context, theme);
 		setContentView(R.layout.devices);
 		this.mBleManager = mBle;
@@ -152,7 +157,7 @@ public class TaixinDialog extends Dialog implements
 
 		@Override
 		public void onLeScan(final BluetoothDevice device, final int rssi,
-							 byte[] scanRecord) {
+				byte[] scanRecord) {
 			String address = device.getAddress();
 			if (!map.containsKey(address)) {
 				map.put(address, address);

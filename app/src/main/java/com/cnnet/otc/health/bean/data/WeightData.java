@@ -36,7 +36,7 @@ public class WeightData implements MyCommData {
      * 本地检查记录ID
      */
     private long nativeRecordId;
-
+    private String mUniqueKey = null;
     /**
      * 体重
      */
@@ -71,10 +71,11 @@ public class WeightData implements MyCommData {
     int gender = -1;  //1男，0女
     int age = 0;
 
-    public WeightData(Context ctx, MyLineChartView myLineView, long nativeRecordId) {
+    public WeightData(Context ctx, MyLineChartView myLineView, long nativeRecordId , String mUniqueKey ) {
         this.myLineView = myLineView;
         this.ctx = ctx;
         this.nativeRecordId = nativeRecordId;
+        this.mUniqueKey=mUniqueKey;
     }
 
     @Override
@@ -118,7 +119,7 @@ public class WeightData implements MyCommData {
                 {
                     int iWValue = (datas[4]&0xFF) * 0x100 + (datas[5]&0xFF);
                     float fWValue = iWValue / 10f;  //得到的体重kg
-                    int iBFPValue = (datas[6]&0xFF) * 0x100 + datas[7]&0xFF;
+                    int iBFPValue = (datas[6]&0xFF) * 0x100 + (datas[7]&0xFF);
                     int BFPValue = iBFPValue / 10;  //得到的体脂肪率：BFP
                     float height = (datas[3]&0xFF) / 100f;  //以米为单位的身高
                     float BMIValue = StringUtil.getDecimalsOne(fWValue / Math.pow(height, 2));  //体质指数
@@ -179,12 +180,12 @@ public class WeightData implements MyCommData {
 
     @Override
     public String[] getInsName() {
-        return new String[]{"体重", "身高", "腰围", "体脂", "BMI指数"};
+        return new String[]{"体重\n\r(kg)", "身高\n\r(cm)", "腰围\n\r(cm)", "体脂\n\r(%)", "BMI指数"};
     }
 
     @Override
     public String[] getInsUnit() {
-        return new String[]{"kg", "cm", "cm", "%", ""};
+        return new String[]{"", "", "", "", ""};
     }
 
     @Override

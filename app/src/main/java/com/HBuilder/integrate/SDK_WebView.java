@@ -54,8 +54,7 @@ public class SDK_WebView extends Activity {
 			mEntryProxy.onCreate(this, savedInstanceState, SDK.IntegratedMode.WEBVIEW, null);
 			setContentView(rootView);
 		}
-		//初始化数据管理
-		SysApp.myDBManager= MyDBManager.getInstance(this);
+
 	}
 
 	@Override
@@ -152,7 +151,7 @@ class WebviewModeListener implements ICoreStatusListener {
 		// 设置单页面集成的appid
 		String appid = "TestAppid";
 		// 单页面集成时要加载页面的路径，可以是本地文件路径也可以是网络路径
-				String url = "file:///android_asset/apps/H5Plugin/www/selectdevice.html";
+				String url = "file:///android_asset/apps/H5Plugin/www/selectdevice_1.html";
 		webview = SDK.createWebview(activity, url, appid, new IWebviewStateListener() {
 			@Override
 			public Object onCallBack(int pType, Object pArgs) {

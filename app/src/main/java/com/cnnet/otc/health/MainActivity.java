@@ -5,10 +5,10 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.HBuilder.integrate.R;
+import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.fragments.DeviceFragment;
@@ -33,8 +34,12 @@ import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.NetUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -78,9 +83,47 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         init();
+        //copyFile("/data/data/com.cnnet.otc.health/databases/otc.db","/sdcard/DCIM/otc.db");
         updateManager = new UpdateManager(this, appUpdateCb);
         updateManager.checkUpdate();
     }
+
+    public void copyFile(String oldPath, String newPath) {
+       try {
+                String currPath=getApplicationContext().getFilesDir().getAbsolutePath();
+                String pkgPath=getApplicationContext().getPackageResourcePath();
+                String dbPath=getApplicationContext().getDatabasePath("otc.db").getAbsolutePath();
+                System.out.println(currPath);
+                System.out.println(pkgPath);
+                System.out.println(dbPath);
+                    int bytesum = 0;
+                    int byteread = 0;
+                    File oldfile = new File(oldPath);
+                    File newFile = new File(newPath);
+                    if(newFile.exists())
+                    {
+                        newFile.delete();
+                    }
+                    if (oldfile.exists()) { //文件存在时
+                            InputStream inStream = new FileInputStream(oldPath); //读入原文件
+                              FileOutputStream fs = new FileOutputStream(newPath);
+                             byte[] buffer = new byte[1444];
+                             int length;
+                         while ( (byteread = inStream.read(buffer)) != -1) {
+                                      bytesum += byteread; //字节数 文件大小
+                                     System.out.println(bytesum);
+                                      fs.write(buffer, 0, byteread);
+                                  }
+                             inStream.close();
+                           }
+                  }
+          catch (Exception e) {
+                    System.out.println("复制单个文件操作出错");
+                    e.printStackTrace();
+
+               }
+    }
+
 
     private void init() {
         findViewById(R.id.fl_home).setOnClickListener(this);

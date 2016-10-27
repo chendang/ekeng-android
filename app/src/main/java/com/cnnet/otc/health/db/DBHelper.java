@@ -93,6 +93,8 @@ public class DBHelper extends SQLiteOpenHelper {
     protected static final String RI_COL_DESC1 = "desc1"; //描述1
     protected static final String RI_COL_SOURCE = "source";  //数据来源：1设备 ，2手动输入
     protected static final String RI_COL_DEVICE_TYPE = "deviceType"; //检查设备类型
+    protected static final String RI_COL_RECORD_TIME = "recordTime"; //检测时间
+    protected static final String RI_COL_TESTCODE="testCode";
 
     protected static final String B_COL_DEIVCE_NAME = "btName";  //蓝牙名称
     protected static final String B_COL_MAC = "mac";  //蓝牙地址
@@ -121,10 +123,16 @@ public class DBHelper extends SQLiteOpenHelper {
      * @param factory
      * @param version
      */
-    private DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    private DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,  int version) {
         super(context, name, factory, version);
     }
-
+    /**
+     25          * 这个方法
+     26          * 1、在第一次打开数据库的时候才会走
+     27          * 2、在清除数据之后再次运行-->打开数据库，这个方法会走
+     28          * 3、没有清除数据，不会走这个方法
+     29          * 4、数据库升级的时候这个方法不会走
+     30          */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         createTable(sqLiteDatabase);
@@ -142,7 +150,7 @@ public class DBHelper extends SQLiteOpenHelper {
             sqlBuilder.append("CREATE TABLE IF NOT EXISTS ").append(TB_DATA_VERSION)
                     .append(" (").append(ID).append("");
 
-            mDB.execSQL("CREATE TABLE IF NOT EXISTS " + TB_LOGIN_INFO
+           /* mDB.execSQL("CREATE TABLE IF NOT EXISTS " + TB_LOGIN_INFO
                     + " (" + ID + " integer primary key autoincrement, " + L_COL_UNIQUEKEY + " text not null unique,"
                     + L_COL_SUPER_UNIQUEKEY + " text not null," + L_COL_LOGIN_ROLE + " integer not null," + L_COL_USERNAME + " text not null,"
                     + L_COL_PASSWORD + " text not null," + L_COL_NAME + " text," + L_COL_SEX + " text)");
@@ -167,7 +175,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     + M_COL_IDNUMBER + " text," + M_COL_TEL + " text," + M_COL_PHONE + " text not null," + M_COL_ADDRESS + " text," + M_COL_BRITHDAY
                     + " text not null," + M_COL_ANAMNESIS + " text," + M_COL_SSN + " text," + M_COL_CREATE_PERSION + " text," + M_COL_CREATE_TIME
                     + " integer not null, " + M_COL_UPDATE_TIME + " integer not null," + M_COL_VERSION + " integer, " + M_COL_STATE + " integer, "
-                    + M_COL_ADD_UNIQUEKEY + " text," + M_COL_WITH_DOCTOR + " text)");
+                    + M_COL_ADD_UNIQUEKEY + " text," + M_COL_WITH_DOCTOR + " text)");*/
 
             mDB.execSQL("CREATE TABLE IF NOT EXISTS " + TB_MEMBER_RECORD
                     + " (" + ID + " integer primary key autoincrement, "
@@ -180,7 +188,8 @@ public class DBHelper extends SQLiteOpenHelper {
                     + " (" + ID + " integer primary key autoincrement, " + RI_COL_NATIVE_RECORD_ID  + " integer not null,"
                     + RI_COL_RECORD_ID + " integer," + RI_COL_TYPE + " text not null,"
                     + RI_COL_VALUE1 + " float, " + RI_COL_SOURCE + " integer not null," + RI_COL_CONCLUSION + " text,"
-                    + RI_COL_DESC1 + " text," + RI_COL_DEVICE_TYPE + " integer not null)");
+                    + RI_COL_DESC1 + " text not null default ''," + RI_COL_DEVICE_TYPE + " integer not null," + RI_COL_RECORD_TIME + " integer DEFAULT (datetime(CURRENT_TIMESTAMP,'localtime')),"
+                            + RI_COL_TESTCODE + " text not null default '')");
 
             mDB.execSQL("CREATE TABLE IF NOT EXISTS " + TB_DEVICE_BLUETOOTHS
                     + " (" + ID + " integer primary key autoincrement, " + B_COL_DEIVCE_NAME + " text not null,"

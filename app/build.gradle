@@ -16,7 +16,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    //task nativeLibsToJar(type: Zip, description: "create a jar archive of the native libs") {
+      //  destinationDir file("$projectDir/libs")
+       // baseName "Native_Libs2"
+        //extension "jar"
+        //from fileTree(dir: "libs", include: "**/*.so")
+        //into "lib"
+    //}
+
+    //tasks.withType(JavaCompile) {
+       // compileTask -> compileTask.dependsOn(nativeLibsToJar)
+    //}
     useLibrary 'org.apache.http.legacy'
+    /*sourceSets {
+        main {
+            jniLibs.srcDirs =['libs']
+    }
+    }*/
 }
 
 dependencies {
@@ -29,7 +45,7 @@ dependencies {
     compile files('libs/aps-igexin.jar')
     compile files('libs/aps.jar')
     compile files('libs/audio.jar')
-    compile files('libs/BaiduLBS_Android.jar')
+    /* compile files('libs/BaiduLBS_Android.jar')*/
     compile files('libs/barcode.jar')
     compile files('libs/camera.jar')
     compile files('libs/contacts.jar')
@@ -37,14 +53,14 @@ dependencies {
     compile files('libs/downloader.jar')
     compile files('libs/file.jar')
     compile files('libs/gallery.jar')
-    compile files('libs/geolocation-baidu.jar')
-    compile files('libs/geolocation-system.jar')
-    compile files('libs/geolocation.jar')
+    /*compile files('libs/geolocation-baidu.jar')
+        compile files('libs/geolocation-system.jar')
+        compile files('libs/geolocation.jar')*/
     compile files('libs/GetuiExt-2.0.3.jar')
     compile files('libs/GetuiSDK2.7.0.0.jar')
     compile files('libs/invocation.jar')
     compile files('libs/json_simple-1.1.jar')
-    compile files('libs/map-baidu.jar')
+    /* compile files('libs/map-baidu.jar')*/
     compile files('libs/messaging.jar')
     compile files('libs/Msc.jar')
     compile files('libs/nativeObj.jar')
@@ -90,4 +106,6 @@ dependencies {
     compile files('libs/taixin.jar')
     compile files('libs/stetho-1.1.1-fatjar.jar')
     compile files('libs/gson-2.2.2.jar')
+    compile files('libs/lswificonfig.jar')/*
+    compile files('libs/Native_Libs2.jar')*/
 }

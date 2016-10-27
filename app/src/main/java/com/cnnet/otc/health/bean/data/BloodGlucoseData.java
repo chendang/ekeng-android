@@ -1,6 +1,9 @@
 package com.cnnet.otc.health.bean.data;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Looper;
 import android.util.Log;
 
 import com.HBuilder.integrate.R;
@@ -10,10 +13,13 @@ import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -26,6 +32,48 @@ import de.greenrobot.event.EventBus;
 public class BloodGlucoseData implements MyCommData {
 
 	private final String TAG = "BloodGlucoseData";
+	private Hashtable<GluTestCode,RecordItem> glu_datas=null;
+	private GluTestCode cur_test_code=null;
+
+	public String getTestcodeTitle()
+	{
+		return  (cur_test_code==null)? "":cur_test_code.getTitle();
+	}
+
+	public  List<GluTestCode> getUntested7PointTestCode()
+	{
+		List<GluTestCode> test_codes=GluTestCode.get7PointTestCodes();
+		List<GluTestCode> untested_list=new ArrayList<GluTestCode>();
+		for(GluTestCode test_code:test_codes)
+		{
+			if(getGlu_datas().get(test_code)==null)
+			{
+				untested_list.add(test_code);
+			}
+
+		}
+		return untested_list;
+	}
+
+
+
+	public String[] getUntested7PointTitles()
+	{
+		List<GluTestCode> test_codes=getUntested7PointTestCode();
+		String [] test_code_strs=new String[test_codes.size()];
+		for(int i=0;i<test_codes.size();i++)
+		{
+			test_code_strs[i]=test_codes.get(i).getTitle();
+		}
+		return test_code_strs;
+	}
+
+	public void deleteTestValue(RecordItem itm)
+	{
+		GluTestCode testCode=GluTestCode.find(itm.getTestCode());
+		getGlu_datas().remove(testCode);
+		SysApp.getMyDBManager().deleteRecordItemByType(itm);
+	}
 
 	/**
 	 * 连机命令
@@ -57,18 +105,74 @@ public class BloodGlucoseData implements MyCommData {
 	public int todoDisconnected_failed, todoDisconnected ;
 
 	private long nativeRecordId;
-
+	private String mUniqueKey = null;
 	private Context context;
+
+	class RetVal
+	{
+		private boolean bool_val;
+		public RetVal(boolean isTrue)
+		{
+			setBool_val(isTrue);
+		}
+
+		public boolean isBool_val() {
+			return bool_val;
+		}
+
+		public void setBool_val(boolean bool_val) {
+			this.bool_val = bool_val;
+		}
+	}
+
+	private boolean doSave(float val)
+	{
+		SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
+		RecordItem itm;
+
+		if(!getGlu_datas().containsKey(cur_test_code))
+		{
+			itm=new RecordItem();
+			getGlu_datas().put(cur_test_code,itm);
+		}
+		else
+		{
+			itm= getGlu_datas().get(cur_test_code);
+		}
+		itm.setValue1(val);
+		itm.setiNativeRecordId(nativeRecordId);
+		itm.setiType(DATA_BLOOD_GLUCOSE);
+		itm.setSource( DBHelper.RI_SOURCE_DEVICE);
+		itm.setiConcluison(SysApp.btDevice.getAddress());
+		itm.setDeviceType( SysApp.check_type.ordinal());
+		itm.setTestCode(cur_test_code.getTest_code());
+		this.setCur_test_code(null);
+		return SysApp.getMyDBManager().addRecordItem(itm);
+	}
+
+	private boolean saveRecord(float val)
+	{
+		if(cur_test_code==null)
+			return false;
+		boolean isOK= doSave(val);
+		if(isOK)
+		{
+			cur_test_code=null;
+		}
+		return isOK;
+	}
+
 	/**
 	 * 血糖争对的图表对象
 	 */
 	private MyLineChartView myLineChartView;
 	
 
-	public BloodGlucoseData(Context ctx, MyLineChartView myLineChartView, long nativeRecordId){
+	public BloodGlucoseData(Context ctx, MyLineChartView myLineChartView, long nativeRecordId,String  mUniqueKey  ){
 		this.myLineChartView = myLineChartView;
 		this.context = ctx;
 		this.nativeRecordId = nativeRecordId;
+		this.mUniqueKey = mUniqueKey;
 	}
 
 	/**
@@ -127,15 +231,18 @@ public class BloodGlucoseData implements MyCommData {
 			} else {
 				data = consistency + "mg/dl";
 			}
-			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BLOOD_GLUCOSE, values, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
-			//EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_SAVE_RECORD_ITEM, context.getString(R.string.CHECK_TYPE_INFO_BLOOD_GLUCOSE)));
-			//DisplayView.fa.hander.sendEmptyMessage(5);
 			EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, data));
+			if(saveRecord(values)) {
+
+				//EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_SAVE_RECORD_ITEM, context.getString(R.string.CHECK_TYPE_INFO_BLOOD_GLUCOSE)));
+				//DisplayView.fa.hander.sendEmptyMessage(5);
+
 			/*if (DisplayView.fa != null) {
 				DisplayView.fa.save();
 				DisplayView.fa.hander.sendEmptyMessage(0);
 			}*/
-			EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
+				EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));
+			}
 		} else {
 
 		}
@@ -168,28 +275,61 @@ public class BloodGlucoseData implements MyCommData {
 	@Override
 	public List<RecordItem>[] getRecordList(String mUniqueKey) {
 		List<RecordItem>[] lists = new List[1];
-		lists[0] = SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BLOOD_GLUCOSE);
+		List<RecordItem> item_list=SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BLOOD_GLUCOSE);
+		if(item_list!=null)
+			update_glu_datas(item_list);
+		else
+		{
+			update_glu_datas(new ArrayList<RecordItem>() );
+		}
+		lists[0] = item_list;
 		return lists;
+	}
+
+	private void update_glu_datas(List<RecordItem> item_list)
+	{
+		getGlu_datas().clear();
+		for(RecordItem itm:item_list)
+		{
+			if(itm.getiNativeRecordId()==this.nativeRecordId)
+			{
+				getGlu_datas().put(GluTestCode.find(itm.getTestCode()),itm);
+			}
+		}
+		/*if(getGlu_datas().values().size()==0)
+		{
+			this.setCur_test_code(GluTestCode.GLU_EMPTY);
+		}*/
 	}
 
 	@Override
 	public List<RecordItem> getRecordAllList(String mUniqueKey) {
-		return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_BLOOD_GLUCOSE);
+		List<RecordItem> item_list=SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_BLOOD_GLUCOSE);
+		if(item_list==null)
+		{
+			item_list=new ArrayList<RecordItem>();
+		}
+		for(RecordItem item:item_list)
+		{
+			GluTestCode test_code=GluTestCode.find(item.getTestCode());
+			item.setValue2Txt(test_code.getTitle());
+		}
+		return item_list;
 	}
 
 	@Override
 	public String[] getInsName() {
-		return new String[]{"血糖"};
+		return new String[]{"血糖\n\r(mmol/L)","检查项目"};
 	}
 
 	@Override
 	public String[] getInsUnit() {
-		return new String[]{"mmol/L"};
+		return new String[]{"",""};
 	}
 
 	@Override
 	public int[] getInsRange() {
-		return new int[]{2};
+		return new int[]{2,2};
 	}
 
 	@Override
@@ -206,6 +346,22 @@ public class BloodGlucoseData implements MyCommData {
 	@Override
 	public int getdisconnected_failed() {
 		return todoDisconnected_failed;
+	}
+
+	public GluTestCode getCur_test_code() {
+		return cur_test_code;
+	}
+
+	public void setCur_test_code(GluTestCode test_code) {
+		this.cur_test_code = test_code;
+	}
+
+	public Hashtable<GluTestCode, RecordItem> getGlu_datas() {
+		if(glu_datas==null)
+		{
+			glu_datas=new Hashtable<GluTestCode, RecordItem>();
+		}
+		return glu_datas;
 	}
 
 }

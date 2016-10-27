@@ -2,6 +2,7 @@ package com.cnnet.otc.health.views.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.HBuilder.integrate.R;
+import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.bean.RecordItem;
+import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.interfaces.MyCommData;
 import com.cnnet.otc.health.util.DateUtil;
 import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.bean.data.LipidDataItem;
 
 import java.util.List;
 
@@ -86,7 +90,7 @@ public class DetectRecordListAdapter extends BaseAdapter {
                         if (length > 3) {
                             handler.value4.setVisibility(View.VISIBLE);
                             handler.value4.setText(myData.getInsName()[3]);
-                            if (length > 3) {
+                            if (length >4) {
                                 handler.value5.setVisibility(View.VISIBLE);
                                 handler.value5.setText(myData.getInsName()[4]);
                             }
@@ -102,19 +106,19 @@ public class DetectRecordListAdapter extends BaseAdapter {
             handler.recordTime.setText(DateUtil.getDateStr(item.getCreateTime(), ctx.getString(R.string.today)));
             if (length > 0) {
                 handler.value1.setVisibility(View.VISIBLE);
-                handler.value1.setText(StringUtil.getInsValueStr(myData.getInsRange()[0], item.getValue1(), myData.getInsUnit()[0]));
+                handler.value1.setText(item.getValue1Txt());
                 if (length > 1) {
                     handler.value2.setVisibility(View.VISIBLE);
-                    handler.value2.setText(StringUtil.getInsValueStr(myData.getInsRange()[1], item.getValue2(), myData.getInsUnit()[1]));
+                    handler.value2.setText(item.getValue2Txt());
                     if (length > 2) {
                         handler.value3.setVisibility(View.VISIBLE);
-                        handler.value3.setText(StringUtil.getInsValueStr(myData.getInsRange()[2], item.getValue3(), myData.getInsUnit()[2]));
+                        handler.value3.setText(item.getValue3Txt());
                         if (length > 3) {
                             handler.value4.setVisibility(View.VISIBLE);
-                            handler.value4.setText(StringUtil.getInsValueStr(myData.getInsRange()[3], item.getValue4(), myData.getInsUnit()[3]));
-                            if (length > 3) {
+                            handler.value4.setText(item.getValue4Txt());
+                            if (length >4) {
                                 handler.value5.setVisibility(View.VISIBLE);
-                                handler.value5.setText(StringUtil.getInsValueStr(myData.getInsRange()[4], item.getValue5(), myData.getInsUnit()[4]));
+                                handler.value5.setText(item.getValue5Txt());
                             }
                         }
                     }
@@ -163,6 +167,8 @@ public class DetectRecordListAdapter extends BaseAdapter {
         }
         return view;
     }
+
+
 
     class ViewHandler {
         TextView recordTime;

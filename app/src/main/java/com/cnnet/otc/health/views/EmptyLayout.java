@@ -21,7 +21,7 @@ public class EmptyLayout {
     private final LayoutParams params;
     private LinearLayout ll;
     private View mView ;
-    public EmptyLayout(Context ctx, ListView listview){
+    public EmptyLayout(Context ctx,ListView listview){
         this.ctx = ctx;
         this.listview = listview;
         parent = (ViewGroup) listview.getParent();
@@ -37,7 +37,7 @@ public class EmptyLayout {
             parent.removeView(ll);
         }
 
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_empty, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_empty, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         Button btn = (Button)view.findViewById(R.id.buttonEmpty);
         btn.setOnClickListener(btnListener);
@@ -56,7 +56,7 @@ public class EmptyLayout {
      * msg 提示的文字
      * @param btnListener  刷新按键监听 为空时 不显示按键
      */
-    public void setEmptyLayout(String msg, OnClickListener btnListener){
+    public void setEmptyLayout(String msg,OnClickListener btnListener){
 
         if(ll != null){
             parent.removeView(ll);
@@ -87,7 +87,7 @@ public class EmptyLayout {
             parent.removeView(ll);
         }
 
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_empty, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_empty, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         TextView tvMessage = (TextView)view.findViewById(R.id.textViewMessage);
         tvMessage.setText(msg_Resouce);
@@ -106,7 +106,7 @@ public class EmptyLayout {
         if(ll != null){
             parent.removeView(ll);
         }
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_loading, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_loading, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         ll.setLayoutParams(params);
         parent.addView(ll);
@@ -117,7 +117,7 @@ public class EmptyLayout {
         if(ll != null){
             parent.removeView(ll);
         }
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         Button btn = (Button)view.findViewById(R.id.buttonError);
         btn.setOnClickListener(btnListener);
@@ -128,11 +128,11 @@ public class EmptyLayout {
 
     }
 
-    public void setErrorLayout(String text, OnClickListener btnListener){
+    public void setErrorLayout(String text,OnClickListener btnListener){
         if(ll != null){
             parent.removeView(ll);
         }
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         TextView tvMessage = (TextView)view.findViewById(R.id.textViewMessage);
         tvMessage.setText(text);
@@ -146,7 +146,7 @@ public class EmptyLayout {
         if(ll != null){
             parent.removeView(ll);
         }
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_error, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         TextView tvMessage = (TextView)view.findViewById(R.id.textViewMessage);
         tvMessage.setText(text_res);
@@ -163,13 +163,13 @@ public class EmptyLayout {
      * @param ic_res_id 图标  0：不显示图标
      * @param btnListener 按键监听  null不显示 按键
      */
-    public void setLayout(String msg, String buttonText, int ic_res_id, OnClickListener btnListener){
+    public void setLayout(String msg,String buttonText,int ic_res_id,OnClickListener btnListener){
 
         if(ll != null){
             parent.removeView(ll);
         }
 
-        View view = LayoutInflater.from(ctx).inflate(R.layout.listview_my_layout, null);
+        View	view = LayoutInflater.from(ctx).inflate(R.layout.listview_my_layout, null);
         ll = (LinearLayout)view.findViewById(R.id.rl);
         TextView tvMessage = (TextView)view.findViewById(R.id.textViewMessage);
         ImageView ic = (ImageView)view.findViewById(R.id.ic);

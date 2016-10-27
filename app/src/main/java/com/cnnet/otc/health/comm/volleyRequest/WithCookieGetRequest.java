@@ -32,7 +32,7 @@ public class WithCookieGetRequest extends JsonRequest<JSONObject>
 		
 	}
 
-	public WithCookieGetRequest(String url, Listener<JSONObject> listener, ErrorListener errorListener)
+	public WithCookieGetRequest(String url,Listener<JSONObject> listener, ErrorListener errorListener)
 	{
 		super(Method.GET, url, url, listener, errorListener);
 		this.listener = listener;

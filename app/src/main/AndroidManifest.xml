@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.HBuilder.integrate"
     android:versionCode="570"
-    android:versionName="5.7.0" >
+    android:versionName="5.7.0">
 
     <supports-screens
         android:anyDensity="true"
@@ -10,13 +11,12 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
-
     <!-- HBuilder Runtime 基础权限   begin -->
     <!-- 联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 使用存储卡 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <!-- Html5Plus runtime基础权限   end -->
 
@@ -147,7 +147,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />-->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
     <!-- Share - 微信分享 -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!-- Push(推送)   end -->
@@ -172,48 +172,40 @@
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <!-- Statistic(统计)  end -->
 
-    <!--otc add start  -->
+
+    <!-- otc add start -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <!--otc add end  -->
 
-
-
+    <!-- otc add end -->
     <application
+        android:name="com.cnnet.otc.health.comm.SysApp"
         android:allowClearUserData="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/CustomTheme" >
+        android:theme="@style/CustomTheme">
         <activity
-            android:name="com.HBuilder.integrate.SDK_WebView"
+            android:name=".SDK_WebView"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="user"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
         <activity
-            android:name="com.HBuilder.integrate.SDK_Runtime"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="sensor" >
-        </activity>
-        <activity
-            android:name="com.HBuilder.integrate.SDK_WebApp"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="user"
-            android:theme="@android:style/Theme.Translucent" >
-        </activity>
-        <!--<activity
             android:name="com.HBuilder.integrate.SDK_WebView"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensor" >
-        </activity>-->
+        </activity>
+        -->
         <activity
             android:name="io.dcloud.PandoraEntryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -222,14 +214,13 @@
             android:launchMode="singleTask"
             android:screenOrientation="user"
             android:theme="@style/DCloudTheme"
-            android:windowSoftInputMode="adjustResize" >
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
 
         <service
             android:name="io.dcloud.common.adapter.io.MiniServerService"
             android:exported="true" />
 
-        <activity android:name="io.dcloud.imagepick.CustomGalleryActivity" >
+        <activity android:name="io.dcloud.imagepick.CustomGalleryActivity">
             <intent-filter>
                 <action android:name="io.dcloud.ACTION_PICK" />
                 <action android:name="io.dcloud.ACTION_MULTIPLE_PICK" />
@@ -253,6 +244,7 @@
 
         <!-- Maps(地图) begin -->
         <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
+        <!--
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Z3erUvGIwBCBQdBl6CArCAGT" >
@@ -263,6 +255,7 @@
             android:enabled="true"
             android:process=":remote" >
         </service>
+        -->
         <!-- Maps(地图) end -->
 
 
@@ -276,7 +269,7 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -332,12 +325,12 @@
         <!-- meta-data节点android:name="appkey"项中android:value值为个推服务器上申请的APPKEY -->
         <!-- meta-data节点android:name="appsecret"项中android:value值为个推服务器上申请的APPSECRET -->
         <!-- 个推 aps配置  begin -->
-        <receiver android:name="io.dcloud.feature.apsGt.PushMessageReceiver" >
+        <receiver android:name="io.dcloud.feature.apsGt.PushMessageReceiver">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.bBPiGM1VQ66mhMI3d9tG0A" />
             </intent-filter>
         </receiver>
-        <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver" >
+        <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="com.HBuilder.integrate.__CREATE_NOTIFICATION" />
@@ -361,15 +354,13 @@
             android:name="com.igexin.sdk.PushService"
             android:exported="true"
             android:label="NotificationCenter"
-            android:process=":pushservice" >
-        </service>
+            android:process=":pushservice" />
         <service
             android:name="com.igexin.sdk.PushServiceUser"
             android:exported="true"
-            android:label="NotificationCenterUser" >
-        </service>
+            android:label="NotificationCenterUser" />
 
-        <receiver android:name="com.igexin.sdk.PushReceiver" >
+        <receiver android:name="com.igexin.sdk.PushReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -382,7 +373,7 @@
         </receiver>
         <receiver
             android:name="com.igexin.sdk.PushManagerReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.pushmanager" />
             </intent-filter>
@@ -394,14 +385,13 @@
             android:exported="false"
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.igexin.download.DownloadService"
             android:process=":pushservice" />
 
-        <receiver android:name="com.igexin.download.DownloadReceiver" >
+        <receiver android:name="com.igexin.download.DownloadReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
@@ -431,7 +421,7 @@
 
         <receiver
             android:name="com.igexin.getuiext.service.PayloadReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
                 <action android:name="com.igexin.sdk.action.bBPiGM1VQ66mhMI3d9tG0A" />
@@ -472,8 +462,7 @@
 
         <activity
             android:name="io.dcloud.share.tencent.WebAuthorize"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 微信分享 配置begin -->
         <meta-data
             android:name="WX_SECRET"
@@ -483,10 +472,10 @@
             android:value="wx0411fa6a39d61297" />
 
         <activity
-            android:name="com.HBuilder.integrate.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -504,20 +493,18 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
-        </activity>
+            android:screenOrientation="behind" />
         <!-- 支付宝支付 配置end -->
 
 
         <!-- 微信支付配置 start -->
         <activity
-            android:name="com.HBuilder.integrate.wxapi.WXPayEntryActivity"
+            android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
@@ -527,12 +514,35 @@
 
         <!-- 微信支付配置end -->
 
-        <!--蓝牙设备数据获取-->
-        <!--蓝牙3.0设备检测界面-->
-        <activity android:name="com.cnnet.otc.health.activities.DetectBle3Activity" android:screenOrientation="portrait"></activity>
-        <!--蓝牙4.0设备检测界面-->
-        <activity android:name="com.cnnet.otc.health.activities.DetectBle4Activity" android:screenOrientation="portrait"></activity>
 
+        <!-- 蓝牙设备数据获取 -->
+        <!-- 7点血糖检测界面 -->
+        <activity
+            android:name="com.cnnet.otc.health.activities.DetectBle2Activity"
+            android:screenOrientation="portrait" />
+        <!-- 蓝牙3.0设备检测界面 -->
+        <activity
+            android:name="com.cnnet.otc.health.activities.DetectBle3Activity"
+            android:screenOrientation="portrait" />
+        <!-- 蓝牙4.0设备检测界面 -->
+        <activity
+            android:name="com.cnnet.otc.health.activities.DetectBle4Activity"
+            android:screenOrientation="portrait" />
+
+        <!-- wifi 连接 start -->
+        <activity
+            android:name="com.foxchen.health.activities.DetectWifiGuideActivity"
+            android:label="@string/title_activity_detect_wifi" />
+        <!-- wifi 连接 end -->
+        <activity
+            android:name="com.foxchen.health.activities.DetectWifiActivity"
+            android:label="@string/title_activity_detect_wifi" />
+        <activity
+            android:name="com.foxchen.health.activities.LSBLueDeviceListActivity"
+            android:label="@string/title_activity_lsblue_device_list" />
+        <activity
+            android:name="com.foxchen.health.activities.LSBlueDeviceAddActivity"
+            android:label="@string/title_activity_lsblue_device_add"></activity>
     </application>
 
 </manifest>

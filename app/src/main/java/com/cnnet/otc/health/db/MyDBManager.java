@@ -6,10 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.HBuilder.integrate.SDK_WebView;
+import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.bean.MemberRecord;
-import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.RoleUser;
 import com.cnnet.otc.health.comm.CommConst;
@@ -31,7 +30,7 @@ public class MyDBManager {
 
     private final String TAG = "MyDBManager";
 
-    private final String DB_NAME = "otcc.db";// 数据库名字
+    private final String DB_NAME = "otcccc.db";// 数据库名字
     private final int DB_VERSION = 1;// 数据库版本
     //private final String PASSWORD = "OTC_7!9%45";
 
@@ -78,12 +77,10 @@ public class MyDBManager {
      * @return
      */
     public boolean addRecordItem(long nativeId, String iType, float value, short sourceType, String deviceInfo, int deviceType) {
-        /*if(nativeId <= 0) {
-            nativeId = addWaitForInspector(mUniqueKey, checkPersion);
-        }*/
-        if(nativeId > 0) {
-            mDB.delete(DBHelper.TB_MEMBER_RECORD_ITEM, DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeId +" AND " + DBHelper.RI_COL_TYPE + "=?",
-                    new String[]{iType});
+
+
+           // mDB.delete(DBHelper.TB_MEMBER_RECORD_ITEM, DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeId +" AND " + DBHelper.RI_COL_TYPE + "=?",
+           //         new String[]{iType});
             ContentValues values = new ContentValues();
             values.put(DBHelper.RI_COL_NATIVE_RECORD_ID, nativeId);
             values.put(DBHelper.RI_COL_TYPE, iType);
@@ -92,11 +89,73 @@ public class MyDBManager {
             values.put(DBHelper.RI_COL_CONCLUSION, deviceInfo);
             values.put(DBHelper.RI_COL_DEVICE_TYPE, deviceType);
             long result = mDB.insert(DBHelper.TB_MEMBER_RECORD_ITEM, null, values);
+
+            if(result > 0) {
+                return true;
+            }
+
+        return false;
+    }
+
+    /**
+     * 插入检查信息
+     * @param itm  本地检查信息
+     * @return
+     */
+    public boolean addRecordItem(RecordItem itm) {
+        /*if(nativeId <= 0) {
+            nativeId = addWaitForInspector(mUniqueKey, checkPersion);
+        }*/
+        if(itm.getiNativeRecordId() > 0) {
+            mDB.delete(DBHelper.TB_MEMBER_RECORD_ITEM, DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + itm.getiNativeRecordId() +" AND " + DBHelper.RI_COL_TYPE + "=? AND " + DBHelper.RI_COL_TESTCODE + "=?",
+                    new String[]{itm.getiType(),itm.getTestCode()});
+            ContentValues values = new ContentValues();
+            values.put(DBHelper.RI_COL_NATIVE_RECORD_ID, itm.getiNativeRecordId());
+            values.put(DBHelper.RI_COL_TYPE, itm.getiType());
+            values.put(DBHelper.RI_COL_VALUE1, itm.getValue1());
+            values.put(DBHelper.RI_COL_SOURCE, itm.getSource());
+            values.put(DBHelper.RI_COL_CONCLUSION, itm.getiConcluison());
+            values.put(DBHelper.RI_COL_DEVICE_TYPE, itm.getDeviceType());
+            values.put(DBHelper.RI_COL_TESTCODE,itm.getTestCode());
+            long result = mDB.insert(DBHelper.TB_MEMBER_RECORD_ITEM, null, values);
             if(result > 0) {
                 return true;
             }
         }
+        return false;
+    }
 
+    /**
+     * 插入检查信息
+     * @param nativeId  本地检查信息
+     * @param iType     检查类型
+     * @param value     检查结果值
+     * @param descr     检查结果描述信息
+     * @param sourceType  来源类型：1设备 ，2手动输入
+     * @param deviceInfo  蓝牙设备信息
+     * @param deviceType  蓝牙设备类型（血糖仪，血氧仪等）
+     * @return
+     */
+    public boolean addRecordItemWithDescr(long nativeId, String iType, float value, String descr,short sourceType, String deviceInfo, int deviceType) {
+        /*if(nativeId <= 0) {
+            nativeId = addWaitForInspector(mUniqueKey, checkPersion);
+        }*/
+        if (nativeId > 0) {
+            mDB.delete(DBHelper.TB_MEMBER_RECORD_ITEM, DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeId + " AND " + DBHelper.RI_COL_TYPE + "=?",
+                    new String[]{iType});
+            ContentValues values = new ContentValues();
+            values.put(DBHelper.RI_COL_NATIVE_RECORD_ID, nativeId);
+            values.put(DBHelper.RI_COL_TYPE, iType);
+            values.put(DBHelper.RI_COL_VALUE1, value);
+            values.put(DBHelper.RI_COL_DESC1, descr);
+            values.put(DBHelper.RI_COL_SOURCE, sourceType);
+            values.put(DBHelper.RI_COL_CONCLUSION, deviceInfo);
+            values.put(DBHelper.RI_COL_DEVICE_TYPE, deviceType);
+            long result = mDB.insert(DBHelper.TB_MEMBER_RECORD_ITEM, null, values);
+            if (result > 0) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -123,11 +182,11 @@ public class MyDBManager {
                 return result;
             }*/
 
-            String sql = "INSERT INTO " + DBHelper.TB_MEMBER_RECORD + "(" + DBHelper.R_COL_NATIVE_MEMBER_ID + "," + DBHelper.R_COL_MEMBER_UNIQUEKEY
+            String sql = "INSERT INTO " + DBHelper.TB_MEMBER_RECORD + "(" +DBHelper.R_COL_RECORD_ID + "," + DBHelper.R_COL_NATIVE_MEMBER_ID + "," + DBHelper.R_COL_MEMBER_UNIQUEKEY
                     + "," + DBHelper.R_COL_RECORD_PERSION + "," + DBHelper.R_COL_ADD_UNIQUEKEY + "," + DBHelper.R_COL_STATE
-                    + ") SELECT ?,?,?,?,0 WHERE NOT EXISTS (SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + " WHERE "
+                    + ") SELECT ?,?,?,?,?,0 WHERE NOT EXISTS (SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + " WHERE "
                     + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? AND " + DBHelper.R_COL_STATE + "==0 AND " + DBHelper.R_COL_ADD_UNIQUEKEY + "=?)";
-            mDB.execSQL(sql, new Object[]{memberNativeId, mUniqueKey, (checkPersion == null ? "" : checkPersion), addUniqueKey, mUniqueKey, addUniqueKey});
+            mDB.execSQL(sql, new Object[]{memberNativeId, mUniqueKey,mUniqueKey, (checkPersion == null ? "" : checkPersion), addUniqueKey, mUniqueKey, addUniqueKey});
         }
         return 0;
     }
@@ -481,7 +540,7 @@ public class MyDBManager {
      */
     public Map<Integer, Boolean> getMapByRecordId(long nativeRecordId) {
         if(nativeRecordId > 0) {
-            String sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD_ITEM + " WHERE " + DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeRecordId
+            String sql = "SELECT count(*),"+DBHelper.RI_COL_DEVICE_TYPE+" FROM " + DBHelper.TB_MEMBER_RECORD_ITEM + " WHERE " + DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeRecordId
                     /*+ " AND " + DBHelper.RI_COL_SOURCE + "=" + DBHelper.RI_SOURCE_DEVICE*/ + " GROUP BY " + DBHelper.RI_COL_DEVICE_TYPE;
             Cursor c = mDB.rawQuery(sql, null);
             if(c != null) {
@@ -490,7 +549,7 @@ public class MyDBManager {
                 if((size = c.getCount()) > 0) {
                     maps = new HashMap<>();
                     while (c.moveToNext()) {
-                        maps.put(c.getInt(8), true);
+                        maps.put(c.getInt(1), true);
                     }
                 }
                 c.close();
@@ -500,6 +559,45 @@ public class MyDBManager {
         return null;
     }
 
+    /**
+     * 获取检查记录各项信息用于存储到远程服务器，目前要求无效数据不上传
+     * @param nativeRecordId
+     * @return
+     */
+    public List<RecordItem> getSubmitedListByRecordId(long nativeRecordId) {
+        Log.d(TAG, "nativeRecordId : " + nativeRecordId);
+        if(nativeRecordId > 0) {
+            String sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD_ITEM + " WHERE " + DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + nativeRecordId;
+            Log.d(TAG, "getListByRecordId : " + sql);
+            Cursor c = mDB.rawQuery(sql, null);
+            if(c != null) {
+                int size = 0;
+                List<RecordItem> list = null;
+                if((size = c.getCount()) > 0) {
+                    list = new ArrayList<>();
+                    while (c.moveToNext()) {
+                        RecordItem item = new RecordItem();
+                        item.setiId(c.getLong(0));
+                        item.setiNativeRecordId(c.getLong(1));
+                        item.setiRecordId(c.getLong(2));
+                        item.setiType(c.getString(3));
+                        item.setValue1(c.getFloat(4));
+                        item.setSource(c.getShort(5));
+                        item.setiConcluison(c.getString(6));
+                        item.setDesc1(c.getString(7));
+                        item.setDeviceType(c.getInt(8));
+                        item.setCreateTime(DateUtil.getDateByStr(c.getString(9)));
+                        item.setTestCode(c.getString(10));
+                        if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
+                            list.add(item);
+                    }
+                }
+                c.close();
+                return list;
+            }
+        }
+        return null;
+    }
 
     /**
      * 获取检查记录各项信息
@@ -528,7 +626,10 @@ public class MyDBManager {
                         item.setiConcluison(c.getString(6));
                         item.setDesc1(c.getString(7));
                         item.setDeviceType(c.getInt(8));
-                        list.add(item);
+                        item.setCreateTime(DateUtil.getDateByStr(c.getString(9)));
+                        item.setTestCode(c.getString(10));
+                        if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
+                            list.add(item);
                     }
                 }
                 c.close();
@@ -565,9 +666,12 @@ public class MyDBManager {
                     item.setiConcluison(c.getString(6));
                     item.setDesc1(c.getString(7));
                     item.setDeviceType(c.getInt(8));
+                    item.setCreateTime(DateUtil.getDateByStr(c.getString(9)));
+                    item.setTestCode(c.getString(10));
                 }
                 c.close();
-                return item;
+                if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
+                    return item;
             }
         }
         return null;
@@ -582,7 +686,7 @@ public class MyDBManager {
     public List<RecordItem> getListByReorcdId(String mUniqueKey, String type) {
         if(StringUtil.isNotEmpty(type)) {
             String sql = "SELECT ri.*,r." + DBHelper.R_COL_CREATE_TIME + " FROM " + DBHelper.TB_MEMBER_RECORD + " AS r LEFT JOIN " + DBHelper.TB_MEMBER_RECORD_ITEM + " AS ri ON r."
-                    + DBHelper.ID + "=ri." + DBHelper.RI_COL_NATIVE_RECORD_ID + " WHERE r." + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? AND ri." + DBHelper.RI_COL_TYPE + "=?";
+                    + DBHelper.R_COL_RECORD_ID + "=ri." + DBHelper.RI_COL_NATIVE_RECORD_ID + " WHERE r." + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? AND ri." + DBHelper.RI_COL_TYPE + "=?";
             Log.d(TAG, "getListByReorcdId : " + sql);
             Cursor c = mDB.rawQuery(sql, new String[]{mUniqueKey, type});
             if(c != null) {
@@ -603,8 +707,10 @@ public class MyDBManager {
                         item.setDesc1(c.getString(7));
                         item.setDeviceType(c.getInt(8));
                         item.setCreateTime(DateUtil.getDateByStr(c.getString(9)));
+                        item.setTestCode(c.getString(10));
                         System.out.println("times---------" + item.getCreateTime().getTime());
-                        list.add(item);
+                        if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
+                            list.add(item);
                     }
                 }
                 c.close();
@@ -929,9 +1035,10 @@ public class MyDBManager {
             values.put(DBHelper.R_COL_STATE, CommConst.STATE_RECORD_NEED_UPLOAD);
             int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY + "=? AND " + DBHelper.ID + "=" + nativeRecordId),
                     new String[]{uniquekey});
-            if(result > 0) {
+            if(result > 0)
                 return true;
-            }
+            else
+                return false;
         }
         return false;
     }
@@ -950,7 +1057,7 @@ public class MyDBManager {
             String date = DateUtil.getDateByTimeLong(createTime.getTime());
             values.put(DBHelper.R_COL_CREATE_TIME, date);
             values.put(DBHelper.R_COL_UPDATE_TIME, date);
-            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY+"=? AND "+ DBHelper.ID+"="+nativeRecordId),
+            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY+"=? AND "+DBHelper.ID+"="+nativeRecordId),
                     new String[]{uniquekey});
             if(result > 0) {
                 values = new ContentValues();
@@ -1009,9 +1116,9 @@ public class MyDBManager {
      */
     public boolean hasSamePhoneMember(Member member) {
         boolean hasSame = false;
-        if(member != null && StringUtil.isNotEmpty(member.getFaUniqueKey())) {
+        if (member != null && StringUtil.isNotEmpty(member.getFaUniqueKey())) {
 
-            Cursor cursor = mDB.rawQuery("SELECT * FROM " + DBHelper.TB_MEMBERS + " WHERE " + DBHelper.M_COL_PHONE + "=?", new String[]{member.getmPhone()});
+            Cursor cursor = mDB.rawQuery("SELECT * FROM " + DBHelper.TB_MEMBERS + " WHERE " + DBHelper.M_COL_PHONE + "=? AND " + DBHelper.M_COL_NAME + "=?", new String[]{member.getmPhone(), member.getName()});
             if (cursor != null && cursor.getCount() > 0) {
                 hasSame = true;
             }
@@ -1221,15 +1328,16 @@ public class MyDBManager {
      */
     public List<RecordItem> getRecordAllInfoByType(String uniqueKey, String... checkType) {
         if(StringUtil.isNotEmpty(uniqueKey) && checkType.length > 0 && checkType.length <= 5) {
-            String checkValue = ",ri0." + DBHelper.RI_COL_DEVICE_TYPE;
-            String leftJoin = "";
+            String checkValue = "",  leftJoin = "";
             for(int i = 0; i < checkType.length; i++) {
                 String type = checkType[i];
                 if(StringUtil.isNotEmpty(type)) {
-                    checkValue += ",ri" + i + "." + DBHelper.RI_COL_VALUE1;
+                    checkValue += ",ri" + i + "." + DBHelper.RI_COL_VALUE1 +",ri" + i + "." + DBHelper.RI_COL_DESC1 + ",ri" + i + "." + DBHelper.RI_COL_RECORD_TIME+",ri" + i + "." + DBHelper.RI_COL_DEVICE_TYPE  ;
                     leftJoin += " LEFT JOIN " + DBHelper.TB_MEMBER_RECORD_ITEM + " AS ri" + i + " ON r." + DBHelper.ID + "=ri" + i + "." +
                             DBHelper.RI_COL_NATIVE_RECORD_ID + " AND ri"  + i + "." + DBHelper.RI_COL_TYPE + "=? ";
-                } else {
+                }
+                else
+                {
                     return null;
                 }
             }
@@ -1246,31 +1354,61 @@ public class MyDBManager {
                 while (c.moveToNext()) {
                     RecordItem item = new RecordItem();
                     item.setiNativeRecordId(c.getLong(0));
+                    long tmp=c.getLong(1);
                     item.setCreateTime(DateUtil.getDateByStr(c.getString(1)));
                     item.setState(c.getInt(2));
-                    item.setDeviceType(c.getInt(3));
-                    if(checkType.length > 0) {
-                        item.setValue1(c.getFloat(4));
-                        if(checkType.length > 1) {
-                            item.setValue2(c.getFloat(5));
-                            if(checkType.length > 2) {
-                                item.setValue3(c.getFloat(6));
-                                if(checkType.length > 3) {
-                                    item.setValue4(c.getFloat(7));
-                                    if(checkType.length > 4) {
-                                        item.setValue5(c.getFloat(8));
-                                    }
-                                }
+                    boolean bFound=false;
+                    for(int i=0;i<checkType.length;i++)
+                    {
+                        int valIdx=i*4+3;
+                        String datetimeStr=c.getString(valIdx+2);
+                        if(datetimeStr!=null)
+                        {
+                            bFound=true;
+                            item.setCreateTime(DateUtil.getDateByStr(datetimeStr));
+                            item.setDeviceType(c.getInt(valIdx+3));
+                            float val=c.getFloat(valIdx);
+                            String descr=c.getString(valIdx+1);
+                            switch(i)
+                            {
+                                case 0:
+                                    item.setValue1(val);
+                                    item.setDesc1(descr);
+                                    item.setValue1Txt(RecordItem.format(val,item.getDeviceType(),descr));
+                                    break;
+                                case 1:
+                                    item.setValue2(val);
+                                    item.setDesc2(descr);
+                                    item.setValue2Txt(RecordItem.format(val,item.getDeviceType(),descr));
+                                    break;
+                                case 2:
+                                    item.setValue3(val);
+                                    item.setDesc3(descr);
+                                    item.setValue3Txt(RecordItem.format(val,item.getDeviceType(),descr));
+                                    break;
+                                case 3:
+                                    item.setValue4(val);
+                                    item.setDesc4(descr);
+                                    item.setValue4Txt(RecordItem.format(val,item.getDeviceType(),descr));
+                                    break;
+                                case 4:
+                                    item.setValue5(val);
+                                    item.setDesc5(descr);
+                                    item.setValue5Txt(RecordItem.format(val,item.getDeviceType(),descr));
+                                    break;
                             }
                         }
                     }
-                    lists.add(item);
+                    if(bFound)
+                        lists.add(item);
                 }
                 return lists;
             }
+            c.close();
         }
         return null;
     }
+
 
     /**
      * 删除检查项记录
@@ -1280,7 +1418,7 @@ public class MyDBManager {
     public boolean deleteRecordItemByType(RecordItem item) {
         if(item != null && item.getiNativeRecordId() > 0) {
             String whereArgs = DBHelper.RI_COL_NATIVE_RECORD_ID + "=" + item.getiNativeRecordId() + " AND " +
-                    DBHelper.RI_COL_DEVICE_TYPE + "=" + item.getDeviceType();
+                    DBHelper.RI_COL_DEVICE_TYPE + "=" + item.getDeviceType()+ " AND "+DBHelper.RI_COL_TESTCODE + "='"+item.getTestCode()+"'";
             int result = mDB.delete(DBHelper.TB_MEMBER_RECORD_ITEM, whereArgs, null);
             if(result > 0) {
                 return true;

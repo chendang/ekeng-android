@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.HBuilder.integrate.R;
+import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 
 import java.math.BigDecimal;
@@ -190,7 +191,7 @@ public class StringUtil {
 	 */
 	public static float getBigDecimal(int scale, float ft) {
 		int roundingMode  =  4;//表示四舍五入，可以选择其他舍值方式，例如去尾，等等.
-		BigDecimal bd  =   new BigDecimal((double)ft);
+		BigDecimal bd  =   new  BigDecimal((double)ft);
 		bd = bd.setScale(scale, roundingMode);
 		ft = bd.floatValue();
 		return ft;

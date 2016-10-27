@@ -33,15 +33,14 @@ import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.util.ValidatorUtil;
 import com.herily.dialog.HerilyAlertDialog;
-
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
 

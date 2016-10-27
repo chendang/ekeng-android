@@ -48,12 +48,13 @@ public class UricacidData implements MyCommData {
     public final String DATA_UA = "UA";  //尿酸
 
     private String allDatas = null;
-
+    private String mUniqueKey = null;
     private byte[] tempDatas = null;
-    public UricacidData(Context context, MyLineChartView myLineChartView, long nativeRecordId) {
+    public UricacidData(Context context, MyLineChartView myLineChartView, long nativeRecordId,String mUniqueKey) {
         this.context = context;
         this.myLineChartView = myLineChartView;
         this.nativeRecordId = nativeRecordId;
+        this.mUniqueKey=mUniqueKey;
     }
 
     @Override
@@ -205,12 +206,12 @@ public class UricacidData implements MyCommData {
 
     @Override
     public String[] getInsName() {
-        return new String[]{"尿酸"};
+        return new String[]{"尿酸(mmol/dL)"};
     }
 
     @Override
     public String[] getInsUnit() {
-        return new String[]{"mmol/dL"};
+        return new String[]{""};
     }
 
     @Override

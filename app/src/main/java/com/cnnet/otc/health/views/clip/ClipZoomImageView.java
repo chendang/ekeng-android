@@ -12,6 +12,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -478,18 +479,18 @@ public class ClipZoomImageView extends ImageView implements
 	 * @param bitmap
 	 * @return
 	 */
-	private Bitmap getCircleBitmap(Bitmap bitmap) {
-        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(), Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
+	private Bitmap getCircleBitmap(Bitmap bitmap) {  
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),bitmap.getHeight(), Config.ARGB_8888);  
+        Canvas canvas = new Canvas(output); 
         final int color = 0xff424242; 
-        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());  
         Paint paint =new Paint();
         paint.setAntiAlias(true);  
         canvas.drawARGB(0, 0, 0, 0);  
         paint.setColor(color); 
         int x = bitmap.getWidth(); 
         canvas.drawCircle(x / 2, x / 2, x / 2, paint);  
-        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));  
         canvas.drawBitmap(bitmap, rect, rect, paint); 
         return output;
 	}

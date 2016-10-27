@@ -1,16 +1,5 @@
 package com.cnnet.otc.health.activities;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.OximetryData;
@@ -26,6 +15,18 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -64,11 +65,10 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detect);
 		mUniqueKey = getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_MEMBER_UNIQUEKEY);
-		nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, 0);
+		nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, new Date().getTime());
 		hasReal = getIntent().getBooleanExtra(CommConst.INTENT_EXTRA_KEY_HAS_REAL, false);
 		initCheckType(Integer.parseInt(getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_DEVICE_TYPE)));
 		init();
-
 	}
 	
 	private void init() {
@@ -98,7 +98,7 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 		findViewById(R.id.btn_back).setOnClickListener(this);
 		findViewById(R.id.bt_detect_connect).setOnClickListener(this);
 
-		bleManager = new BleManager(this, null, myLineView, nativeRecordId, hasReal);
+		bleManager = new BleManager(this, null, myLineView, nativeRecordId, hasReal,mUniqueKey);
 		bleManager.startConnectBtDevice(null);
 		listview = (ListView) findViewById(R.id.listview);
 		setData();

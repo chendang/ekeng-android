@@ -1,12 +1,8 @@
 package com.cnnet.otc.health.managers;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.bluetooth.BluetoothAdapter.LeScanCallback;
-import android.bluetooth.BluetoothDevice;
-import android.graphics.Color;
-import android.os.Handler;
-import android.util.Log;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
@@ -22,10 +18,13 @@ import com.cnnet.otc.health.views.MyLineChartView;
 import com.example.blelib.BtEngineManager;
 import com.example.blelib.ProtocolManager;
 
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.bluetooth.BluetoothAdapter.LeScanCallback;
+import android.bluetooth.BluetoothDevice;
+import android.graphics.Color;
+import android.os.Handler;
+import android.util.Log;
 import de.greenrobot.event.EventBus;
 
 
@@ -38,6 +37,7 @@ public class BleManager {
 	private MyLineChartView myLineView;  //绘图对象
 
 	private long navtiveRecordId;
+	private String mUniqueKey = null;
 	/**
 	 * 蓝牙启动管理
 	 */
@@ -76,11 +76,12 @@ public class BleManager {
 
 	private int connectState = 0;  //当前连接状态，0：未连接，1连接中，2已连接
 	
-	public BleManager(Activity mActivity, LeScanCallback mLeScanCallback, MyLineChartView myLineView, long navtiveRecordId, boolean hasReal) {
+	public BleManager(Activity mActivity, LeScanCallback mLeScanCallback, MyLineChartView myLineView, long navtiveRecordId, boolean hasReal,String mUniqueKey) {
 		this.mActivity = mActivity;
 		this.myLineView = myLineView;
 		this.mLeScanCallback = mLeScanCallback;
 		this.navtiveRecordId = navtiveRecordId;
+		this.mUniqueKey = mUniqueKey;
 		mainHandler = new Handler();
 		this.hasReal = hasReal;
 		if(hasReal) {
@@ -95,8 +96,8 @@ public class BleManager {
 	 * 获取蓝牙控制管理实例对象
 	 * @return
 	 */
-	public static BleManager getInstance(Activity mActivity, LeScanCallback mLeScanCallback, MyLineChartView myLineView, long navtiveRecordId, boolean hasReal) {
-		BleManager mBleManager = new BleManager(mActivity, mLeScanCallback, myLineView, navtiveRecordId, hasReal);
+	public static BleManager getInstance(Activity mActivity, LeScanCallback mLeScanCallback, MyLineChartView myLineView, long navtiveRecordId, boolean hasReal,String mUniqueKey) {
+		BleManager mBleManager = new BleManager(mActivity, mLeScanCallback, myLineView, navtiveRecordId, hasReal, mUniqueKey);
 		return mBleManager;
 	}
 	
@@ -146,7 +147,7 @@ public class BleManager {
 		if(data == null) {
 			switch (SysApp.check_type) {
 				case OXIMETRY:   //血氧仪
-					data = new OximetryData(mActivity, myLineView, navtiveRecordId);
+					data = new OximetryData(mActivity, myLineView, navtiveRecordId,mUniqueKey);
 					break;
 			}
 
@@ -249,12 +250,12 @@ public class BleManager {
 		return mEngineManager.getConnectState();
 	}
 	
-	
+
 	@SuppressLint("NewApi")
 	private LeScanCallback mNormalLeScanCallback = new LeScanCallback() {
 		@Override
 		public void onLeScan(final BluetoothDevice device, final int rssi,
-							 byte[] scanRecord) {
+				byte[] scanRecord) {
 			Log.d("ss", device.getAddress());
 		}
 	};

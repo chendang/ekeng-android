@@ -1,13 +1,13 @@
 package com.cnnet.otc.health.bluetooth;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 public class TaiXinDate	implements  com.example.taixin.MyData  {
 
-	public List<Integer> list = new ArrayList<Integer>();
+	public List<Integer>  list = new ArrayList<Integer>();
 	public byte Tdatas;
 	public int State_Faile ;
 	

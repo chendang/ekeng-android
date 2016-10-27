@@ -1,5 +1,7 @@
 package com.cnnet.otc.health.bluetooth;
 
+import java.util.ArrayList;
+import java.util.Set;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -18,10 +20,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
@@ -31,9 +33,6 @@ import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 import com.example.blelib.MyData;
-
-import java.util.ArrayList;
-import java.util.Set;
 
 public class DeviceDialog extends Dialog {
 	

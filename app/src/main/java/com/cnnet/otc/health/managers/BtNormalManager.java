@@ -1,5 +1,9 @@
 package com.cnnet.otc.health.managers;
 
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,10 +33,6 @@ import com.cnnet.otc.health.services.BluetoothService;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import de.greenrobot.event.EventBus;
 
 public class BtNormalManager {
@@ -57,6 +57,7 @@ public class BtNormalManager {
 	private MyLineChartView myLineView;
 	private MyCommData myData;
 	private long nativeRecordId;
+	private String mUniqueKey = null;
 
 	private Timer mTimer = null;
 	private TimerTask mTimerTask = null;
@@ -104,9 +105,10 @@ public class BtNormalManager {
 	 * 初始化
 	 * @param mActivity
 	 */
-	public BtNormalManager(Activity mActivity, MyLineChartView myLineChartView, long navtiveRecordId) {
+	public BtNormalManager(Activity mActivity, MyLineChartView myLineChartView, long navtiveRecordId,String mUniqueKey ) {
 		this.mActivity = mActivity;
 		this.myLineView = myLineChartView;
+		this.mUniqueKey=mUniqueKey;
 		touchCount = 8;
 		this.nativeRecordId = navtiveRecordId;
 		myData = getData();
@@ -138,22 +140,22 @@ public class BtNormalManager {
 		if(myData == null) {
 			switch (SysApp.check_type) {
 				case BLOOD_GLUCOSE:   //血糖仪
-					myData = new BloodGlucoseData(mActivity, myLineView, nativeRecordId);
+					myData = new BloodGlucoseData(mActivity, myLineView, nativeRecordId,mUniqueKey);
 					break;
 				case BLOOD_PRESSURE:   //血压计
-					myData = new BloodPressureData(mActivity, nativeRecordId);
+					myData = new BloodPressureData(mActivity, nativeRecordId,mUniqueKey);
 					break;
 				case THERMOMETER:       //体温计
-					myData = new TemperatureData(mActivity, myLineView, nativeRecordId);
+					myData = new TemperatureData(mActivity, myLineView, nativeRecordId,mUniqueKey);
 					break;
 				case URIC_ACID:  //尿酸
-					myData = new UricacidData(mActivity, myLineView, nativeRecordId);
+					myData = new UricacidData(mActivity, myLineView, nativeRecordId,mUniqueKey);
 					break;
 				case LIPID:  //血脂
-					myData = new LipidData(mActivity, myLineView, nativeRecordId);
+					myData = new LipidData(mActivity, myLineView, nativeRecordId,mUniqueKey);
 					break;
 				case WEIGHT:  //体重
-					myData = new WeightData(mActivity, myLineView, nativeRecordId);
+					myData = new WeightData(mActivity, myLineView, nativeRecordId,mUniqueKey);
 					break;
 			}
 
@@ -244,20 +246,20 @@ public class BtNormalManager {
 					return;
 				}
 				if (touchCount == 8) {
-					touchCount = 0;
-					if(cuickConnect != null) {
-						cuickConnect.cancel();
-					}
-					Log.d(TAG, "开始连接1111");
-					while (connectStatus == 0) {
-						try {
-							Thread.sleep(100);
-						} catch (Exception e) {
-							e.printStackTrace();
+						touchCount = 0;
+						if(cuickConnect != null) {
+							cuickConnect.cancel();
 						}
-					}
-					cuickConnect = new CuickConnect();
-					cuickConnect.start();
+						Log.d(TAG, "开始连接1111");
+						while (connectStatus == 0) {
+							try {
+								Thread.sleep(100);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+						cuickConnect = new CuickConnect();
+						cuickConnect.start();
 				} else if (connectStatus == 2) {
 					touchCount++;
 					sendHandlerStartThread();

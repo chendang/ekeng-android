@@ -5,8 +5,9 @@ public class CommConst {
 	public final static String APP_HEAND_NAME = APP_FOLDER_NAME + "/head/";
 
 	public static final String SERVER_URL = "http://otc.kzjk360.com";//"http://192.168.1.112:8081";
+	public static final String SUFIX = "HAVA";
 	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_COMM"; //更新APP路径
-	//	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_WENHE"; //更新APP路径
+//	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_WENHE"; //更新APP路径
 	public final static String DOWN_APK_FILENAME = "update.apk";
 
 	public static final int DB_DATA_PAGE = 20;  //数据库中分析数据
@@ -43,6 +44,11 @@ public class CommConst {
 	public static final int ERROR_CODE_SERVER_ADD_MEMBER_ERROR = 1003; //提交会员信息失败
 	public static final int ERROR_CODE_NETWORK_ERROR = 1004;  //网络异常
 	public static final int ERROR_CODE_UPLOAD_FILE_ERROR = 1005; //上传文件失败
+
+	/**************************************检测结果状态*********************************************************/
+	public static final String VALUE_GREATER="1";
+	public static final String VALUE_SMALLER="2";
+	public static final String VALUE_STRANGE="3";
 
 	/******************************************蓝牙现在所处连接状态*********************************************/
 	/**
@@ -141,5 +147,15 @@ public class CommConst {
 
 	public final static String INTENT_EXTRA_KEY_DEVICE_IS_DELETED = "isDeviceDeleted";//设备删除成功
 
+	/***************************************服务器错误码*************************************/
+
+	public static int SUCCESS=0;
+	public static int ERR_ADDMEMBER_DUPLICATE_NICKNAME=-3;
+	public static int ERR_ADDMEMBER_ILLIGAL_CONTENT=-4;
+	public static int ERR_ADDMEMBER_DUPLICATE_NAME=-2;
+	public static int ERR_ADDMEMBER_CANNOT_VERIFY=-6;
+	public static int ERR_ADDMEMBER_OTHER=-1;
+
+	public static int ERR_LOGIN_MULTIPLE_USERS_WITH_SAME_PHONE=-2;
 
 }

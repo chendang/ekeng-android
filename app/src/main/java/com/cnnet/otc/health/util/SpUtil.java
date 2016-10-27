@@ -52,7 +52,7 @@ public class SpUtil {
      * @param kvs
      * @throws IllegalArgumentException
      */
-    public void putMultiKv2Region(String region, Object[][] kvs)  throws IllegalArgumentException {
+    public void putMultiKv2Region(String region, Object[][] kvs)  throws IllegalArgumentException{
         if (StringUtil.isEmpty(region)) {
             putMultiKv(kvs);
         }
@@ -82,7 +82,7 @@ public class SpUtil {
      * @param key
      * @param value
      */
-    public void putKv(Object key, Object value) throws IllegalArgumentException {
+    public void putKv(Object key, Object value) throws IllegalArgumentException  {
         if (checkParam(key, value)) {
             executeWrite(String.valueOf(key), value, true);
         }
@@ -101,7 +101,7 @@ public class SpUtil {
     }
 
 
-    public Object getKvOfRegion(String region, Object key, Object defaultValue){
+    public Object getKvOfRegion(String region, Object key,Object defaultValue){
         Object o = getKvOfRegion(region,key);
         if(null == o){
             o = defaultValue;
@@ -138,7 +138,7 @@ public class SpUtil {
     }
 
 
-    public Object get(String key, Object defaultValue) {
+    public Object get(String key,Object defaultValue) {
         Object o = getAll().get(key);
         if(null == o){
             o = defaultValue;
@@ -205,7 +205,7 @@ public class SpUtil {
      * @param commit 是否马上提交
      * @throws IllegalArgumentException
      */
-    private void put(Object key, Object value, boolean commit) throws IllegalArgumentException {
+    private void put(Object key, Object value, boolean commit) throws IllegalArgumentException  {
         if (checkParam(key, value)) {
             executeWrite(String.valueOf(key), value, commit);
         }
@@ -291,7 +291,7 @@ public class SpUtil {
     }
 
 
-    public List<String> Map2List (Map<String, ?> map ) {
+    public  List<String> Map2List (Map<String, ?> map ) {
 
         List listKey = new ArrayList();
         List listValue = new ArrayList();

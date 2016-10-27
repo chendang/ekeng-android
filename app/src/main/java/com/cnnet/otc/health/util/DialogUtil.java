@@ -42,9 +42,9 @@ public class DialogUtil {
     }
 
     public static AlertDialog Confirm(Context ctx, CharSequence title,
-                                      CharSequence message, CharSequence okText,
-                                      DialogInterface.OnClickListener oklistener, CharSequence cancelText,
-                                      DialogInterface.OnClickListener cancellistener, DialogInterface.OnKeyListener key) {
+                                           CharSequence message, CharSequence okText,
+                                           DialogInterface.OnClickListener oklistener, CharSequence cancelText,
+                                           DialogInterface.OnClickListener cancellistener, DialogInterface.OnKeyListener key) {
         HerilyAlertDialog.Builder builder = new HerilyAlertDialog.Builder(ctx);//createDialog(ctx, title, message);
         builder.setTitle(title);
         builder.setMessage(message);
@@ -53,6 +53,31 @@ public class DialogUtil {
         builder.setNegativeButton(cancelText, cancellistener);
         builder.setOnKeyListener(key).setCancelable(false);
         return builder.show();
+    }
+
+    public static AlertDialog ShowMessage(Context ctx, CharSequence title,
+                                      CharSequence message, CharSequence okText)
+    {
+        HerilyAlertDialog.Builder builder = new HerilyAlertDialog.Builder(ctx);//createDialog(ctx, title, message);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setMessageGravity(Gravity.CENTER);
+        builder.setPositiveButton(okText, null);
+        return builder.show();
+    }
+
+    /**
+     * 确认对话框
+     *
+     * @param ctx
+     * @param titleId
+     * @param messageId
+     * @param okTextId
+     */
+    public static void ShowMessage(Context ctx, int titleId, int messageId,
+                               int okTextId) {
+        ShowMessage(ctx, ctx.getText(titleId), ctx.getText(messageId),
+                ctx.getText(okTextId));
     }
 
     /**
@@ -128,8 +153,8 @@ public class DialogUtil {
     }
 
     public static AlertDialog myViewAlertDialogHasCancel(Context context, View view, int titleId,
-                                                         int okTextId, DialogInterface.OnClickListener oklistener,
-                                                         int cancelId, DialogInterface.OnClickListener cancellistener) {
+                                                int okTextId, DialogInterface.OnClickListener oklistener,
+                                                int cancelId, DialogInterface.OnClickListener cancellistener) {
         HerilyAlertDialog.Builder builder = new HerilyAlertDialog.Builder(context);
         builder.setTitle(titleId);
         builder.setView(view);

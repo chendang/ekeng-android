@@ -58,7 +58,7 @@ public class CustomTextView extends TextView {
 
 	@Override
 	protected void onTextChanged(CharSequence text, int start, int before,
-								 int after) {
+			int after) {
 		super.onTextChanged(text, start, before, after);
 		refitText(text.toString(), this.getWidth());
 	}

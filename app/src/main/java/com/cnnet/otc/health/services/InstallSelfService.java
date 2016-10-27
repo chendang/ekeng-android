@@ -1,5 +1,7 @@
 package com.cnnet.otc.health.services;
 
+import java.io.File;
+
 import android.app.Service;
 import android.content.Intent;
 import android.net.Uri;
@@ -7,8 +9,6 @@ import android.os.IBinder;
 
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
-
-import java.io.File;
 
 
 public class InstallSelfService extends Service {

@@ -14,12 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.SimpleAdapter;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.HBuilder.integrate.R;
+import com.cnnet.otc.health.activities.DetectBle2Activity;
 import com.cnnet.otc.health.activities.DetectBle3Activity;
 import com.cnnet.otc.health.activities.DetectBle4Activity;
 import com.cnnet.otc.health.bean.Member;
@@ -35,7 +37,6 @@ import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyGridView;
 import com.cnnet.otc.health.views.adapter.MyDeviceGridAdapter;
 import com.cnnet.otc.health.views.adapter.WaitInsMemberListAdapter;
-
 import java.util.Map;
 
 import butterknife.Bind;
@@ -163,6 +164,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                             switch (type) {
                                 case R.drawable.btn_xt_selector://血糖
                                     SysApp.check_type = CheckType.BLOOD_GLUCOSE;
+                                    intent = new Intent(ctx, DetectBle2Activity.class);
                                     break;
                                 case R.drawable.btn_bp_selector://血压
                                     SysApp.check_type = CheckType.BLOOD_PRESSURE;
@@ -174,7 +176,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                                     SysApp.check_type = CheckType.OXIMETRY;
                                     intent = new Intent(ctx, DetectBle4Activity.class);
                                     intent.putExtra(CommConst.INTENT_EXTRA_KEY_HAS_REAL, true);
-
                                     break;
                                 case R.drawable.btn_xz_selector://血脂
                                     SysApp.check_type = CheckType.LIPID;

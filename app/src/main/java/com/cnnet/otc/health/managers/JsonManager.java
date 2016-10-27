@@ -5,11 +5,12 @@ import android.util.Log;
 
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.bean.MemberRecord;
+import com.cnnet.otc.health.bean.OperatorType;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.RoleUser;
 import com.cnnet.otc.health.comm.CommConst;
-import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.interfaces.IUser;
+import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.util.StringUtil;
 
 import org.json.JSONArray;
@@ -105,10 +106,34 @@ public class JsonManager {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
         return null;
     }
+
+
+    private static List<Member> getGrpMemberByJson(JSONObject json) {
+        if(json != null) {
+            try {
+                JSONArray jsonArray=json.getJSONArray("group");
+                List<Member> grp_members=new ArrayList<Member>();
+                int l=jsonArray.length();
+                for(int i=0;i<l;i++)
+                {
+                    Member member=new Member();
+                    JSONObject jsonObj=(JSONObject) jsonArray.getJSONObject(i);
+                    member.setUniqueKey(json.getString("mUniqueKey"));
+                    member.setName(json.getString("mName"));
+                    member.setmPhone(json.getString("mPhone"));
+                    grp_members.add(member);
+                }
+                return grp_members;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 
     /**
      * 获取医生（护士）用户登录时，返回的信息
@@ -364,6 +389,9 @@ public class JsonManager {
                     obj.put("value1", item.getValue1());
                     obj.put("iConclusion", item.getiConcluison());
                     obj.put("desc1", item.getDesc1());
+                    long times = item.getCreateTime().getTime();
+                    obj.put("recordTime",times);
+                    obj.put("testCode",item.getTestCode());
                     jsonArray.put(obj);
                 }
             } catch (JSONException e) {
@@ -400,6 +428,38 @@ public class JsonManager {
     }
 
     /**
+     * 使用新增会员信息填充JSONObject
+     * @param member
+     * @param obj
+     * @return
+     */
+    public static void fillJsonWithMember(Member member,JSONObject obj) throws org.json.JSONException
+    {
+        String headPath = member.getmHeadPath();
+        if(StringUtil.isNotEmpty(headPath)) {
+            headPath = headPath.substring(headPath.lastIndexOf("/") + 1, headPath.length());
+        } else {
+            headPath = "";
+        }
+        obj.put("orgRoot",CommConst.SUFIX);
+        obj.put("mNickname","");
+        obj.put("mHeadPath", headPath);
+        obj.put("mName", member.getName());
+        obj.put("mSex", member.getSex());
+        obj.put("mIdNumber", member.getmIdNumber());
+        obj.put("mTel", member.getmTel());
+        obj.put("mPhone", member.getmPhone());
+        obj.put("message", member.getMessage());
+        obj.put("mAddress", member.getmAddress());
+        obj.put("mBrithday", member.getmBrithday());
+        obj.put("mSSN", member.getmSSN());
+        obj.put("mAnamnesis", member.getmAnamnesis());
+        obj.put("mCreateTime", member.getmCreateTime());
+        obj.put("mCreateTime", member.getmUpdateTime());
+
+    }
+
+    /**
      * 当以护士角色登录APP时，新增会员将要提交的信息
      * @param member
      * @param nurseUniqueKey
@@ -410,25 +470,8 @@ public class JsonManager {
             try {
                 JSONObject obj = new JSONObject();
                 obj.put("nurseUniqueKey", nurseUniqueKey);
-                String headPath = member.getmHeadPath();
-                if(StringUtil.isNotEmpty(headPath)) {
-                    headPath = headPath.substring(headPath.lastIndexOf("/") + 1, headPath.length());
-                } else {
-                    headPath = "";
-                }
-                obj.put("mHeadPath", headPath);
-                obj.put("mName", member.getName());
-                obj.put("mSex", member.getSex());
-                obj.put("mIdNumber", member.getmIdNumber());
-                obj.put("mTel", member.getmTel());
-                obj.put("mPhone", member.getmPhone());
-                obj.put("message", member.getMessage());
-                obj.put("mAddress", member.getmAddress());
-                obj.put("mBrithday", member.getmBrithday());
-                obj.put("mSSN", member.getmSSN());
-                obj.put("mAnamnesis", member.getmAnamnesis());
-                obj.put("mCreateTime", member.getmCreateTime());
-                obj.put("mCreateTime", member.getmUpdateTime());
+                obj.put("operator_type",OperatorType.BY_NURSE.ordinal());
+                fillJsonWithMember(member,obj);
                 JSONArray array = new JSONArray();
                 JSONObject doctors = new JSONObject();
                 doctors.put("doctorUniqueKey", member.getWithDoctor());
@@ -453,31 +496,8 @@ public class JsonManager {
             try {
                 JSONObject obj = new JSONObject();
                 obj.put("doctorUniqueKey", doctorUniqueKey);
-                String headPath = member.getmHeadPath();
-                if(StringUtil.isNotEmpty(headPath)) {
-                    headPath = headPath.substring(headPath.lastIndexOf("/") + 1, headPath.length());
-                } else {
-                    headPath = "";
-                }
-                obj.put("mHeadPath", headPath);
-                obj.put("mName", member.getName());
-                obj.put("mSex", member.getSex());
-                obj.put("mIdNumber", member.getmIdNumber());
-                obj.put("mTel", member.getmTel());
-                obj.put("mPhone", member.getmPhone());
-                obj.put("message", member.getMessage());
-                obj.put("mAddress", member.getmAddress());
-                obj.put("mBrithday", member.getmBrithday());
-                obj.put("mSSN", member.getmSSN());
-                obj.put("mAnamnesis", member.getmAnamnesis());
-                obj.put("mCreateTime", member.getmCreateTime());
-                obj.put("mCreateTime", member.getmUpdateTime());
-                //obj.put("nurseUniqueKey", withNurse);
-                /*JSONArray array = new JSONArray();
-                JSONObject nurse = new JSONObject();
-                nurse.put("nurseUniqueKey", withNurse);
-                array.put(nurse);
-                obj.put("nurse", array);*/
+                obj.put("operator_type",OperatorType.BY_DOCTOR.ordinal());
+                fillJsonWithMember(member,obj);
                 return obj;
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -485,6 +505,27 @@ public class JsonManager {
         }
         return null;
     }
+
+    /**
+     * 当患者使用APP自我注册新增会员时将要提交的信息
+     * @param member
+     * @return
+     */
+    public static JSONObject getAddMemberBySelf(Member member) {
+        if(member != null) {
+            try {
+                JSONObject obj = new JSONObject();
+                obj.put("operator_type",OperatorType.BY_SELF.ordinal());
+                fillJsonWithMember(member,obj);
+                JSONArray array = new JSONArray();
+                return obj;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 
     /**
      * 获取新增会员记录提交的信息
@@ -496,7 +537,31 @@ public class JsonManager {
         if(record != null && StringUtil.isNotEmpty(nurseUniqueKey)) {
             try {
                 JSONObject obj = new JSONObject();
+                obj.put("orgRoot",CommConst.SUFIX);
                 obj.put("nurseUniqueKey", nurseUniqueKey);
+                obj.put("mUniqueKey", record.getmUniqueKey());
+                record.setCreateTime(new Date(System.currentTimeMillis()));
+                long times = record.getCreateTime().getTime();
+                Log.d(TAG, "times = " + times);
+                obj.put("createTime", times);
+                return obj;
+            }catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取自我检测记录提交的信息
+     * @param record
+     * @return
+     */
+    public static JSONObject getAddMemberRecordJsonBySelf(MemberRecord record) {
+        if(record != null ) {
+            try {
+                JSONObject obj = new JSONObject();
+                obj.put("operator_type",OperatorType.BY_SELF.ordinal());
                 obj.put("mUniqueKey", record.getmUniqueKey());
                 record.setCreateTime(new Date(System.currentTimeMillis()));
                 long times = record.getCreateTime().getTime();

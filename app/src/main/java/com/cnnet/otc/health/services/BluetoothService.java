@@ -1,5 +1,10 @@
 package com.cnnet.otc.health.services;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.UUID;
+
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -20,11 +25,6 @@ import com.cnnet.otc.health.managers.BtNormalManager;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.example.blelib.MyData;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.UUID;
 
 import de.greenrobot.event.EventBus;
 
@@ -258,7 +258,7 @@ public class BluetoothService {
 		}
 		// 启动接受数据
 		if (SysApp.check_type == CheckType.BLOOD_PRESSURE || SysApp.check_type == CheckType.URIC_ACID
-				|| SysApp.check_type == CheckType.WEIGHT || SysApp.check_type == CheckType.LIPID) {
+				|| SysApp.check_type ==CheckType.WEIGHT || SysApp.check_type == CheckType.LIPID) {
 			Log.d(TAG, context.getString(R.string.TESTING));
 			//DisplayView.text = context.getString(R.string.TESTING);
 			//DisplayView.fa.hander.sendEmptyMessage(5);
@@ -325,7 +325,7 @@ public class BluetoothService {
 				title = context.getString(R.string.CONNECT_THERMOMETER);
 			} else if(SysApp.check_type == CheckType.URIC_ACID ) {
 				title = context.getString(R.string.CONNECT_URIC_ACID);
-			} else if(SysApp.check_type == CheckType.WEIGHT) {
+			} else if(SysApp.check_type ==CheckType.WEIGHT) {
 				title = context.getString(R.string.CONNECT_WEIGHT);
 			} else if(SysApp.check_type == CheckType.LIPID) {
 				title = context.getString(R.string.CONNECT_LIPID);
@@ -351,7 +351,7 @@ public class BluetoothService {
 			title = context.getString(R.string.CONNECT_THERMOMETER);
 		} else if(SysApp.check_type == CheckType.URIC_ACID ) {
 			title = context.getString(R.string.CONNECT_URIC_ACID);
-		} else if(SysApp.check_type == CheckType.WEIGHT) {
+		} else if(SysApp.check_type ==CheckType.WEIGHT) {
 			title = context.getString(R.string.CONNECT_WEIGHT);
 		} else if(SysApp.check_type == CheckType.LIPID) {
 			title = context.getString(R.string.CONNECT_LIPID);
@@ -470,7 +470,7 @@ public class BluetoothService {
 			while (readFlag) {
 				// Log.d(TAG, "..................");
 				try {
-					if(SysApp.check_type == CheckType.URIC_ACID || SysApp.check_type == CheckType.WEIGHT
+					if(SysApp.check_type == CheckType.URIC_ACID || SysApp.check_type ==CheckType.WEIGHT
 							|| SysApp.check_type == CheckType.LIPID) {  //
 						byte[] readBuf = new byte[50];
 						if ((byteLength = mmInStream.read(readBuf)) > 0) {

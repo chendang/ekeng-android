@@ -1,21 +1,27 @@
 package com.cnnet.otc.health.bluetooth;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.FetalHeart;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class TaixinAdapter extends ArrayAdapter<TaixinTextandImage> {
 
@@ -28,7 +34,7 @@ public class TaixinAdapter extends ArrayAdapter<TaixinTextandImage> {
 	private List<FetalHeart> fetalHeartsTextList = new ArrayList<FetalHeart>();
 
 	public TaixinAdapter(Activity activity, List<TaixinTextandImage> imageAndTexts,
-						 ListView listView, String name) {
+			ListView listView,String name) {
 		super(activity, 0, imageAndTexts);
 		this.listView = listView;
 		this.name = name;

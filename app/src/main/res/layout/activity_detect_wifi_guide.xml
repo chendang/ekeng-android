@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_edittext_normal"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/fg_home_bar_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/top_bar_color"
+        android:orientation="horizontal"
+        android:layout_weight="0.03">
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/top_back_btn_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/xml_login_main_btn_back" />
+
+        <TextView
+            android:id="@+id/tv_detect_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="@string/home_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_main_title_size"
+            android:gravity="center"
+            android:layout_marginRight="60dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.00">
+
+        <ImageView
+            android:layout_width="364dp"
+            android:layout_height="209dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/check_false" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:text="第一步：长按查询键3秒血压计进入配置状态--WIFI图标闪烁"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:text="下一步"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wifiNextBtn"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp" />
+    </RelativeLayout>
+
+</LinearLayout>

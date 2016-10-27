@@ -1,5 +1,7 @@
 package com.cnnet.otc.health.bluetooth;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +11,6 @@ import android.widget.TextView;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
-
-import java.util.ArrayList;
 
 public class DeviceListAdapter extends BaseAdapter {
 	private ArrayList<MyBlueToothDevice> list;

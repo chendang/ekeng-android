@@ -12,11 +12,15 @@ import android.widget.TextView;
 
 import com.HBuilder.integrate.R;
 import com.cnnet.otc.health.bean.Member;
+import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.util.StringUtil;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.utils.StorageUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -189,7 +193,7 @@ public class MemberListAdapter extends BaseAdapter {
          * @param position position >0 点击 该position位置的checkbox,position =-1 表示选择或取消全部item
          * @param isAll  true 选择全部
          */
-        public  void onClickItemCheckBox(int position, boolean isAll);
+        public  void onClickItemCheckBox(int position ,boolean isAll);
     }
 
     class ViewHolder {

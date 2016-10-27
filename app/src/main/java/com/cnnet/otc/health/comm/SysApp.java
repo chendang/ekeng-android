@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SysApp extends Application {
+public class SysApp extends Application{
 
 	public static int SCREEN_WIDTH;   //屏幕宽度
 	public static int SCREEN_HEIGHT;  //屏幕高度
@@ -44,7 +44,7 @@ public class SysApp extends Application {
 	private static IUser accountBean;
 
 	private static SpManager spManager = null;
-	public static MyDBManager myDBManager = null;
+	private static MyDBManager myDBManager = null;
 
 	public static String LOCAL_ROOT_FLODER = "";  //根目录
 	public static String LOCAL_HEAD_FLODER = "";  //头像目录
@@ -118,7 +118,7 @@ public class SysApp extends Application {
 		accountBean = null;
 		LOGIN_STATE = CommConst.FLAG_USER_STATUS_OFF_LINE;
 		ImageLoader.getInstance().destroy();
-		Intent intent = new Intent(CommConst.INTENT_ACTION_EXIT_APP);
+		Intent intent = new Intent (CommConst.INTENT_ACTION_EXIT_APP);
 		ctx.sendBroadcast(intent);
 	}
 

@@ -9,6 +9,8 @@
         <item>血脂</item>
         <item>体重</item>
         <item>尿酸</item>
+        <item>乐心血压计</item>
+        <item>乐心体重秤</item>
     </string-array>
 
     <string-array name="device_codes">
@@ -29,4 +31,6 @@
         <item>M</item>
         <item>F</item>
     </string-array>
+
+
 </resources>

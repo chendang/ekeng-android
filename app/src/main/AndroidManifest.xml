@@ -542,7 +542,19 @@
             android:label="@string/title_activity_lsblue_device_list" />
         <activity
             android:name="com.foxchen.health.activities.LSBlueDeviceAddActivity"
-            android:label="@string/title_activity_lsblue_device_add"></activity>
+            android:label="@string/title_activity_lsblue_device_add" />
+        <activity
+            android:name="com.foxchen.health.activities.DetectWifiSerchActivity"
+            android:label="@string/title_activity_detect_wifi_serch" />
+        <activity
+            android:name="com.foxchen.health.activities.DetectWifiSuccActivity"
+            android:label="@string/title_activity_detect_wifi_succ" />
+        <activity
+            android:name="com.foxchen.health.activities.DetectWifiFailureActivity"
+            android:label="@string/title_activity_detect_wifi_failure" />
+        <activity
+            android:name="com.foxchen.health.activities.LSBlueAddSyncActivity"
+            android:label="@string/title_activity_lsblue_add_sync"></activity>
     </application>
 
 </manifest>

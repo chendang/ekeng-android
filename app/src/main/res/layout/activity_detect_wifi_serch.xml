@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detect_wifi_serch"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.foxchen.health.activities.DetectWifiSerchActivity"
+    android:orientation="vertical"
     android:background="@drawable/bg_edittext_normal">
 
     <LinearLayout
@@ -21,7 +26,7 @@
             android:id="@+id/tv_detect_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/title_ls_wifi_blood_pressure_guide"
+            android:text="@string/title_ls_wifi_blood_pressure_serch"
             android:textColor="@color/white"
             android:textSize="@dimen/app_main_title_size"
             android:gravity="center"
@@ -30,32 +35,35 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4">
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="281dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/detectwifiintruimage"
+            android:layout_height="283dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/image_lswifiserch"
             />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/fg_home_bar_top"
         android:orientation="vertical"
-        android:layout_weight="1"
-        android:gravity="bottom">
+        android:layout_weight="0.5">
 
-        <Button
-            android:text="下一步"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/wifiNextBtn"
-            android:background="@drawable/btn_blue"
-            android:layout_margin="10dp" />
+            android:layout_height="match_parent"
+            android:id="@+id/detectResInfo"
+            android:paddingLeft="20dp"
+            android:textSize="18sp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="请稍等,正在搜索设备..." />
     </LinearLayout>
 
 </LinearLayout>

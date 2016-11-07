@@ -35,7 +35,8 @@ public class SysApp extends Application{
 
 	public static int LOGIN_STATE = CommConst.FLAG_USER_STATUS_OFF_LINE;  //离线中
 
-	public static CheckType check_type = CheckType.NONE;
+	public static CheckType check_type = CheckType.NONE;//设备类型
+	public static BrandType brand_type = BrandType.NONE;//设备类型
 	public static MyBlueToothDevice btDevice = null;  //当前连接蓝牙信息
 
 	private static ExecutorService LIMITED_TASK_EXECUTOR;  //线程池数量和对象
@@ -48,7 +49,16 @@ public class SysApp extends Application{
 
 	public static String LOCAL_ROOT_FLODER = "";  //根目录
 	public static String LOCAL_HEAD_FLODER = "";  //头像目录
-	
+	private static String mUniqueKey; //用户会员号
+
+	public static String getmUniqueKey() {
+		return mUniqueKey;
+	}
+
+	public static void setmUniqueKey(String mUniqueKey) {
+		SysApp.mUniqueKey = mUniqueKey;
+	}
+
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub

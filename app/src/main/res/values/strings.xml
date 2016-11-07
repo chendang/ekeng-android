@@ -267,5 +267,17 @@
     <string name="title_activity_detect_wifi">DetectWifiActivity</string>
     <string name="title_activity_lsblue_device_list">LSBLueDeviceListActivity</string>
     <string name="title_activity_lsblue_device_add">LSBlueDeviceAddActivity</string>
+    <string name="title_activity_detect_wifi_serch">DetectWifiSerchActivity</string>
+    <string name="title_activity_detect_wifi_succ">DetectWifiSuccActivity</string>
+    <string name="title_activity_detect_wifi_failure">DetectWifiFailureActivity</string>
 
+    <!--wifi设置 名称字段-->
+    <string name="title_ls_wifi_blood_pressure_guide">title_ls_wifi_blood_pressure_guide</string>
+    <string name="title_ls_wifi_blood_pressure">title_ls_wifi_blood_pressure</string>
+    <string name="title_ls_wifi_blood_pressure_serch">title_ls_wifi_blood_pressure_serch</string>
+    <string name="title_ls_wifi_blood_pressure_succ">title_ls_wifi_blood_pressure_succ</string>
+    <string name="title_ls_wifi_blood_pressure_failure">title_ls_wifi_blood_pressure_failure</string>
+    <string name="LS_WIFI_BLOOD_PRESSURE">LS_WIFI_BLOOD_PRESSURE</string>
+    <string name="LS_WIFI_WEIGHT">LS_WIFI_WEIGHT</string>
+    <string name="title_activity_lsblue_add_sync">LSBlueAddSyncActivity</string>
 </resources>

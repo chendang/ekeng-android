@@ -244,5 +244,12 @@
     <string name="male">男</string>
     <string name="female">女</string>
 
-
+     <!--wifi设置 名称字段-->
+    <string name="title_ls_wifi_blood_pressure_guide">设置乐心设备</string>
+    <string name="title_ls_wifi_blood_pressure">确认家庭WIFI</string>
+    <string name="title_ls_wifi_blood_pressure_serch">添加设备中</string>
+    <string name="title_ls_wifi_blood_pressure_succ">配网成功</string>
+    <string name="title_ls_wifi_blood_pressure_failure">配网失败</string>
+    <string name="LS_WIFI_BLOOD_PRESSURE">乐心血压计</string>
+    <string name="LS_WIFI_WEIGHT">乐心体重秤</string>
 </resources>

@@ -9,9 +9,14 @@ import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -160,8 +165,23 @@ public class UricacidData implements MyCommData {
                     int int_vv = Integer.parseInt(vv_Value, 16);
 
                     int vv = (int)(int_vv * 100 / 16.81f);
+                    nativeRecordId=new Date().getTime();
+                    SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_UA, vv, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     Log.d(TAG, "UA value is ..... (" + vv + "mmol/dL)");
+                    UploadAllNewInfoTask.submitOneRecordInfo(context,mUniqueKey, nativeRecordId,
+                            new SubmitServerListener() {
+                                @Override
+                                public void onResult(int result) {
+                                    DialogUtil.cancelDialog();
+                                    if (result == 0) { //success
+                                    } else if(result == -2){
+                                        ToastUtil.TextToast(context.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                    } else {
+                                        ToastUtil.TextToast(context.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                    }
+                                }
+                            });
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, "尿酸结果为：" + vv + "mmol/dL"));
 
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));

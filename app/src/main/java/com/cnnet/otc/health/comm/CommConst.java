@@ -5,6 +5,7 @@ public class CommConst {
 	public final static String APP_HEAND_NAME = APP_FOLDER_NAME + "/head/";
 
 	public static final String SERVER_URL = "http://otc.kzjk360.com";//"http://192.168.1.112:8081";
+	public static final String OTC_PUSH_SERVER_URL = "http://healthapi.kzjk360.com";//"http://192.168.1.112:8081";
 	public static final String SUFIX = "HAVA";
 	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_COMM"; //更新APP路径
 //	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_WENHE"; //更新APP路径

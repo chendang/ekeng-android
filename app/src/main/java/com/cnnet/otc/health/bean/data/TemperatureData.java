@@ -4,6 +4,9 @@ import android.content.Context;
 import android.util.Log;
 
 import com.HBuilder.integrate.R;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.cnnet.otc.health.bean.MemberRecord;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
@@ -12,10 +15,21 @@ import com.cnnet.otc.health.comm.TempState;
 import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.managers.JsonManager;
+import com.cnnet.otc.health.managers.RequestManager;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -131,8 +145,24 @@ public class TemperatureData implements MyCommData {
 			if (temperatureStatus == TempState.NORMAL) {
 				text = modeText + temperature + unitText;
 				Log.d(DATA_TEMP, " result : " + text + "   ;   id=" + nativeRecordId);
+				nativeRecordId=new Date().getTime();
 				SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
 				SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_TEMP, temperature, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+
+
+				UploadAllNewInfoTask.submitOneRecordInfo(context,mUniqueKey, nativeRecordId,
+						new SubmitServerListener() {
+							@Override
+							public void onResult(int result) {
+								DialogUtil.cancelDialog();
+								if (result == 0) { //success
+								} else if(result == -2){
+									ToastUtil.TextToast(context.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+								} else {
+									ToastUtil.TextToast(context.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+								}
+							}
+						});
 			} else if (temperatureStatus == TempState.MEASURING_TEMP_LOW) {
 				text = context.getString(R.string.TEMPERATURE_LOW);
 			} else if (temperatureStatus == TempState.MEASURING_TEMP_HIGTH) {
@@ -187,7 +217,7 @@ public class TemperatureData implements MyCommData {
 
 	@Override
 	public List<RecordItem> getRecordAllList(String mUniqueKey) {
-		return SysApp.getMyDBManager().getListByReorcdId(mUniqueKey, DATA_TEMP);
+		return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey, DATA_TEMP);
 	}
 
 	@Override

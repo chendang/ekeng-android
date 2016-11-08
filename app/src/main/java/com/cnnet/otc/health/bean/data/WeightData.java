@@ -11,10 +11,15 @@ import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.events.BleEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
 import com.cnnet.otc.health.util.DateUtil;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -125,11 +130,25 @@ public class WeightData implements MyCommData {
                     float BMIValue = StringUtil.getDecimalsOne(fWValue / Math.pow(height, 2));  //体质指数
 
                     System.out.println(fWValue + "; " + iBFPValue + "; " + BMIValue);
-
+                    nativeRecordId=new Date().getTime();
+                    SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_WEIGHT, fWValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BFP, BFPValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BMI, BMIValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     Log.d(TAG, "value is ..... " + fWValue + "kg;  ");
+                    UploadAllNewInfoTask.submitOneRecordInfo(ctx,mUniqueKey, nativeRecordId,
+                            new SubmitServerListener() {
+                                @Override
+                                public void onResult(int result) {
+                                    DialogUtil.cancelDialog();
+                                    if (result == 0) { //success
+                                    } else if(result == -2){
+                                        ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                    } else {
+                                        ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                    }
+                                }
+                            });
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, "体重结果为" + fWValue + "kg"));
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CLOSE_BT_DEVICE, null));
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_RESET, null));

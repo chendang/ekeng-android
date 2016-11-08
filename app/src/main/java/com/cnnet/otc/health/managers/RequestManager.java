@@ -16,6 +16,7 @@ import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.comm.volleyRequest.JsonStringRequest;
 import com.cnnet.otc.health.comm.volleyRequest.PostUploadRequest;
+import com.cnnet.otc.health.util.DateUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -293,7 +294,7 @@ public class RequestManager {
      * @param record   检查记录对象
      * @param nurseUniqueKey   会员所属护士管辖
      */
-    public static void addMemberRecord(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
+   /* public static void addMemberRecord(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
                                        List<RecordItem> items, MemberRecord record, String nurseUniqueKey) {
         StringBuilder sb = new StringBuilder();
         sb.append(SysApp.getSpManager().getServerUrl());
@@ -313,8 +314,35 @@ public class RequestManager {
         JsonStringRequest jsonStringRequest = new JsonStringRequest(url, paramsStr, listener, errorListener);
         jsonStringRequest.setTag(ctx);
         requestQueue.add(jsonStringRequest);
-    }
+    }*/
+    public static void addMemberRecord(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,
+                                       List<RecordItem> items, MemberRecord record, String nurseUniqueKey) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SysApp.getSpManager().getOtcPushServerUrl());
+        sb.append("/device/api/OtcPushData");
+//        JSONObject jsonByMaps = JsonManager.getAddMemberRecordJson(record, nurseUniqueKey);
+        JSONObject jsonByMaps = new JSONObject();
 
+        try {
+            jsonByMaps.put("UserName",record.getmUniqueKey());
+            jsonByMaps.put("CreateTime", DateUtil.getDateStrByDate(record.getCreateTime()));
+            for(RecordItem item: items) {
+                jsonByMaps.put("data", JsonManager.getOtcRecordInfoJSON(item));
+                String url = sb.toString();
+                Log.d(TAG, "addMemberRecord: url(" + url + ")");
+                String paramsStr = (jsonByMaps==null)?null:jsonByMaps.toString();
+                Log.d(TAG, "params: " + paramsStr);
+                JsonStringRequest jsonStringRequest = new JsonStringRequest(url, paramsStr, listener, errorListener);
+                jsonStringRequest.setTag(ctx);
+                requestQueue.add(jsonStringRequest);
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
     /**
      * 添加健康检查记录
      * @param ctx

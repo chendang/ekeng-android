@@ -268,21 +268,21 @@ public class UploadAllNewInfoTask {
         if(StringUtil.isNotEmpty(addUniquKey) && nativeRecordId > 0) {
             final MemberRecord record = SysApp.getMyDBManager().getWaitInspectorRecord(addUniquKey, nativeRecordId);
             if(record != null) {
-                List<RecordItem> lists = SysApp.getMyDBManager().getSubmitedListByRecordId(record.getId());
+                List<RecordItem> lists = SysApp.getMyDBManager().getSubmitedListByRecordId(record.getRecordId());
                 if(lists != null && lists.size() > 0) {
-                    SysApp.getMyDBManager().submitRecordInfo(addUniquKey, record.getId());
+                    SysApp.getMyDBManager().submitRecordInfo(addUniquKey, record.getRecordId());
                     RequestManager.addMemberRecord(ctx, new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject jsonObject) {
-                                    if (JsonManager.getCode(jsonObject) == 0) {
-                                        try {
-                                            long recordId = jsonObject.getLong("recordId");
-                                            SysApp.getMyDBManager().submitRecordSuccess(addUniquKey, nativeRecordId, recordId, record.getCreateTime());
+                                    if (JsonManager.getCode(jsonObject) == 200) {
+//                                        try {
+//                                            long recordId = jsonObject.getLong("recordId");
+                                            SysApp.getMyDBManager().submitRecordSuccess(addUniquKey, nativeRecordId, nativeRecordId, record.getCreateTime());
                                             l.onResult(0);
                                             return;
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
-                                        }
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
                                     }
                                     l.onResult(CommConst.ERROR_CODE_SERVER_ADD_RECORD_ERROR);
                                 }

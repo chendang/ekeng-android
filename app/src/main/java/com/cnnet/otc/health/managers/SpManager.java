@@ -145,7 +145,10 @@ public class SpManager {
         }
         return CommConst.SERVER_URL;
     }
+    public String getOtcPushServerUrl() {
 
+        return CommConst.OTC_PUSH_SERVER_URL;
+    }
     /**
      * 修改设置服务器URL
      * @param url

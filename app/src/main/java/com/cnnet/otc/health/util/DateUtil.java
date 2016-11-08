@@ -46,7 +46,15 @@ public class DateUtil {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return format.format(date);
     }
-
+    /**
+     * 根据日期格式获取日期字符串yyyy-MM-dd HH:mm:ss
+     * @param date
+     * @return
+     */
+    public static String getDateStrByDate(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return format.format(date);
+    }
     /**
      * 获取信息yyyy-MM-dd HH:mm:ss
      * @param dateStr

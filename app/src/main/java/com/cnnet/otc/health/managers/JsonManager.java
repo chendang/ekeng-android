@@ -402,6 +402,24 @@ public class JsonManager {
     }
 
     /**
+     * 将一条检查记录的信息转成JSON数组
+     * @param recordItem
+     * @return
+     */
+    public static JSONObject getOtcRecordInfoJSON( RecordItem recordItem) {
+       JSONObject obj = new JSONObject();
+        if(recordItem != null) {
+            try {
+                obj.put("iType", recordItem.getiType());
+                obj.put("value1", recordItem.getValue1());
+                obj.put("idesc", recordItem.getiConcluison());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return obj;
+    }
+    /**
      * 修改会员时，获取将要提交的会员信息
      * @param member
      * @return

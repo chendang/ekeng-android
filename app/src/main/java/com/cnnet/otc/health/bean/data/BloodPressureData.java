@@ -10,8 +10,13 @@ import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
+import com.cnnet.otc.health.util.ToastUtil;
 
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -91,11 +96,25 @@ public class BloodPressureData implements MyCommData {
 					+ ctx.getString(R.string.TIMES)
 					+ ctx.getString(R.string.PERIOD);
 			System.out.println("血压数据：" + data);
+			nativeRecordId=new Date().getTime();
+			SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_HIGHT, highPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_LOW, lowPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_PULSE, highPressure-lowPressure, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
 			SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BP_PR, heartRate, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
-
+			UploadAllNewInfoTask.submitOneRecordInfo(ctx,mUniqueKey, nativeRecordId,
+					new SubmitServerListener() {
+						@Override
+						public void onResult(int result) {
+							DialogUtil.cancelDialog();
+							if (result == 0) { //success
+							} else if(result == -2){
+								ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+							} else {
+								ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+							}
+						}
+					});
 			//DisplayView.fa.hander.sendEmptyMessage(5);
 			EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, data));
 			/*if (DisplayView.fa != null) {

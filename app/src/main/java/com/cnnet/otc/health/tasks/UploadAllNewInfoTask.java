@@ -67,7 +67,34 @@ public class UploadAllNewInfoTask {
             l.onResult(CommConst.ERROR_CODE_NETWORK_ERROR);
         }
     }
-
+    /**
+     * 同步本地信息
+     * @param ctx
+     * @param l
+     */
+    public static void SynchronizationOtcInfo(final Context ctx, final SubmitServerListener l) {
+        isSync = false;
+        if(NetUtil.checkNetState(ctx)) { //当网络正常时开始同步
+            //第一步：先同步会员信息，同步一条后需要修改本地会员表中KEY，和会员检查记录中的KEY
+//            uploadMemberInfo(ctx, uniqueKey, new SubmitServerListener() {
+//                @Override
+//                public void onResult(int result) {
+//                    if (result == 0) {
+            uploadOtcRecordInfo(ctx, new SubmitServerListener() {
+                            @Override
+                            public void onResult(int result) {
+                                l.onResult(result);
+                            }
+                        });
+//                    } else {
+//                        l.onResult(result);
+//                    }
+//                }
+//            });
+        } else {
+            l.onResult(CommConst.ERROR_CODE_NETWORK_ERROR);
+        }
+    }
     /**
      * 获取需要上传会员的对象，开始逐一进行上传
      * @param ctx
@@ -264,6 +291,59 @@ public class UploadAllNewInfoTask {
                 }, lists, record, addUniquKey);
     }
 
+    /**
+     * OTC
+     * 获取需要同步的会员检查记录，逐一开始同步
+     * @param ctx
+     * @param l
+     */
+    private static void uploadOtcRecordInfo(Context ctx, SubmitServerListener l) {
+        index = 0;
+        List<MemberRecord> recordsLists = SysApp.getMyDBManager().getWaitUploadRecordList("");
+        if(recordsLists != null && recordsLists.size() > 0) {
+            isSync = true;
+            submitOtcOneRecord(ctx, recordsLists, index, l);
+        } else {
+            l.onResult(0);
+        }
+    }
+    /**
+     * OTC
+     * 依次提交检查记录
+     * @param ctx
+     * @param recordsLists
+     * @param position
+     * @param l
+     */
+    private static void submitOtcOneRecord(final Context ctx, final List<MemberRecord> recordsLists, int position,final SubmitServerListener l) {
+        final MemberRecord record = recordsLists.get(position);
+        final String addUniquKey=  record.getAdd_uniqueKey();
+        List<RecordItem> lists = SysApp.getMyDBManager().getSubmitedListByRecordId( record.getRecordId());
+        RequestManager.addMemberRecord(ctx, new Response.Listener<JSONObject>(){
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        if(JsonManager.getCode(jsonObject) == 200) {
+                            SysApp.getMyDBManager().submitRecordSuccess(addUniquKey, record.getRecordId(), record.getRecordId(), record.getCreateTime());
+                            index++;
+                            if(index >= recordsLists.size()) {
+                                l.onResult(0);
+                                index = 0;
+                            } else {
+                                submitOtcOneRecord(ctx, recordsLists, index, l);
+                            }
+                            return;
+                        }
+                        l.onResult(CommConst.ERROR_CODE_SERVER_ADD_RECORD_ERROR);
+                    }
+                },
+                new Response.ErrorListener(){
+
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        l.onResult(CommConst.ERROR_CODE_SERVER_FAIL);
+                    }
+                }, lists, record, addUniquKey);
+    }
     public static void submitOneRecordInfo(Context ctx, final String addUniquKey, final long nativeRecordId, final SubmitServerListener l) {
         if(StringUtil.isNotEmpty(addUniquKey) && nativeRecordId > 0) {
             final MemberRecord record = SysApp.getMyDBManager().getWaitInspectorRecord(addUniquKey, nativeRecordId);

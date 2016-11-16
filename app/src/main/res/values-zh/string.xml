@@ -252,4 +252,7 @@
     <string name="title_ls_wifi_blood_pressure_failure">配网失败</string>
     <string name="LS_WIFI_BLOOD_PRESSURE">乐心血压计</string>
     <string name="LS_WIFI_WEIGHT">乐心体重秤</string>
+
+    <string name="device_not_surport_ble4">设备不支持蓝牙4.0</string>
+    <string name="device_not_open_ble">设备蓝牙未开启</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.foxchen.health.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.cnnet.otc.health.managers.RequestManager;
 import com.cnnet.otc.health.util.SHA1Util;
+import com.cnnet.otc.health.util.ToastUtil;
 import com.lifesense.ble.LsBleManager;
 import com.lifesense.ble.ReceiveDataCallback;
 import com.lifesense.ble.SearchCallback;
@@ -74,10 +77,17 @@ public class LSBlueAddSyncActivity extends Activity {
             if(!lsBleManager.isSupportLowEnergy())
             {
                 //判断当前设备的手机是否支持蓝牙4.0
+                ToastUtil.TextToast(getBaseContext(), R.string.device_not_surport_ble4, 5000);
+                this.finish();
+                return;
+
             }
             if(!lsBleManager.isOpenBluetooth())
             {
                 //判断当前手机的蓝牙功能是否处于打开状态
+                ToastUtil.TextToast(getBaseContext(), R.string.device_not_open_ble, 2000);
+                Intent intent =  new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+                startActivity(intent);
             }else{
                 if(getIntent().getStringExtra("MAC")==null)
                     getDeviceInfo();
@@ -272,7 +282,7 @@ public class LSBlueAddSyncActivity extends Activity {
             public void onReceivePedometerMeasureData(final Object dataObject,
                                                       final PacketProfile packetType, final String sourceData) {
 
-                if(dataObject!=null){
+               /* if(dataObject!=null){
                     Message msg=new Message();
                     msg.what=666666;
                     msg.obj=dataObject;
@@ -282,7 +292,7 @@ public class LSBlueAddSyncActivity extends Activity {
                 for (int i =0;i<=dataObjectList.size();i++){
                     PedometerData pd= (PedometerData) dataObjectList.get(i);
 
-                }
+                }*/
 //                RequestManager.postLSBlueData();
 
                 System.err.println("dataObject:" + dataObject);

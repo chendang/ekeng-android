@@ -1,5 +1,6 @@
 package com.HBuilder.integrate;
 
+import butterknife.ButterKnife;
 import io.dcloud.EntryProxy;
 import io.dcloud.common.DHInterface.ICore;
 import io.dcloud.common.DHInterface.ICore.ICoreStatusListener;
@@ -9,9 +10,14 @@ import io.dcloud.common.DHInterface.IWebviewStateListener;
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												import io.dcloud.feature.internal.sdk.SDK;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -25,8 +31,18 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.webkit.JavascriptInterface;
 
+import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.db.MyDBManager;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
+import com.cnnet.otc.health.util.AppCheckUtil;
+import com.cnnet.otc.health.util.DialogUtil;
+import com.cnnet.otc.health.util.NetUtil;
+import com.cnnet.otc.health.util.ToastUtil;
+
+import static com.android.volley.VolleyLog.TAG;
+import static io.dcloud.common.adapter.util.AndroidResources.getString;
 
 /**
  * 本demo为以webview控件方式集成5+ sdk， 
@@ -36,11 +52,14 @@ public class SDK_WebView extends Activity {
 
 	boolean doHardAcc = true;
 	EntryProxy mEntryProxy = null;
-
+	private static Context ctx;
+	private boolean stopThread=false;
+	private Thread newThread=null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		ctx=this;
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		if (mEntryProxy == null) {
@@ -71,6 +90,7 @@ public class SDK_WebView extends Activity {
 	public void onResume() {
 		super.onResume();
 		mEntryProxy.onResume(this);
+		startSyncInfo();
 	}
 
 	public void onNewIntent(Intent intent) {
@@ -84,6 +104,10 @@ public class SDK_WebView extends Activity {
 	protected void onDestroy() {
 		super.onDestroy();
 		mEntryProxy.onStop(this);
+		ButterKnife.unbind(this);
+		if(SysApp.getMyDBManager() != null) {
+			SysApp.getMyDBManager().destory();
+		}
 	}
 
 	@Override
@@ -119,7 +143,64 @@ public class SDK_WebView extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		mEntryProxy.onActivityExecute(this, SysEventType.onActivityResult, new Object[] { requestCode, resultCode, data });
 	}
+	/**
+	 * 启动时，就开始同步数据中
+	 */
 
+	private Handler handler = new Handler(){
+
+		public void handleMessage(Message msg)
+		 {
+		// TODO Auto-generated method stub
+
+		 Log.e(TAG, Thread.currentThread().getName() + " " +msg.obj);
+			 setTitle("" +msg.obj);
+			 if (msg.what == 0) {
+				 ToastUtil.TextToast(getBaseContext(), R.string.sync_success, 2000);
+			 }
+			 if (msg.what == 1) {
+				 ToastUtil.TextToast(getBaseContext(), R.string.mobile_network_error, 2000);
+			 }
+
+		}
+	};
+	private void startSyncInfo() {
+//		if(SysApp.getAccountBean() != null && SysApp.getAccountBean().getRole() < CommConst.FLAG_USER_ROLE_MEMBER) {
+
+		handler.post(new Runnable() {
+			@Override
+			public void run() {
+				if(NetUtil.checkNetState(ctx) && !stopThread) {
+//					DialogUtil.loadProgressUnClose(ctx, getString(R.string.syncing));
+					UploadAllNewInfoTask.SynchronizationOtcInfo(ctx, new SubmitServerListener() {
+
+						@Override
+						public void onResult(int result) {
+//							DialogUtil.cancelDialog();
+							if (result == 0) {
+								if(UploadAllNewInfoTask.isSync) {
+//									mHandler.sendEmptyMessage(0);
+
+									ToastUtil.TextToast(getBaseContext(), R.string.sync_success, 2000);
+									stopThread=true;
+							}
+
+							} else {
+//								mHandler.sendEmptyMessage(1);
+								AppCheckUtil.toastErrMsgByConnectResultCode(getBaseContext(), result);
+							}
+//							Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//							startActivityForResult(enableIntent, 3);
+						}
+					});
+
+				}
+			}
+		});
+
+
+	}
+//	}
 }
 
 class WebviewModeListener implements ICoreStatusListener {
@@ -227,4 +308,5 @@ class WebviewModeListener implements ICoreStatusListener {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 }

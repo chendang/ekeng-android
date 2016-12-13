@@ -3,7 +3,9 @@ package com.cnnet.otc.health.bluetooth;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -13,7 +15,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -56,6 +61,17 @@ public class TaixinDialog extends Dialog implements
 		this.mBleManager.setLeScanCallBack(mLestartScanCallback);
 		mContext = context;
 		Sharepare = sharepare;
+		if(Build.VERSION.SDK_INT >= 23){
+			//6.0以上设备
+			int hasPermission = ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+			if(hasPermission != PackageManager.PERMISSION_GRANTED) {
+				Log.d(TAG, "mayRequestLocation: 请求粗略定位的权限");
+				ActivityCompat.requestPermissions((Activity) mContext,
+						new String[]{
+								android.Manifest.permission.ACCESS_COARSE_LOCATION},0);
+
+			}
+		}
 		init();
 	}
 

@@ -2,6 +2,8 @@ package com.cnnet.otc.health.bluetooth;
 
 import java.util.ArrayList;
 import java.util.Set;
+
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,9 +15,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -25,6 +30,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+import com.cnnet.otc.health.activities.DetectBle3Activity;
+import com.cnnet.otc.health.comm.SysApp;
 import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.managers.BtNormalManager;
@@ -33,6 +40,7 @@ import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 import com.example.blelib.MyData;
+import com.foxchen.qbs.SDK_WebApp;
 
 public class DeviceDialog extends Dialog {
 	
@@ -70,14 +78,18 @@ public class DeviceDialog extends Dialog {
 		this.mydata = mydata;
 		mContext = context;
 		init();
+		if(Build.VERSION.SDK_INT >= 23){
+			//6.0以上设备
+			int hasPermission = ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+			if(hasPermission != PackageManager.PERMISSION_GRANTED) {
+				Log.d(TAG, "mayRequestLocation: 请求粗略定位的权限");
+				ActivityCompat.requestPermissions((Activity) mContext,
+						new String[]{
+								android.Manifest.permission.ACCESS_COARSE_LOCATION},0);
 
-		// 使蓝牙可用
-		if (mBtAdapter != null && !mBtAdapter.isEnabled()) {
-			// mBtAdapter.enable();
-			Intent enableIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			((Activity) context).startActivityForResult(enableIntent, 3);
+			}
 		}
+
 		mBtAdapter.cancelDiscovery();
 	}
 

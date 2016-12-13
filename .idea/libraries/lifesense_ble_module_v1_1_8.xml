@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lifesense_ble_module_v1.1.8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/lifesense_ble_module_v1.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

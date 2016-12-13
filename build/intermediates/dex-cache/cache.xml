@@ -3,264 +3,750 @@
 
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\pdr.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_8435b3f294dcebb056f50fd7ece5b44a47280faf.jar" />
+        sha1="f183232b6f801150c3fb6e1068485e8a0370e0b2">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\pdr_901ff9c871550a28ee6718e7190c2547dbd90240.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipaysdk.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="b40481f01537a329936ce54ee2fe15ef2537f010">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\alipaysdk_39f6ebfc5ff94e18c8ca80d61eaae8f50094484e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\open_sdk_r5043_lite.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="1f213f03dfe8868d0b24898234f6eefb67015a4a">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\open_sdk_r5043_lite_c8249b1df7b36f20b6080c8dcf1cba73a511af08.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\invocation.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\invocation.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="10814898667722fc3f8c0d7ff26677e39f32c2a4">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\invocation_fbbc9fea07bed22174855bbc4dac0f17093a7aae.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\invocation_578b2b511ace317c51c80f145a7231d879f891fb.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\messaging.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="32001add889e4b57ddeedd7fca0e0cb717ead80b">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\messaging_b566d4716c355a50e9eacdb4b083b32a64e48529.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth-sina.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="4f0bc7c30f32cccb22183fbcbf6232e7d1d9e529">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\oauth-sina_25af5d523bc9051136996d12c4d969940f393ed1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\ui.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5b081831d9ba55ad2726d1e0d63dc7da84a7b829">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\ui_d552e03054b87204b56cb7a1327da4b574671b0e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment-alipay.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="42583108645cdb7b84455c9102a795fc5c83872e">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\payment-alipay_5b606e100aa0cf3d1fa265cfcde29a2e9c6222ee.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-qq.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="af7dc52d4d98c53cf1c7f7cea3929c126b61a8ec">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\share-qq_d57bfa70347503e9a760a8024c9749970919803a.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-qq_d57bfa70347503e9a760a8024c9749970919803a\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\weibosdkcore_release.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment-alipay.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="265f83894203f2bd137185bc3cefaca45b186ca0">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\weibosdkcore_release_df0156f426c9c11d38a02f68fd6efbbcd147d218.jar" />
+        sha1="42583108645cdb7b84455c9102a795fc5c83872e">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\payment-alipay_5b606e100aa0cf3d1fa265cfcde29a2e9c6222ee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\sensor.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c3c6ab277532491f9d7cb0b6b34df17999d48e10">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\sensor_ab1a4259bea5b484b2832ae619a731085ce68649\classes.dex" />
     </item>
     <item
         is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\lswificonfig.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7668bf21be67c8e4e7e30ceffc5d9f3d64a1b556">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\lswificonfig_f804733002e33983c2a4d2014db7e51b2eb101b7.jar" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_weibo_sdk_component.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="17d672bf657b4d848d1b33782496fc0dd972072c">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk_component_6fa35cbfb8be5521bf7d413d988b8d36bf26968f.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk_component_6fa35cbfb8be5521bf7d413d988b8d36bf26968f\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\geolocation-system.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8486c47d4158f7cc93942f7410c33ede8f74c047">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\geolocation-system_904ec7bb426d873337bf2bc94de1d7b3ddae95b3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-tencent.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="07a72a00a38e50051963f7ea30caf0cb7d741b47">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\share-tencent_76f1093604c40c4e54f2735989e59957c6812648.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="09df57545665a49df3d4b12ec8dae8e233adf450">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\instant-run_74fced3ba9ccc97a566603e8afb42aa711143395.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\weibosdk.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="860f7bf08016ffb93f564cdebab6d70586ad46d6">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\weibosdk_23b48e51d53b452e8ef5cf1dbb900326085ac67d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_weibo_sdk.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="33921321a220f3927929217aeed32befede21502">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk_7572ce0f965de3790b820979c91b3c337aaff295.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nativeObj.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="003c55995af8bc42fd763a00add5883324aaa7c4">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\nativeObj_7ee6277b839c230f4dc39d36dd3a2dca079a7b68.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\gallery.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="496b3bb9778a5ff43613267aa608f7adcb912bbc">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\gallery_0ef84b89d47a59ae7501ee191a222ed1a6842963.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\eventbus-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0_4c8b19485d6ee220cdb8ab1d3da5ebcf87728126.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\taixin.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0474c71c8eb29412633d4c614d5eb277927b269f">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\taixin_4d1c809b9bbbb76e1f34fb60cc2c3f05bfd01229.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\volley.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="54d33711392bcad97b049ed3be3c1de8ea490ec0">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\volley_26e493fe6ee673bff723c4e63ea372b102f75612.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\aps.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="523d2c11bb2f079894d97b7ad838b178ef2df6dd">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\aps_38d9b19e149a7329eead3cc3d6f8ab3e52dd321d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\pdr.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="f183232b6f801150c3fb6e1068485e8a0370e0b2">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\pdr_87c1ff5d2d85158397b0aa43dc0dfe90fe5074f4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\gson-2.2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="1f96456ca233dec780aa224bff076d8e8bca3908">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\gson-2.2.2_7c31b843e41a5041d240e07fa6507307df5a1ad2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\uploader.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5a52643682c717d91785ec0c79dda0b821b88607">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\uploader_f7d60d97873a3349281f001f6969fa6c937f3ff6.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="196acd27ec611666481529b99fce9f40cc7237e1">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\oauth_449dc595e9ae4f38eddc4c624eb8f9e4d6e57f2a.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth_449dc595e9ae4f38eddc4c624eb8f9e4d6e57f2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\eventbus-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\eventbus-2.4.0_4c8b19485d6ee220cdb8ab1d3da5ebcf87728126\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\Msc.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\share-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="da17b60c73f5fa4f2ff7c354f52e71aa6e4f1b6e">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\share-weixin_fc2cfc8c676064223ea66e3f38c6dbdc94e8ec5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\ui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5b081831d9ba55ad2726d1e0d63dc7da84a7b829">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\ui_0d3ff801bc450ac8b1a18b0ac03282d9b36208bb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth-sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4f0bc7c30f32cccb22183fbcbf6232e7d1d9e529">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-sina_25af5d523bc9051136996d12c4d969940f393ed1\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\Msc.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="a11eb2b2631d3538589d79e5d85e10d4dc216480">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\Msc_2d0c15ac57c19e1a721ab767d3dbd385d4b9f6e7.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\Msc_6ab28f47b8c2150a9e4960c31bc9d9e07d59d10d.jar" />
     </item>
     <item
         is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\audio.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25213cafe81f758562351ea676fbd83827dbad80">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\audio_40d73c65a5d2455b083a6f1ebc475b82021f2594.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\weibosdkcore_release.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="265f83894203f2bd137185bc3cefaca45b186ca0">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\weibosdkcore_release_0c3eea03957b07be80693e183a2585ca19770b6e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e07ff77fd7e9e455b3d4f3579b76ef920e4d0ab1">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\payment_a51162149f769d4567d1f55151d52fcd0a900f7d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\contacts.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="37ab7966a1ec1b7bbebf3f5b0792dddd9da5a0a9">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\contacts_ab2c7d3e065f0c1c651e40d533b3178749a08fcf\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\share.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9700a303a8c75002a3f9b21b849ce59e6e8d947">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\share_3dac03cab3095b8b867391694ef1049d5e42b866.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\payment.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e07ff77fd7e9e455b3d4f3579b76ef920e4d0ab1">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\payment_80f6a35d17b0eb22ee8508409bd13272c3e0d5c9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nopermission.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="303f4ff57349d49b76d4c5c6f49572b6dff16d7a">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\nopermission_ff641d8812887a7739f1cd41b284c11eb673f783\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\universal-image-loader-1.9.3-with-sources.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03e3948d42b8d78961a092a184af66bd86da42e6">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.3-with-sources_8f35d7d4579958236c04314d9fedcc7768a36284\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\oauth-sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4f0bc7c30f32cccb22183fbcbf6232e7d1d9e529">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\oauth-sina_2eeabba9748e9aac3f09671ec39d10a8adc06efc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nativeObj.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="003c55995af8bc42fd763a00add5883324aaa7c4">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\nativeObj_7ee6277b839c230f4dc39d36dd3a2dca079a7b68\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\lsBluetoothDemo\libs\lifesense_ble_module_v1.1.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="adedf27b9de2d3abca0888e64bfe513a727e4b29">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\lsBluetoothDemo\build\intermediates\pre-dexed\debug\lifesense_ble_module_v1.1.8_810911fff4052984b73ffa013ed8e85b6d8cd9f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\tx_weibo_sdk-httpclient-3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d6364bcc1b2b2aa69d008602d36a700453648560">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk-httpclient-3.0.1_e140e3bc4c54606a658300e60c7979907ba133cc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\umeng-analytics-v6.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aab9085bca0c26dcb9cb11837a5f5e22cc102a5e">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\umeng-analytics-v6.0.1_b64d8764938955bf784b230ac47573c19c42e434\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\lifesense_ble_module_v1.1.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="adedf27b9de2d3abca0888e64bfe513a727e4b29">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\lifesense_ble_module_v1.1.8_ec8678fad42d77da74dfa39ca321a3b5482ca592\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_162132ebdaee44db20457982841b1722eb2595fd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipayutdid.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\alipayutdid_b2ac2e0a5335cce00a1065a959468971366bff6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_3f1c8100987d1b1b41dd056cc06200b384fe64e3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\device.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4baf611e43bf8965690977f70baa5f7429784e58">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\device_d1551e194baa055af08ba39cea832becf7278211\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\messaging.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="32001add889e4b57ddeedd7fca0e0cb717ead80b">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\messaging_b566d4716c355a50e9eacdb4b083b32a64e48529\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\alipayutdid.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\alipayutdid_39ae1f8c0c8f033fddd82f1ee8139d8ea13a89e0.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\xhr.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7186336cdcd378c9dd8157d80ed23c84edcc343d">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\xhr_f1a2f4cd21abcc1688b142e4290ae24481503e91\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\statistics-umeng.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8043ca971abf6d9da420297e5ef7bdeeeabc2c51">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\statistics-umeng_b6acf5f049d5241fad827e70f6ebc4c5434d39dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\share-tencent.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="07a72a00a38e50051963f7ea30caf0cb7d741b47">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\share-tencent_00c50563090dbf424be2f1afc1fdfef9ef9373a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\HBuilder-Integrate1\lib\unspecified\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="11627c457686d659033f5033f41b487d1fcdb475">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\release\HBuilder-Integrate1-lib-unspecified_0785a716b54590be8fa2ee9e1fc17764e3234eca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="54d33711392bcad97b049ed3be3c1de8ea490ec0">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\volley_4e9d706f30bdfde467e607f3eceec7f1d452cfff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\downloader.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bc9e58b2d7e1aab6d83f4326b509d5bbfa0b4021">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\downloader_51afe5075a6975c87fa5056c995c144a6cf2aeb9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\uploader.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5a52643682c717d91785ec0c79dda0b821b88607">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\uploader_f7d60d97873a3349281f001f6969fa6c937f3ff6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="54d33711392bcad97b049ed3be3c1de8ea490ec0">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\volley_26e493fe6ee673bff723c4e63ea372b102f75612\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\GetuiSDK2.7.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de9bd9eedb38574a7741b18e34fc9e1f1ca0bc7b">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\GetuiSDK2.7.0.0_74f1312a70a535c623ca74dcd05a54b90bae4c5f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\file.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8116779a891ff1574a3b19012bd9e3ce9b6fda1b">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\file_bda6c0871345a1f27fc78bb81e6b42b58707562e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\universal-image-loader-1.9.3-with-sources.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="03e3948d42b8d78961a092a184af66bd86da42e6">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3-with-sources_e274dee93214fbf64e0b13ca14a644af98604f39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_66fc652f9bb2ecdd2ffd8b3fddda0aabd9a3ed2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_66fc652f9bb2ecdd2ffd8b3fddda0aabd9a3ed2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\share-sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="32556e60a8715217fc7d2c7942fc51736558ff92">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\share-sina_454e5190d34865cad9f6a536975078bee99c33c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\file.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8116779a891ff1574a3b19012bd9e3ce9b6fda1b">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\file_8df285b51ade1772f3c3ea2966446771919d94b9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="925eef7c2a46f9480cf9d84c01457cfe9c022489">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\payment-weixin_53155d20380936b9aa713a1939bc2339eef2fdf5\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\share-qq.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="af7dc52d4d98c53cf1c7f7cea3929c126b61a8ec">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\share-qq_27c09c3be60c53a517190c376bdaae48b9cf485f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\exploded-aar\com.baoyz.swipemenulistview\library\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8ec8378e8d7aa3104f60823e6350f2728d3609ba">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\com.baoyz.swipemenulistview-library-1.3.0_57efcd82176a836db3ec78a0c9bfe85df1f9e44b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\contacts.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="37ab7966a1ec1b7bbebf3f5b0792dddd9da5a0a9">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\contacts_572fd28f9fad3cd8a9567c2d219c4e5f529c6f9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="662e61645dadbef20d692c9b9160153a34db5ef5">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_7ba5932365d7f8703493f7ddf40ba33916a621b1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\GetuiExt-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7825bfa9135d693e2046eab96fd94e724e0f9eda">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\GetuiExt-2.0.3_cc1bcb82dc5dc849b5783e9a0ffa5d73dac8970f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\navigatorui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="caba21fcbe625efd887724164cabf045a910b6b7">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\navigatorui_94cf65a494247bf7b432e6bdf89c0b7736e80d6d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\xhr.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7186336cdcd378c9dd8157d80ed23c84edcc343d">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\xhr_8f9020b79ca0e7d4ea9e3f132b9227a6d03c7869.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\lifesense_ble_module_v1.1.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="adedf27b9de2d3abca0888e64bfe513a727e4b29">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\lifesense_ble_module_v1.1.8_5e105b06487d6b226b279735273697d380a858d1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\statistics-umeng.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8043ca971abf6d9da420297e5ef7bdeeeabc2c51">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\statistics-umeng_bda32db856a41ca9730c1a62ff3b4383020db015\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\gson-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1f96456ca233dec780aa224bff076d8e8bca3908">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\gson-2.2.2_013b5ba3f06670cbee156fc24ac7baae31a2dacf.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_weibo_sdk-httpclient-3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d6364bcc1b2b2aa69d008602d36a700453648560">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk-httpclient-3.0.1_3d32d1b87a03ee8c64379858f235c763e2f37d54\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\navigatorui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="caba21fcbe625efd887724164cabf045a910b6b7">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\navigatorui_ace6a03d529a0b21efe0ace15f1451904d09270e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\speech_ifly.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9283645e02163ad739aef73d6525b4ebac1f6ff8">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\speech_ifly_9445b58bf4d0f7334bde7ebe7b57d23f0ab58b1d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipaysecsdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7413c074c9edf523050267b93d0875151dc4b644">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\alipaysecsdk_bbae0699391f0d97541c453d1b63acfe10e35624\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\audio.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25213cafe81f758562351ea676fbd83827dbad80">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\audio_9999806483c9841ad958ddfa8f13bac1f1293736\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\HBuilder-Integrate1\lib\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="11627c457686d659033f5033f41b487d1fcdb475">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\HBuilder-Integrate1-lib-unspecified_0785a716b54590be8fa2ee9e1fc17764e3234eca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\sensor.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c3c6ab277532491f9d7cb0b6b34df17999d48e10">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\sensor_e018e04d9d93ca67446709690c72de250f0666b6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.baoyz.swipemenulistview\library\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8ec8378e8d7aa3104f60823e6350f2728d3609ba">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.baoyz.swipemenulistview-library-1.3.0_3ed7aa6a261e7edf8d6f511e06482bf9e173ae0e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\speech_ifly.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9283645e02163ad739aef73d6525b4ebac1f6ff8">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\speech_ifly_e4b1e856abc0d1f92b7bc50544120271d8a264c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\uploader.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5a52643682c717d91785ec0c79dda0b821b88607">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\uploader_4747bd99a5a2db1694671d8d08d62cd614c9fd95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\oauth.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="196acd27ec611666481529b99fce9f40cc7237e1">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\oauth_c8b81e6603705250235106377a480782fe025ad4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\ui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5b081831d9ba55ad2726d1e0d63dc7da84a7b829">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\ui_d552e03054b87204b56cb7a1327da4b574671b0e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\nineoldandroids-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a43cf9e271b5bc564e880a0a4be63ab9c69c97f8">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0_e2d220480ab4c7aa06515710c0c691c878fd74af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\tx_wx.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d7c2f29c05b35e8c8713be2b81c41cf18f98b64a">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\tx_wx_51a83a344156e73a428ba2a0a276102a57ad2d12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\taixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0474c71c8eb29412633d4c614d5eb277927b269f">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\taixin_81892247fd870f4002c4b12ec53693079bed0cf4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\aps-igexin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5db0274d27c657d60da39878e32da675bee2bc0e">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\aps-igexin_9ba6e5f59cf1658f87616dfb061f25606a93b029.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5fd8779d356102b62bd0ae467c5718af0c386929">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\instant-run_1174382866fd8efaa6d95e3ff3f9326a5711ffba.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\barcode.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="873ed7f86a9d920a14b0eccade601821eb3c16c4">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\barcode_10923dd4854623f54bd82112a9e0e32211fa59ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\device.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4baf611e43bf8965690977f70baa5f7429784e58">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\device_ce9ee6601522b5769b40694fc58ec3d45a094dac.jar" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\json_simple-1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\json_simple-1.1_086dff60ec2b3fc95408be0bb2c7a98b26d41ec7.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\json_simple-1.1_086dff60ec2b3fc95408be0bb2c7a98b26d41ec7\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\GetuiExt-2.0.3.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e69b8947d7bad669750b3782a6a10aa5e6cb4a4a">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_23d4eebeb23c38a8117f614eb2c2d01f54421aa1.jar" />
+        sha1="7825bfa9135d693e2046eab96fd94e724e0f9eda">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\GetuiExt-2.0.3_ebdd2f3881eceb4c66e2022be27f9a90754c48fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\messaging.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="32001add889e4b57ddeedd7fca0e0cb717ead80b">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\messaging_b937210766a729b58f7bd271c93dbbafa5e3d49b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\SOFT_INSTALLER\android\android-sdk-windows\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\lsBluetoothDemo\build\intermediates\pre-dexed\debug\support-v4-19.1.0_d680b721f6f988ff0625d3ca158762f77c40119f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\lswificonfig.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7668bf21be67c8e4e7e30ceffc5d9f3d64a1b556">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\lswificonfig_c79ae44dd198defb65ccbd240aa13d9eb3228fad\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -269,268 +755,142 @@
         optimize="true"
         revision="23.0.3"
         sha1="b86074e6240f0f876701810a047b0261f7bd060e">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\realm-android-0.84.1_9ddce11cfe7ba75e8a4a866c1c091130cab0ab2b.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\realm-android-0.84.1_9ddce11cfe7ba75e8a4a866c1c091130cab0ab2b.jar" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="C:\Users\chendang\.gradle\caches\modules-2\files-2.1\io.realm\realm-android\0.84.1\b86074e6240f0f876701810a047b0261f7bd060e\realm-android-0.84.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b86074e6240f0f876701810a047b0261f7bd060e">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\realm-android-0.84.1_9ddce11cfe7ba75e8a4a866c1c091130cab0ab2b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-sina.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="32556e60a8715217fc7d2c7942fc51736558ff92">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\share-sina_1d265b94afcc63b7bed77d9efd023780dd49ad99.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-sina_1d265b94afcc63b7bed77d9efd023780dd49ad99\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\navigatorui.jar"
-        jumboMode="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="caba21fcbe625efd887724164cabf045a910b6b7">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\navigatorui_94cf65a494247bf7b432e6bdf89c0b7736e80d6d.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_f5663e06320aed8191accbaa947774ec8a5624f6.jar" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\speech.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="e6ebe50aa0eef5970e1fc7985974ffd35cbecf52">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\speech_d6df88f2634d87c32692b76c75d356874b0db2c5.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\speech_d6df88f2634d87c32692b76c75d356874b0db2c5\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\file.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\stetho-1.1.1-fatjar.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="8116779a891ff1574a3b19012bd9e3ce9b6fda1b">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\file_bda6c0871345a1f27fc78bb81e6b42b58707562e.jar" />
+        sha1="4976fb3ebf9d4d9bdd44c39c440d5a2b048bba42">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\stetho-1.1.1-fatjar_18ae42819cea25c7a0976df16047daee97c06c78.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\aps-igexin.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5db0274d27c657d60da39878e32da675bee2bc0e">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\aps-igexin_d412036c7f1ac4f5b2f0317549d214965e9eae96.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nopermission.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="303f4ff57349d49b76d4c5c6f49572b6dff16d7a">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\nopermission_ff641d8812887a7739f1cd41b284c11eb673f783.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\GetuiSDK2.7.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="de9bd9eedb38574a7741b18e34fc9e1f1ca0bc7b">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\GetuiSDK2.7.0.0_a72857fa36d8ad1ccf553988068a6d5fe58ab875.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\GetuiExt-2.0.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="7825bfa9135d693e2046eab96fd94e724e0f9eda">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\GetuiExt-2.0.3_cc1bcb82dc5dc849b5783e9a0ffa5d73dac8970f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment-weixin.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="925eef7c2a46f9480cf9d84c01457cfe9c022489">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\payment-weixin_53155d20380936b9aa713a1939bc2339eef2fdf5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\payment.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e07ff77fd7e9e455b3d4f3579b76ef920e4d0ab1">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\payment_a51162149f769d4567d1f55151d52fcd0a900f7d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\contacts.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="37ab7966a1ec1b7bbebf3f5b0792dddd9da5a0a9">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\contacts_ab2c7d3e065f0c1c651e40d533b3178749a08fcf.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\map-baidu.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e8ef80428d3a7a30f06d9c18c2141fe24a912e8c">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\map-baidu_234aa3bfc7e85f303ee2990823184977fc1234d3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\geolocation.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="7961d6dd7e67e46187b1295f4cc70f68d6e84b72">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\geolocation_167e0207ff91f70e7a4ca561cca00d2a6058531d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\speech_ifly.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="9283645e02163ad739aef73d6525b4ebac1f6ff8">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\speech_ifly_9445b58bf4d0f7334bde7ebe7b57d23f0ab58b1d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-weixin.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="da17b60c73f5fa4f2ff7c354f52e71aa6e4f1b6e">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\share-weixin_773ed200abf0c1036d1d061532e8c48d2c97fbc5.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nineoldandroids-2.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="a43cf9e271b5bc564e880a0a4be63ab9c69c97f8">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0_98c2b6c3e117499bfdd23f2ca6f2052700642645.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\nineoldandroids-2.4.0_98c2b6c3e117499bfdd23f2ca6f2052700642645\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-weixin.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e9700a303a8c75002a3f9b21b849ce59e6e8d947">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\share_ceeaa480a2de566fd1fe2ad61e92eb1fdfefa5f6.jar" />
+        sha1="da17b60c73f5fa4f2ff7c354f52e71aa6e4f1b6e">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-weixin_773ed200abf0c1036d1d061532e8c48d2c97fbc5\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipaysecsdk.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\taixin.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7413c074c9edf523050267b93d0875151dc4b644">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\alipaysecsdk_bbae0699391f0d97541c453d1b63acfe10e35624.jar" />
+        sha1="0474c71c8eb29412633d4c614d5eb277927b269f">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\taixin_4d1c809b9bbbb76e1f34fb60cc2c3f05bfd01229\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth-qq.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\json_simple-1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d59d44761d5736050e8420ad057d1eb09af18fe8">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\oauth-qq_2e0d2664e0bd645907541bd3aa30be8b13063cdc.jar" />
+        sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\json_simple-1.1_a100f6bf31f6f0eb3b985c12ce2b98a60cae345b.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_weibo_sdk-httpclient-3.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="d6364bcc1b2b2aa69d008602d36a700453648560">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk-httpclient-3.0.1_3d32d1b87a03ee8c64379858f235c763e2f37d54.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\stetho-1.1.1-fatjar.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="4976fb3ebf9d4d9bdd44c39c440d5a2b048bba42">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\stetho-1.1.1-fatjar_16e968e8e82fa443b2ad494dae654040fe3b30be.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\stetho-1.1.1-fatjar_16e968e8e82fa443b2ad494dae654040fe3b30be\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\barcode.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\oauth-qq.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="873ed7f86a9d920a14b0eccade601821eb3c16c4">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\barcode_10923dd4854623f54bd82112a9e0e32211fa59ed.jar" />
+        sha1="d59d44761d5736050e8420ad057d1eb09af18fe8">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\oauth-qq_ee03db943c8fb87bd7b3c14ce5aaa95f828c3eed.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\umeng-analytics-v6.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="aab9085bca0c26dcb9cb11837a5f5e22cc102a5e">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\umeng-analytics-v6.0.1_b64d8764938955bf784b230ac47573c19c42e434.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_162132ebdaee44db20457982841b1722eb2595fd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\statistics-umeng.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8043ca971abf6d9da420297e5ef7bdeeeabc2c51">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\statistics-umeng_bda32db856a41ca9730c1a62ff3b4383020db015.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_wx.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="d7c2f29c05b35e8c8713be2b81c41cf18f98b64a">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\tx_wx_ccee60a8538e901bd91299452911dc5d2a0c6bff.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_wx_ccee60a8538e901bd91299452911dc5d2a0c6bff\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\sensor.jar"
+        is-multidex="true"
+        jar="C:\Users\chendang\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="c3c6ab277532491f9d7cb0b6b34df17999d48e10">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\sensor_ab1a4259bea5b484b2832ae619a731085ce68649.jar" />
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-7.0.1_cab3e6d8fa378c1a25ab82f6781814a0a52c9f3f\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\audio.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth-qq.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="25213cafe81f758562351ea676fbd83827dbad80">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\audio_9999806483c9841ad958ddfa8f13bac1f1293736.jar" />
+        sha1="d59d44761d5736050e8420ad057d1eb09af18fe8">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-qq_2e0d2664e0bd645907541bd3aa30be8b13063cdc\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\geolocation-baidu.jar"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="cb199421f6dcc18a3bfcb859192b44ad467d17ce">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\geolocation-baidu_96d1c74ca97dd138bba6df4f4ad87684238ebb40.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_f5663e06320aed8191accbaa947774ec8a5624f6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -539,16 +899,367 @@
         optimize="true"
         revision="23.0.3"
         sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_cab3e6d8fa378c1a25ab82f6781814a0a52c9f3f.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_cab3e6d8fa378c1a25ab82f6781814a0a52c9f3f.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\device.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\blelib.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="4baf611e43bf8965690977f70baa5f7429784e58">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\device_d1551e194baa055af08ba39cea832becf7278211.jar" />
+        sha1="0ab0a674e8b292343b5fcea767d2126f899e96c6">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\blelib_fc0fc8b6d3e0e100bdeb6637b56e546dd60a2e2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\barcode.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="873ed7f86a9d920a14b0eccade601821eb3c16c4">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\barcode_5944a775b31bbbd33836b394590aa09a4aaebaaf.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\downloader.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bc9e58b2d7e1aab6d83f4326b509d5bbfa0b4021">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\downloader_b4d02e4639485f01e3a5c52226703aae0decd256\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_dafbfc47e83e5bda8137b19132bcd0b8b5fa6d90.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\eventbus-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0_a59e1a014e0728461ce07a37f4b219e09f9790bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\speech.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e6ebe50aa0eef5970e1fc7985974ffd35cbecf52">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\speech_1dad05c4f6788b81fd8df6378703c8921f0edf4b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\invocation.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="10814898667722fc3f8c0d7ff26677e39f32c2a4">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\invocation_fbbc9fea07bed22174855bbc4dac0f17093a7aae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share-tencent.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="07a72a00a38e50051963f7ea30caf0cb7d741b47">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\share-tencent_76f1093604c40c4e54f2735989e59957c6812648\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\weibosdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="860f7bf08016ffb93f564cdebab6d70586ad46d6">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\weibosdk_a54a2155065dfe161db2c3d21f1f88b20bcca08b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\open_sdk_r5043_lite.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1f213f03dfe8868d0b24898234f6eefb67015a4a">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\open_sdk_r5043_lite_c8249b1df7b36f20b6080c8dcf1cba73a511af08\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\umeng-analytics-v6.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aab9085bca0c26dcb9cb11837a5f5e22cc102a5e">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\umeng-analytics-v6.0.1_5efcb0ac762a69515400670361814c85e404a291.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_8435b3f294dcebb056f50fd7ece5b44a47280faf\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_ddf7ba740e4c020ea48366a560a41cff664c27f0.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\weibosdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="860f7bf08016ffb93f564cdebab6d70586ad46d6">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\weibosdk_23b48e51d53b452e8ef5cf1dbb900326085ac67d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\alipaysdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b40481f01537a329936ce54ee2fe15ef2537f010">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\alipaysdk_2619e8db8ab4dbcfc56a912e262c4082ffa92ffb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\nativeui.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3e3cb3d56a00db6127320441eab3a4e864349e61">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\nativeui_59c4bc37a3ae9807bef6e3fcd738f6fe09ae4cca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\alipaysecsdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7413c074c9edf523050267b93d0875151dc4b644">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\alipaysecsdk_136662c5cb8db819a164ec26a41267564314f92a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\aps.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="523d2c11bb2f079894d97b7ad838b178ef2df6dd">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\aps_38d9b19e149a7329eead3cc3d6f8ab3e52dd321d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\tx_weibo_sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="33921321a220f3927929217aeed32befede21502">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\tx_weibo_sdk_7572ce0f965de3790b820979c91b3c337aaff295\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipaysdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b40481f01537a329936ce54ee2fe15ef2537f010">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\alipaysdk_39f6ebfc5ff94e18c8ca80d61eaae8f50094484e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\weibosdkcore_release.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="265f83894203f2bd137185bc3cefaca45b186ca0">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\weibosdkcore_release_df0156f426c9c11d38a02f68fd6efbbcd147d218\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\camera.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7168ac50f667c4a98fdc704e080c8ad6af264f77">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\camera_79b2f5faba2f9068cfdb4052085364dd99f1f916.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\payment-alipay.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="42583108645cdb7b84455c9102a795fc5c83872e">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\payment-alipay_805ded1388eb41520072b164d94bd2b46f3324d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\payment-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="925eef7c2a46f9480cf9d84c01457cfe9c022489">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\payment-weixin_8057f9e6d22d941e54d027c76ea65fcb6e2143fb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\gson-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1f96456ca233dec780aa224bff076d8e8bca3908">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\gson-2.2.2_7c31b843e41a5041d240e07fa6507307df5a1ad2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\pdr.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f183232b6f801150c3fb6e1068485e8a0370e0b2">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\pdr_87c1ff5d2d85158397b0aa43dc0dfe90fe5074f4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\Msc.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a11eb2b2631d3538589d79e5d85e10d4dc216480">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_2d0c15ac57c19e1a721ab767d3dbd385d4b9f6e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c1c2d0a767a6380bfe4b27b35316687f71aca12c">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_23d4eebeb23c38a8117f614eb2c2d01f54421aa1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\gallery.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="496b3bb9778a5ff43613267aa608f7adcb912bbc">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\gallery_0ef84b89d47a59ae7501ee191a222ed1a6842963\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\GetuiSDK2.7.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de9bd9eedb38574a7741b18e34fc9e1f1ca0bc7b">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\GetuiSDK2.7.0.0_a72857fa36d8ad1ccf553988068a6d5fe58ab875\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_a93d4fb21147cedeeab3a82c482afdc433c17f23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\nativeObj.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="003c55995af8bc42fd763a00add5883324aaa7c4">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\nativeObj_662f9badc435b1b163c35c1bd78e983ec164f3ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\tx_weibo_sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="33921321a220f3927929217aeed32befede21502">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk_5f3636cb5d393a33dd42f894868d67f4cfb4c51c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\share.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9700a303a8c75002a3f9b21b849ce59e6e8d947">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\share_ceeaa480a2de566fd1fe2ad61e92eb1fdfefa5f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\nopermission.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="303f4ff57349d49b76d4c5c6f49572b6dff16d7a">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\nopermission_b5f8a54a122f4c586e82c70c0a174be40910011a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\open_sdk_r5043_lite.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1f213f03dfe8868d0b24898234f6eefb67015a4a">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\open_sdk_r5043_lite_9d7574fa88a1fca783e9609f13fcfa4c993a5fa9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ece0c021d1f9f3ccb7348a05713cc7560d59e4d6">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_74fced3ba9ccc97a566603e8afb42aa711143395\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\oauth-weixin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e8fc3cf376baaa112776273e3e37a01a48b4d4f2">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\oauth-weixin_81674370457f077bdf50735d3d0c089f8adf59c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\blelib.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0ab0a674e8b292343b5fcea767d2126f899e96c6">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\blelib_a8fc029b6166330b41859cd69eaef6c8d3e6830f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\aps.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="523d2c11bb2f079894d97b7ad838b178ef2df6dd">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\aps_8c564bf6f9fe36f511dc3e73a05e6027c4469261.jar" />
     </item>
     <item
         is-multidex="false"
@@ -557,106 +1268,70 @@
         optimize="true"
         revision="23.0.3"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_cbeecbb3421f54759470bd237246af4a617b445d.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\Loading\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_cbeecbb3421f54759470bd237246af4a617b445d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\xhr.jar"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\gallery.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="7186336cdcd378c9dd8157d80ed23c84edcc343d">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\xhr_f1a2f4cd21abcc1688b142e4290ae24481503e91.jar" />
+        sha1="496b3bb9778a5ff43613267aa608f7adcb912bbc">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\gallery_0882da09ae0289a94796d14cd435959fb1467e2e.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_3f1c8100987d1b1b41dd056cc06200b384fe64e3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\exploded-aar\com.baoyz.swipemenulistview\library\1.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8ec8378e8d7aa3104f60823e6350f2728d3609ba">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\com.baoyz.swipemenulistview-library-1.3.0_3ed7aa6a261e7edf8d6f511e06482bf9e173ae0e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\blelib.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0ab0a674e8b292343b5fcea767d2126f899e96c6">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\blelib_fc0fc8b6d3e0e100bdeb6637b56e546dd60a2e2a.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\oauth-weixin.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="e8fc3cf376baaa112776273e3e37a01a48b4d4f2">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\oauth-weixin_a43ea92fdbe446c5e4fcba357b557b2b0dd1013a.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\oauth-weixin_a43ea92fdbe446c5e4fcba357b557b2b0dd1013a\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\alipayutdid.jar"
+        is-multidex="true"
+        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\aps-igexin.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\alipayutdid_b2ac2e0a5335cce00a1065a959468971366bff6c.jar" />
+        sha1="5db0274d27c657d60da39878e32da675bee2bc0e">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\aps-igexin_d412036c7f1ac4f5b2f0317549d214965e9eae96\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\universal-image-loader-1.9.3-with-sources.jar"
+        is-multidex="true"
+        jar="F:\SOFT_INSTALLER\android\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="03e3948d42b8d78961a092a184af66bd86da42e6">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3-with-sources_8f35d7d4579958236c04314d9fedcc7768a36284.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_cbeecbb3421f54759470bd237246af4a617b445d\classes.dex" />
     </item>
     <item
         is-multidex="false"
+        jar="F:\hkb_workspace_android_new\HealthQDoctor\app\libs\tx_weibo_sdk_component.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="17d672bf657b4d848d1b33782496fc0dd972072c">
+        <dex dex="F:\hkb_workspace_android_new\HealthQDoctor\app\build\intermediates\pre-dexed\debug\tx_weibo_sdk_component_3baf33a91db9be39cc7dfad9d58fe766fd80c671.jar" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\camera.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="7168ac50f667c4a98fdc704e080c8ad6af264f77">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\camera_92c39ff5bdcb312122448d90dacdff02f5f30871.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\camera_92c39ff5bdcb312122448d90dacdff02f5f30871\classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
         jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\nativeui.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="3e3cb3d56a00db6127320441eab3a4e864349e61">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\nativeui_36f5095c5388bf55baea4da4c5aeb8085367c007.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\BaiduLBS_Android.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="9cc5fb6c6a98c9ba56e774cb20fa9b48bc6f75f3">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android_b818841655ae27846947ee370791a04ff6efd296.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\libs\downloader.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="bc9e58b2d7e1aab6d83f4326b509d5bbfa0b4021">
-        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\pre-dexed\debug\downloader_b4d02e4639485f01e3a5c52226703aae0decd256.jar" />
+        <dex dex="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\intermediates\transforms\dex\debug\folders\1000\2\nativeui_36f5095c5388bf55baea4da4c5aeb8085367c007\classes.dex" />
     </item>
 
 </items>

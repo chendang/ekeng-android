@@ -1,1 +1,2 @@
-include ':app', ':mcustom-HerilyAlertDialog-library', ':MPChartLib', ':xlistview_autoload'
+include ':app', ':mcustom-HerilyAlertDialog-library', ':MPChartLib', ':xlistview_autoload', ':lib', ':Loading'
+include ':lsBluetoothDemo'

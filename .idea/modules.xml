@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HBuilder-Integrate1.iml" filepath="$PROJECT_DIR$/HBuilder-Integrate1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HealthQDoctor.iml" filepath="$PROJECT_DIR$/HealthQDoctor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Loading/Loading.iml" filepath="$PROJECT_DIR$/Loading/Loading.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lsBluetoothDemo/lsBluetoothDemo.iml" filepath="$PROJECT_DIR$/lsBluetoothDemo/lsBluetoothDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mcustom-HerilyAlertDialog-library/mcustom-HerilyAlertDialog-library.iml" filepath="$PROJECT_DIR$/mcustom-HerilyAlertDialog-library/mcustom-HerilyAlertDialog-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/xlistview_autoload/xlistview_autoload.iml" filepath="$PROJECT_DIR$/xlistview_autoload/xlistview_autoload.iml" />
     </modules>

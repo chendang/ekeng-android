@@ -3,7 +3,7 @@ package com.cnnet.otc.health.bean.data;
 import android.content.Context;
 import android.util.Log;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
@@ -11,9 +11,13 @@ import com.cnnet.otc.health.db.DBHelper;
 import com.cnnet.otc.health.db.MyDBManager;
 import com.cnnet.otc.health.events.BleEvent;
 import com.cnnet.otc.health.interfaces.MyCommData;
+import com.cnnet.otc.health.interfaces.SubmitServerListener;
+import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -126,7 +130,7 @@ public class OximetryData implements MyCommData {
 
     @Override
     public List<RecordItem> getRecordAllList(String mUniqueKey) {
-        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey,DATA_SPO2, DATA_PI, DATA_PR);
+        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey,DATA_SPO2,DATA_PI,DATA_PR);
     }
 
     @Override
@@ -214,15 +218,31 @@ public class OximetryData implements MyCommData {
         if(cloudSample) {
             int checkType = SysApp.check_type.ordinal();
             MyDBManager dbManager = SysApp.getMyDBManager();
+            nativeRecordId=new Date().getTime();
             dbManager.addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
             dbManager.addRecordItem(nativeRecordId, DATA_SPO2, getSpo2(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);
             dbManager.addRecordItem(nativeRecordId, DATA_PI, (getPi() / 10), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);
             dbManager.addRecordItem(nativeRecordId, DATA_PR, getPr(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), checkType);
+
+            UploadAllNewInfoTask.submitOneRecordInfo(ctx,mUniqueKey, nativeRecordId,
+                    new SubmitServerListener() {
+                        @Override
+                        public void onResult(int result) {
+                            DialogUtil.cancelDialog();
+                            if (result == 0) { //success
+                            } else if(result == -2){
+                                ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                            } else {
+                                ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                            }
+                        }
+                    });
             return true;
         } else {
             ToastUtil.TextToast(ctx, R.string.sample_error, 2000);
         }
-        return false;
+
+        return true;
     }
 
 

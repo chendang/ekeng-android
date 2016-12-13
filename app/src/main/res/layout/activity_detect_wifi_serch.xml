@@ -5,7 +5,7 @@
     android:id="@+id/activity_detect_wifi_serch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.foxchen.health.activities.DetectWifiSerchActivity"
+    tools:context=".health.activities.DetectWifiSerchActivity"
     android:orientation="vertical"
     android:background="@drawable/bg_edittext_normal">
 

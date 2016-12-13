@@ -8,7 +8,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.herily.dialog.HerilyAlertDialog;
 import com.herily.dialog.HerilyProgressDialog;
 

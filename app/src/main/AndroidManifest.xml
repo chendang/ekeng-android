@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.HBuilder.integrate"
-    android:versionCode="570"
-    android:versionName="5.7.0">
+    package="com.foxchen.qbs"
+    android:versionCode="100"
+    android:versionName="1.0.0">
 
     <supports-screens
         android:anyDensity="true"
@@ -128,10 +128,10 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="getui.permission.GetuiService.com.HBuilder.integrate" />
+    <uses-permission android:name="getui.permission.GetuiService.com.foxchen.qbs" />
 
     <permission
-        android:name="getui.permission.GetuiService.com.HBuilder.integrate"
+        android:name="getui.permission.GetuiService.com.foxchen.qbs"
         android:protectionLevel="normal" />
     <!-- Push(推送)-个推    end -->
 
@@ -186,7 +186,7 @@
         android:largeHeap="true"
         android:theme="@style/CustomTheme">
         <activity
-            android:name=".SDK_WebView"
+            android:name=".SDK_WebApp"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -199,13 +199,7 @@
             </intent-filter>
         </activity>
 
-        <!--
-        <activity
-            android:name="com.HBuilder.integrate.SDK_WebView"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="sensor" >
-        </activity>
-        -->
+
         <activity
             android:name="io.dcloud.PandoraEntryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -333,10 +327,10 @@
         <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.HBuilder.integrate.__CREATE_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__REMOVE_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__CREATE_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__REMOVE_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__CLEAR_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__CLILK_NOTIFICATION" />
             </intent-filter>
         </receiver>
 
@@ -399,7 +393,7 @@
 
         <provider
             android:name="com.igexin.download.DownloadProvider"
-            android:authorities="downloads.com.HBuilder.integrate"
+            android:authorities="downloads.com.foxchen.qbs"
             android:exported="true"
             android:process=":pushservice" />
 
@@ -505,8 +499,8 @@
         <!-- 微信支付配置 start -->
         <activity
             android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
+        android:exported="true"
+        android:launchMode="singleTop" />
 
         <meta-data
             android:name="WX_APPID"
@@ -531,29 +525,29 @@
 
         <!-- wifi 连接 start -->
         <activity
-            android:name="com.foxchen.health.activities.DetectWifiGuideActivity"
+            android:name=".health.activities.DetectWifiGuideActivity"
             android:label="@string/title_activity_detect_wifi" />
         <!-- wifi 连接 end -->
         <activity
-            android:name="com.foxchen.health.activities.DetectWifiActivity"
+            android:name=".health.activities.DetectWifiActivity"
             android:label="@string/title_activity_detect_wifi" />
         <activity
-            android:name="com.foxchen.health.activities.LSBLueDeviceListActivity"
+            android:name=".health.activities.LSBLueDeviceListActivity"
             android:label="@string/title_activity_lsblue_device_list" />
         <activity
-            android:name="com.foxchen.health.activities.LSBlueDeviceAddActivity"
+            android:name=".health.activities.LSBlueDeviceAddActivity"
             android:label="@string/title_activity_lsblue_device_add" />
         <activity
-            android:name="com.foxchen.health.activities.DetectWifiSerchActivity"
+            android:name=".health.activities.DetectWifiSerchActivity"
             android:label="@string/title_activity_detect_wifi_serch" />
         <activity
-            android:name="com.foxchen.health.activities.DetectWifiSuccActivity"
+            android:name=".health.activities.DetectWifiSuccActivity"
             android:label="@string/title_activity_detect_wifi_succ" />
         <activity
-            android:name="com.foxchen.health.activities.DetectWifiFailureActivity"
+            android:name=".health.activities.DetectWifiFailureActivity"
             android:label="@string/title_activity_detect_wifi_failure" />
         <activity
-            android:name="com.foxchen.health.activities.LSBlueAddSyncActivity"
+            android:name=".health.activities.LSBlueAddSyncActivity"
             android:label="@string/title_activity_lsblue_add_sync"></activity>
     </application>
 

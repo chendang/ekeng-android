@@ -2,8 +2,10 @@ package com.cnnet.otc.health.activities;
 
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,8 +17,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.BloodPressureData;
 import com.cnnet.otc.health.bean.data.LipidData;
@@ -81,6 +84,10 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detect);
+        if(!checkBlue()){
+            finish();
+            return;
+        }
         mUniqueKey = getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_MEMBER_UNIQUEKEY);
         nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, new Date().getTime());
         Log.d(TAG, "mUniqueKey = " + mUniqueKey);
@@ -99,7 +106,29 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
             e.printStackTrace();
         }
     }
+    private boolean checkBlue(){
 
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter
+                .getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            Toast.makeText(this, "本机没有找到蓝牙硬件或驱动！", Toast.LENGTH_LONG).show();
+
+            return false;
+        }
+        // 如果本地蓝牙没有开启，则开启
+        if (!mBluetoothAdapter.isEnabled()) {
+            // 我们通过startActivityForResult()方法发起的Intent将会在onActivityResult()回调方法中获取用户的选择，比如用户单击了Yes开启，
+            // 那么将会收到RESULT_OK的结果，
+            // 如果RESULT_CANCELED则代表用户不愿意开启蓝牙
+            Intent mIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(mIntent, 1);
+            // 用enable()方法来开启，无需询问用户(实惠无声息的开启蓝牙设备),这时就需要用到android.permission.BLUETOOTH_ADMIN权限。
+            // mBluetoothAdapter.enable();
+            // mBluetoothAdapter.disable();//关闭蓝牙
+        }
+        return true;
+
+    }
     private void initBlue() {
         //注册EventBus
         EventBus.getDefault().register(this);

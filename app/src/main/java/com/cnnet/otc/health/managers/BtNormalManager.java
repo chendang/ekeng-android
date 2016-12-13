@@ -16,7 +16,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.data.BloodGlucoseData;
 import com.cnnet.otc.health.bean.data.BloodPressureData;

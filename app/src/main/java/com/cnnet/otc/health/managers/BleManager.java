@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.data.OximetryData;
 import com.cnnet.otc.health.bluetooth.TaixinDialog;

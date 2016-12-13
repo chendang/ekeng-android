@@ -1,6 +1,6 @@
 package com.cnnet.otc.health.activities;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.OximetryData;
 import com.cnnet.otc.health.comm.BaseActivity;
@@ -15,7 +15,10 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -25,6 +28,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Date;
 import java.util.List;
@@ -63,6 +67,10 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		if(!checkBlue()){
+			finish();
+			return;
+		}
 		setContentView(R.layout.activity_detect);
 		mUniqueKey = getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_MEMBER_UNIQUEKEY);
 		nativeRecordId = getIntent().getLongExtra(CommConst.INTENT_EXTRA_KEY_NATIVE_RECORD_ID, new Date().getTime());
@@ -70,7 +78,46 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 		initCheckType(Integer.parseInt(getIntent().getStringExtra(CommConst.INTENT_EXTRA_KEY_DEVICE_TYPE)));
 		init();
 	}
-	
+	private boolean checkBlue(){
+		int currentapiVersion=android.os.Build.VERSION.SDK_INT;
+		if(currentapiVersion<18){
+			Toast.makeText( this , "该设备系统版本不支持" , Toast.LENGTH_LONG).show();
+
+			return false;
+		}
+
+		if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+
+			Toast.makeText( this , "设备不支持蓝牙4.0" , Toast.LENGTH_LONG).show();
+
+			return false;
+		}
+		BluetoothAdapter mBluetoothAdapter = BluetoothAdapter
+				.getDefaultAdapter();
+		if (mBluetoothAdapter == null) {
+			Toast.makeText(this, "本机没有找到蓝牙硬件或驱动！", Toast.LENGTH_LONG).show();
+
+			return false;
+		}
+		// 如果本地蓝牙没有开启，则开启
+		if (!mBluetoothAdapter.isEnabled()) {
+			// 我们通过startActivityForResult()方法发起的Intent将会在onActivityResult()回调方法中获取用户的选择，比如用户单击了Yes开启，
+			// 那么将会收到RESULT_OK的结果，
+			// 如果RESULT_CANCELED则代表用户不愿意开启蓝牙
+			Intent mIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			startActivityForResult(mIntent, 1);
+			// 用enable()方法来开启，无需询问用户(实惠无声息的开启蓝牙设备),这时就需要用到android.permission.BLUETOOTH_ADMIN权限。
+			// mBluetoothAdapter.enable();
+			// mBluetoothAdapter.disable();//关闭蓝牙
+		}
+		return true;
+		/*BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(this.BLUETOOTH_SERVICE);
+		BluetoothAdapter mBluetoothAdapter = null;
+		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+			mBluetoothAdapter = bluetoothManager.getAdapter();
+		}
+		mBluetoothAdapter.enable();*/
+	}
 	private void init() {
 		//注册EventBus
 		EventBus.getDefault().register(this);

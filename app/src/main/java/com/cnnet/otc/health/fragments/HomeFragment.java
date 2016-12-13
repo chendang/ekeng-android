@@ -20,7 +20,7 @@ import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.activities.DetectBle2Activity;
 import com.cnnet.otc.health.activities.DetectBle3Activity;
 import com.cnnet.otc.health.activities.DetectBle4Activity;

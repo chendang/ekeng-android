@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.comm.BaseActivity;
 import com.cnnet.otc.health.comm.CommConst;

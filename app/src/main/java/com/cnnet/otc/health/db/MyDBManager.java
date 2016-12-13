@@ -185,8 +185,8 @@ public class MyDBManager {
             String sql = "INSERT INTO " + DBHelper.TB_MEMBER_RECORD + "(" +DBHelper.R_COL_RECORD_ID + "," + DBHelper.R_COL_NATIVE_MEMBER_ID + "," + DBHelper.R_COL_MEMBER_UNIQUEKEY
                     + "," + DBHelper.R_COL_RECORD_PERSION + "," + DBHelper.R_COL_ADD_UNIQUEKEY + "," + DBHelper.R_COL_STATE
                     + ") SELECT ?,?,?,?,?,0 WHERE NOT EXISTS (SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + " WHERE "
-                    + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? AND " + DBHelper.R_COL_STATE + "==0 AND " + DBHelper.R_COL_ADD_UNIQUEKEY + "=?)";
-            mDB.execSQL(sql, new Object[]{memberNativeId, mUniqueKey,mUniqueKey, (checkPersion == null ? "" : checkPersion), addUniqueKey, mUniqueKey, addUniqueKey});
+                    + DBHelper.R_COL_MEMBER_UNIQUEKEY +  "=? AND " + DBHelper.R_COL_RECORD_ID + "=? AND " + DBHelper.R_COL_STATE + "==0 AND " + DBHelper.R_COL_ADD_UNIQUEKEY + "=?)"  ;
+            mDB.execSQL(sql, new Object[]{memberNativeId, mUniqueKey,mUniqueKey, (checkPersion == null ? "" : checkPersion), addUniqueKey, mUniqueKey,memberNativeId,addUniqueKey});
         }
         return 0;
     }
@@ -402,39 +402,46 @@ public class MyDBManager {
      * @return
      */
     public List<MemberRecord> getWaitUploadRecordList(String uniqueKey) {
-        if(StringUtil.isNotEmpty(uniqueKey)) {
-            String sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + "  WHERE " + DBHelper.R_COL_ADD_UNIQUEKEY
+        String sql = "";
+        if (StringUtil.isNotEmpty(uniqueKey)) {
+            sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + "  WHERE " + DBHelper.R_COL_ADD_UNIQUEKEY
                     + "='" + uniqueKey + "' AND " + DBHelper.R_COL_STATE + "=" + CommConst.STATE_RECORD_NEED_UPLOAD +
                     " ORDER BY id ASC";
-            Log.d(TAG, "sql = " + sql);
-            Cursor c = mDB.rawQuery(sql, null);
-            if(c != null) {
-                int size;
-                List<MemberRecord> recordList = null;
-                if((size = c.getCount()) > 0) {
-                    recordList = new ArrayList<>();
-                    Log.d(TAG, "getWaitUploadRecordList >>> size = " + size);
-                    while (c.moveToNext()) {
-                        MemberRecord record = new MemberRecord();
-                        record.setId(c.getLong(0));
-                        record.setRecordId(c.getLong(1));
-                        record.setMemberNativeId(c.getLong(2));
-                        record.setmUniqueKey(c.getString(3));
-                        record.setRecordPersion(c.getString(4));
-                        record.setCreateTime(DateUtil.getDateByStr(c.getString(5)));
-                        record.setUpdateTime(DateUtil.getDateByStr(c.getString(6)));
-                        record.setRecordType(c.getShort(7));
-                        record.setState(c.getShort(8));
-                        record.setAdd_uniqueKey(c.getString(9));
-                        //record.setCheckedItems(getListByRecordId(record.getId()));
-                        recordList.add(record);
-                    }
-                }
-                c.close();
-                return recordList;
-            }
+
+        } else {
+            //同步本机所有记录
+            sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + "  WHERE " + DBHelper.R_COL_STATE + "=" + CommConst.STATE_RECORD_NEED_UPLOAD +
+                    " ORDER BY "+DBHelper.R_COL_RECORD_ID +" ASC";
         }
-        return null;
+
+        Log.d(TAG, "sql = " + sql);
+        List<MemberRecord> recordList = null;
+        Cursor c = mDB.rawQuery(sql, null);
+        if (c != null) {
+            int size;
+
+            if ((size = c.getCount()) > 0) {
+                recordList = new ArrayList<>();
+                Log.d(TAG, "getWaitUploadRecordList >>> size = " + size);
+                while (c.moveToNext()) {
+                    MemberRecord record = new MemberRecord();
+                    record.setId(c.getLong(0));
+                    record.setRecordId(c.getLong(1));
+                    record.setMemberNativeId(c.getLong(2));
+                    record.setmUniqueKey(c.getString(3));
+                    record.setRecordPersion(c.getString(4));
+                    record.setCreateTime(DateUtil.getDateByStr(c.getString(5)));
+                    record.setUpdateTime(DateUtil.getDateByStr(c.getString(6)));
+                    record.setRecordType(c.getShort(7));
+                    record.setState(c.getShort(8));
+                    record.setAdd_uniqueKey(c.getString(9));
+                    //record.setCheckedItems(getListByRecordId(record.getId()));
+                    recordList.add(record);
+                }
+            }
+            c.close();
+        }
+        return recordList;
     }
 
 
@@ -484,9 +491,9 @@ public class MyDBManager {
      */
     public MemberRecord getWaitInspectorRecord(String addUniqueKey, long nativeRecordId) {
         if(StringUtil.isNotEmpty(addUniqueKey) && nativeRecordId > 0) {
-            String sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + "  WHERE " + DBHelper.R_COL_ADD_UNIQUEKEY
+            String sql = "SELECT * FROM " + DBHelper.TB_MEMBER_RECORD + "  WHERE " + DBHelper.R_COL_NATIVE_MEMBER_ID
                     + "='" + addUniqueKey + "' AND " + DBHelper.R_COL_STATE + "=" + CommConst.STATE_RECORD_WAIT
-                    + " AND " + DBHelper.ID + "=" + nativeRecordId + " ORDER BY id DESC";
+                    + " AND " + DBHelper.R_COL_RECORD_ID + "=" + nativeRecordId + " ORDER BY "+ DBHelper.R_COL_RECORD_ID +" DESC";
             Log.d(TAG, "sql = " + sql);
             Cursor c = mDB.rawQuery(sql, null);
             if(c != null) {
@@ -1033,7 +1040,7 @@ public class MyDBManager {
         if(StringUtil.isNotEmpty(uniquekey) && nativeRecordId > 0) {
             ContentValues values = new ContentValues();
             values.put(DBHelper.R_COL_STATE, CommConst.STATE_RECORD_NEED_UPLOAD);
-            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY + "=? AND " + DBHelper.ID + "=" + nativeRecordId),
+            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY + "=? AND " + DBHelper.R_COL_RECORD_ID + "=" + nativeRecordId),
                     new String[]{uniquekey});
             if(result > 0)
                 return true;
@@ -1057,7 +1064,7 @@ public class MyDBManager {
             String date = DateUtil.getDateByTimeLong(createTime.getTime());
             values.put(DBHelper.R_COL_CREATE_TIME, date);
             values.put(DBHelper.R_COL_UPDATE_TIME, date);
-            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY+"=? AND "+DBHelper.ID+"="+nativeRecordId),
+            int result = mDB.update(DBHelper.TB_MEMBER_RECORD, values, (DBHelper.R_COL_ADD_UNIQUEKEY+"=? AND "+DBHelper.R_COL_RECORD_ID+"="+nativeRecordId),
                     new String[]{uniquekey});
             if(result > 0) {
                 values = new ContentValues();
@@ -1333,7 +1340,7 @@ public class MyDBManager {
                 String type = checkType[i];
                 if(StringUtil.isNotEmpty(type)) {
                     checkValue += ",ri" + i + "." + DBHelper.RI_COL_VALUE1 +",ri" + i + "." + DBHelper.RI_COL_DESC1 + ",ri" + i + "." + DBHelper.RI_COL_RECORD_TIME+",ri" + i + "." + DBHelper.RI_COL_DEVICE_TYPE  ;
-                    leftJoin += " LEFT JOIN " + DBHelper.TB_MEMBER_RECORD_ITEM + " AS ri" + i + " ON r." + DBHelper.ID + "=ri" + i + "." +
+                    leftJoin += " LEFT JOIN " + DBHelper.TB_MEMBER_RECORD_ITEM + " AS ri" + i + " ON r." + DBHelper.R_COL_RECORD_ID + "=ri" + i + "." +
                             DBHelper.RI_COL_NATIVE_RECORD_ID + " AND ri"  + i + "." + DBHelper.RI_COL_TYPE + "=? ";
                 }
                 else
@@ -1346,7 +1353,7 @@ public class MyDBManager {
             params[checkType.length] = uniqueKey;
             String sql = "SELECT r.id, r." + DBHelper.R_COL_CREATE_TIME + ",r." + DBHelper.R_COL_STATE + checkValue + " FROM "
                     + DBHelper.TB_MEMBER_RECORD + " AS r " + leftJoin + " WHERE ri0." + DBHelper.RI_COL_DEVICE_TYPE + ">=0 AND r."
-                    + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? GROUP BY r.id ORDER BY  r.id DESC";
+                    + DBHelper.R_COL_MEMBER_UNIQUEKEY + "=? GROUP BY r." + DBHelper.R_COL_RECORD_ID+" ORDER BY  r."+DBHelper.R_COL_RECORD_ID + " DESC";
             Log.d(TAG, "sql = " + sql);
             Cursor c = mDB.rawQuery(sql, params);
             if(c != null && c.getCount() > 0) {

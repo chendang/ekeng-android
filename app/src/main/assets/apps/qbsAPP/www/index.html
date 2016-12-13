@@ -1,0 +1,785 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<title>Q博士</title>
+<link rel="stylesheet" href="css/my_mui_min.css">
+<link href="css/part1/style.css" type="text/css" rel="stylesheet"/>
+
+<script src="js/pulsClick.js" type="text/javascript" ></script>
+
+<script type="text/javascript">
+
+
+// 预创建二级页面
+var preate={};
+function preateWebivew(id){
+	if(!preate[id]){
+		var w=plus.webview.create(id,id,{scrollIndicator:'none',scalable:false,popGesture:'hide'},{preate:true});
+		preate[id]=w;
+		w.addEventListener('close',function(){//页面关闭后可再次打开
+			_openw=null;
+			preate[id]&&(preate[id]=null);//兼容窗口的关闭
+		},false);
+	}
+}
+// 判断预载打开
+// H5 plus事件处理
+var as='pop-in';// 默认窗口动画
+var _openw=null;
+function pclicked(id){
+	if(_openw){return;}
+	_openw=preate[id];
+	if(_openw){
+		if(_openw.showded){
+			_openw.show('auto');
+		}else{
+			_openw.show(as);
+			_openw.showded=true;
+		}
+		_openw=null;
+	}else{
+		_openw=plus.webview.create(id,id,{scrollIndicator:'none',scalable:false,popGesture:'hide'});
+		preate[id]=_openw;
+		_openw.addEventListener('loaded',function(){//叶面加载完成后才显示
+//			setTimeout(function(){
+			_openw.show(as);
+			_openw.showded=true;
+			_openw=null;
+//			},10);
+		},false);
+		_openw.addEventListener('close',function(){//页面关闭后可再次打开
+			_openw=null;
+			preate[id]&&(preate[id]=null);//兼容窗口的关闭
+		},false);
+	}
+}
+// H5 plus事件处理
+
+if(window.plus){
+	plusReady();
+}else{
+	document.addEventListener('plusready',plusReady,false);
+}
+
+
+function plusReady(){
+//preateWebivew('member/MedPlanTake.html');
+//preateWebivew('member/ToMemberHealthIndexVer20.html');
+
+}
+
+
+
+	</script>
+
+
+
+</head>
+
+<body>
+<section id="page-wrapper">
+  <!--个人信息页面start-->
+  <section id="personal-center">
+    <!--头部start-->
+    <div class="personal-header">
+      <h1>个人信息</h1>
+      <a href="javascript:void(0)" class="p_back" id="slidePerson"><img src="img/part1/5-13.png" alt="" /></a>
+      <a href="javascript:void(0)" class="share" id="personmenu"><img src="img/part1/5-09.png" alt="" /></a>
+      <div class="box">
+        <div>
+          <ul>
+            <li><a href="##" title="" class="p_ico01">添加成员</a></li>
+            <li><a href="##" title="" class="p_ico02">通用</a></li>
+            <li><a href="##" title="" class="p_ico03">分享</a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+    <!--头部end-->
+    <!--我的家庭start-->
+    <div class="p_main">
+      <ul class="title">
+        <h2>我的家庭</h2>
+      </ul>
+      <ul class="p_list">
+        <div id="FamilyMemberList"></div>
+        
+        <li>
+          <a href="member/FamilyAddMemberPart1.html" title="">
+            <div class="m_cell_hd"><img src="img/part1/5-17.jpg" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>添加家人</h4>
+              <p>无信息</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--我的家庭end-->
+    <!--我的朋友圈start-->
+    <!--<div class="p_main mt15">
+      <ul class="title">
+        <h2>我的朋友圈</h2>
+      </ul>
+      <ul class="clearfix p_list01">
+        <li><img src="img/part1/4.jpg" alt="" /></li>
+        <li><img src="img/part1/4.jpg" alt="" /></li>
+        <li><img src="img/part1/4.jpg" alt="" /></li>
+        <li><img src="img/part1/4.jpg" alt="" /></li>
+        <li><img src="img/part1/4.jpg" alt="" /></li>
+        <li><a href="##" title=""><img src="img/part1/5-16.jpg" alt="" /></a></li>
+      </ul>
+    </div>-->
+    <!--我的朋友圈end-->
+    <!--我的收藏start-->
+    <!--<div class="p_main mt15">
+      <ul class="title">
+        <h2>我的收藏</h2>
+      </ul>
+      <ul class="clearfix p_list02">
+        <li><a href="##" title=""><h4>我的收藏</h4></a></li>
+        <li><a href="##" title=""><h4>我的收藏</h4></a></li>
+        <li><a href="##" title=""><h4>我的收藏</h4></a></li>
+        <li><a href="##" title=""><h4>我的收藏</h4></a></li>
+      </ul>
+    </div>-->
+    <!--我的收藏end-->
+  </section>
+  <!--个人信息页面end-->
+  
+  
+  
+  <!--主页start-->
+  <section id="personal-main" style="margin-top: 2px;">
+    <!--头部start-->
+    <div class="personal-header" style="margin-top: -8px;">
+      <h1>首页</h1>
+      <a href="javascript:void(0)" class="share" id="share"><img src="img/part1/5-09.png" alt="" /></a>
+      <div class="box">
+        <div>
+          <ul>
+            <li><a href="##" title="" class="p_ico01">添加成员</a></li>
+            <li><a href="##" title="" class="p_ico02">通用</a></li>
+            <li><a href="##" title="" class="p_ico03">分享</a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+    <!--头部end-->  
+    <!--个人信息编辑start-->
+    <div class="personal_edit">
+      <ul class="m_cell_hd"><a href="javascript:void(0)"><img src="img/part1/5-14.jpg" alt="" class="p_click" id="openmenu"/></a></ul>
+      <ul class="m_cell_hd m_cell_primary">
+        <h4>个人信息</h4>
+        <p>健康计划</p>
+      </ul>
+      <ul class="m_cell_ft">
+        <div class="fl">
+          <p>空气指数</p>
+          <p><img src="img/part1/5-08.png" alt="" />PM2.5</p>
+        </div>
+      </ul>
+      <ul class="m_cell_ft"><b>43</b></ul>
+    </div>
+    <!--个人信息编辑end-->
+    <!--分类start-->
+    <div class="p_type">
+      <ul class="clearfix">
+        <li onclick="clicked('member/myGrade.html',true)">
+            <div class="p_ico04"></div>
+            <h4>健康指数</h4>
+        </li>
+        <li onclick="clicked('member/ToMemberHealthIndexVer20.html',true)">
+            <div class="p_ico05"></div>
+            <h4>健康数据</h4>
+        </li>
+        <li onclick="clicked('member/webview_url.html',true)">
+         
+            <div class="p_ico08"></div>
+            <h4>病历上传</h4>
+       
+        </li>
+        <li onclick="clicked('member/myDeviceListNew.html',true)">
+            <div class="p_ico07"></div>
+            <h4>我要监测</h4>
+        </li>
+        <li onclick="clicked('member/QuestionMenu.html',true)">
+            <div class="p_ico09"></div>
+            <h4>健康问卷</h4>
+        </li>
+        <li onclick="clicked('member/myReportList.html',true)">
+            <div class="p_ico06"></div>
+            <h4>健康评估</h4>
+        </li>
+
+        <li onclick="clicked('member/myReportList.html',true)">
+            <div class="p_ico25"></div>
+            <h4>健康处方</h4>
+        </li>
+        <li style="display:none;" id="changeOne">
+            <div class="p_ico26" id="MedSetList"></div>
+            <h4>平衡套餐</h4>
+        </li>
+        <li >
+          <a href="#" title="" id="more">
+            <div class="p_ico11"></div>
+            <h4>更多</h4>
+          </a>
+        </li>
+      </ul>
+      <ul class="clearfix" style="display:none;" id="more-list">
+
+        <li onclick="clicked('member/SportList.html',true)">
+            <div class="p_ico27"></div>
+            <h4>运动设置</h4>
+        </li>
+        <li onclick="clicked('member/SetBmiInfo.html',true)">
+            <div class="p_ico17"></div>
+            <h4>BMI测算</h4>
+        </li>
+        <li onclick="clicked('member/TestMenu.html',true)">
+            <div class="p_ico19"></div>
+            <h4>心理测试</h4>
+        </li>
+        <li onclick="clicked('member/MyFriend.html',true)">
+            <div class="p_ico20"></div>
+            <h4>我的朋友</h4>
+        </li>
+        <li onclick="clicked('member/FriendGroupList.html',true)">
+          
+            <div class="p_ico21"></div>
+            <h4>我的群组</h4>
+
+        </li>
+        <li onclick="clicked('member/MyPubForFriend.html',true)">
+
+            <div class="p_ico22"></div>
+            <h4>我的相册</h4>
+
+        </li>
+        <li onclick="clicked('member/MyFriendFocus.html',true)">
+
+            <div class="p_ico23"></div>
+            <h4>我的关注</h4>
+
+        </li>
+        <li id="changeBack">
+          <a href="#" title="">
+            <div class="p_ico18"></div>
+            <h4>收起菜单</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--分类end-->
+    <!--健康计划start-->
+    <div class="p_plan mt15">
+      <ul class="title clearfix" id="itemAppSet" onclick="clicked('member/MyPlanSet.html',true)">
+        <h2 class="p_ico12 fl">90天健康管理计划<i>12月21日</i></h2>
+        <p>编辑计划<img src="img/part1/5-11.jpg" alt="" id="click01" /></p>
+      </ul>
+      <ul class="p_plan-list">
+        <!--<li id="itemAppSet">
+          <a href="member/MyPlanSet.html" title="">
+            <div class="m_cell_hd"><img src="img/part1/5-14.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>添加管理计划（未设置）</h4>
+            </div>
+          </a>
+        </li>-->
+        <li style="display:none;" id="itemApp1" onclick="clicked('member/MedPlanTake.html',true)">
+          	<div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-01.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>营养素服用</h4>
+              <p>今天的营养素还没有完成</p>
+            </div>
+            <div class="m_cell_ft">
+              <i>去完成</i>
+            </div>
+            </div>
+
+        </li>
+        <li style="display:none;" id="itemApp2">
+          <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-02.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary" onclick="clicked('member/MonitorSet.html',true)">
+              <h4>监测计划</h4>
+              <p>上次监测时间2016年10月15日</p>
+            </div>
+            <div class="m_cell_ft" onclick="clicked('member/myDeviceListNew.html',true)">
+              <i>去监测</i>
+            </div>
+          </div>
+        </li>
+        <li style="display:none;" id="itemApp3">
+        <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-03.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary"  onclick="clicked('member/DaysFoodRecord.html',true)">           	 
+              <h4>膳食管理</h4>
+              <p>今天还没有记录吃了些什么</p>
+            </div>
+            <div class="m_cell_ft"  onclick="clicked('member/DaysFoodRecord.html',true)">
+              <i>去记录</i>
+            </div>
+         </div>
+        </li>
+        <li style="display:none;" id="itemApp4" onclick="clicked('member/SportIndex.html',true)">
+           <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-04.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>运动计划</h4>
+              <p>今天还没有运动</p>
+            </div>
+            <div class="m_cell_ft">
+              <i>去运动</i>
+            </div>
+          </div>
+        </li>
+        <li style="display:none;" id="itemApp5" onclick="clicked('member/FeelingIndex.html',true)">
+          <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-05.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>心情管理</h4>
+              <p>今天还没有记录心情</p>
+            </div>
+            <div class="m_cell_ft">
+              <i>去记录</i>
+            </div>
+           </div>
+        </li>
+        <li style="display:none;" id="itemApp6" onclick="clicked('member/SleepIndex.html',true)">
+         <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-06.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>睡眠管理</h4>
+              <p>看看最近睡眠怎么样</p>
+            </div>
+            <div class="m_cell_ft">
+              <i>去查看</i>
+            </div>
+         </div>
+        </li>
+        <li style="display:none;" id="itemApp7" onclick="clicked('member/MyFriendFocus.html',true)">
+           <div class="blist">
+            <div class="m_cell_hd"><img src="img/part1/5-07.png" alt="" /></div>
+            <div class="m_cell_hd m_cell_primary">
+              <h4>健康日志管理</h4>
+              <p>今天还没有记录健康日志</p>
+            </div>
+            <div class="m_cell_ft">
+              <i>去查看</i>
+            </div>
+           </div>
+        </li>
+      </ul>
+    </div>
+    <!--健康计划end-->
+    <!--资讯start-->
+    <div class="p_plan mt15">
+      <ul class="title clearfix" onclick="clicked('member/NewsIndex.html',true)">
+        <h2 class="p_ico13 fl">资讯<i id="newsdate">12月21日</i></h2>
+        <p>更多资讯<img src="img/part1/5-11.jpg" alt="" id="click02" /></p>
+      </ul>
+      <ul class="p_news_list">
+        <div id="newsTopList"></div>
+        <div id="newsRecommendList"></div>
+
+      </ul>
+    </div>
+    <!--资讯end-->
+    
+   <!--健康话题start-->
+    <div class="p_plan mt15">
+      <ul class="title clearfix">
+        <h2 class="p_ico16 fl">健康话题<i>12月21日</i></h2>
+        <p><a href="javascript:clicked('member/TopicList.html',true);" title="">更多话题</a><img src="img/part1/5-11.jpg" alt="" id="click03" /></p>
+      </ul>
+      <ul class="p_plan_list01">
+        <li>
+          <div class="p_con01">
+            <ul class="m_cell_hd"><img src="img/part1/3-01.png" alt="" /></ul>
+            <ul class="m_cell_hd m_cell_primary"><p>话题:高血压</p></ul>
+            <ul class="m_cell_ft">
+              <li>
+                <img src="img/part1/12_01.jpg" alt=""/>
+              </li>
+            </ul>
+            <div>
+              <a href="##" title="">屏蔽问题</a>
+              <a href="##" title="">分享</a>
+            </div>
+          </div>
+          <div class="p_con02" onclick="showTopicContent('1')">
+            <a href="#">
+              <h4>高血压饮食该怎么注意</h4>
+              <p>大量调查结果已经表明饮食结构对高血压的发生和发展有着重要的影响，过多的钠盐、大量饮酒、膳食中过多脂肪的摄入等，均可引发和加重高血压，在平时的饮食中，高血压患者一定...</p>
+            </a>
+          </div>
+          <p>1.3k 赞同·152评论·<a href="javascript:void(0)">关注问题</a></p>
+        </li>
+        <li>
+          <div class="p_con01">
+            <ul class="m_cell_hd"><img src="img/part1/3-01.png" alt="" /></ul>
+            <ul class="m_cell_hd m_cell_primary"><p>来着话题:高血压</p></ul>
+            <ul class="m_cell_ft">
+              <li>
+                <img src="img/part1/12_01.jpg" alt=""/>
+              </li>
+            </ul>
+            <div>
+              <a href="##" title="">屏蔽问题</a>
+              <a href="##" title="">分享</a>
+            </div>
+          </div>
+          <div class="p_con02" onclick="showTopicContent('1')">
+            <a href="#">
+              <h4>高血压饮食该怎么注意</h4>
+              <p>大量调查结果已经表明饮食结构对高血压的发生和发展有着重要的影响，过多的钠盐、大量饮酒、膳食中过多脂肪的摄入等，均可引发和加重高血压，在平时的饮食中，高血压患者一定...</p>
+            </a>
+          </div>
+          <p>1.3k 赞同·152评论·<a href="javascript:void(0)">关注问题</a></p>
+        </li>
+        <li>
+          <div class="p_con01">
+            <ul class="m_cell_hd"><img src="img/part1/3-01.png" alt="" /></ul>
+            <ul class="m_cell_hd m_cell_primary"><p>话题:高血压</p></ul>
+            <ul class="m_cell_ft">
+              <li>
+                <img src="img/part1/12_01.jpg" alt=""/>
+              </li>
+            </ul>
+            <div>
+              <a href="##" title="">屏蔽问题</a>
+              <a href="##" title="">分享</a>
+            </div>
+          </div>
+          <div class="p_con02">
+            <a href="#" onclick="showTopicContent('1')">
+              <h4>高血压饮食该怎么注意</h4>
+              <p>大量调查结果已经表明饮食结构对高血压的发生和发展有着重要的影响，过多的钠盐、大量饮酒、膳食中过多脂肪的摄入等，均可引发和加重高血压，在平时的饮食中，高血压患者一定...</p>
+            </a>
+          </div>
+          <p>1.3k 赞同·152评论·<a href="javascript:void(0)">关注问题</a></p>
+        </li>
+      </ul>
+    </div>  
+    <!--健康话题end-->
+    
+  </section>
+  <!--主页end-->
+</section>
+
+<!--底部start-->
+<div class="line75"></div>
+<div class="footer">
+  <ul class="clearfix">
+    <li>
+      <a href="index.html" title="">
+        <div class="ico20"></div>
+        <h4>首页</h4>
+      </a>
+    </li>
+    <li>
+      <a href="##" title="">
+        <div class="ico21"></div>
+        <h4>消息</h4>
+      </a>
+    </li>
+    <li>
+      <a href="member/FriendDyn.html" title="">
+        <div class="ico22"></div>
+        <h4>发现</h4>
+      </a>
+    </li>
+    <li>
+      <a href="member/userIndex.html" title="">
+        <div class="ico23"></div>
+        <h4>个人</h4>
+      </a>
+    </li>
+  </ul>
+</div>
+<!--底部end-->
+<script src="scripts/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="js/mui.min.js "></script>
+<script src="scripts/public.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+
+
+
+var username = localStorage.getItem("username");
+var tokenLogin = localStorage.getItem("tokenLogin");
+if (username == null || username=="") {
+clicked('Login.html',true)
+}
+
+
+ var domainUrl = GetMvcApiDomain();          
+      
+getNewsTopList('15','2');
+getNewsRecommendList('15','3');
+getMyPlanList(username);
+        
+function getNewsTopList(newsClass,topcount) {
+	
+	          $.ajax({
+             	url: domainUrl + "api/News/getNewsTopList",
+                type: 'get',
+                dataType: "json",
+                data: {newsClass:newsClass,topcount:topcount},
+                success: function (data) {
+                var inner = '';
+                $.each(data, function (i, j) {
+                inner += '<li>';
+                inner += '<a href="javascript:showNewsContent(' + j.Id + ');" title="">';
+                inner += '<div class="m_cell_hd"><img src="' + j.img_src + '" width=60 height=60>';
+                inner += '</div>';
+                inner += '<div class="m_cell_ft m_cell_primary">';
+                inner += '<h4>' + j.title + '</h4>';
+                inner += '<p>' + j.content + '</p>';
+                inner += '</div>';
+                inner += '</a>';
+                inner += '</li>';
+                });
+                $("#newsTopList").html(inner);    
+               },
+                error: function () {
+                mui.toast("网络错误，请稍后再试");
+                 }
+            })
+
+ }
+
+
+function getNewsRecommendList(newsClass,topcount) {
+	
+	          $.ajax({
+             	url: domainUrl + "api/News/getNewsRecommendList",
+                type: 'get',
+                dataType: "json",
+                data: {newsClass:newsClass,topcount:topcount},
+                success: function (data) {
+                var inner = '';
+                $.each(data, function (i, j) {
+                inner += '<li>';
+                inner += '<a href="javascript:showNewsContent(' + j.Id + ');" title="">';
+                inner += '<div class="m_cell_hd"><img src="' + j.img_src + '" width=60 height=60>';
+                inner += '</div>';
+
+                inner += '<div class="m_cell_ft m_cell_primary">';
+                inner += '<h4>' + j.title + '</h4>';
+                inner += '<p>' + j.content + '</p>';
+                inner += '</div>';
+                inner += '</a>';
+                inner += '</li>';
+                });
+                $("#newsRecommendList").html(inner);    
+               },
+                error: function () {
+                mui.toast("网络错误，请稍后再试");
+                 }
+            })
+
+ }
+
+
+function getMyPlanList(username) {
+	
+	          $.ajax({
+             	url: domainUrl + "api/MyPlan/getMyPlanListState",
+                type: 'get',
+                dataType: "json",
+                data: {UserName:username},
+                success: function (data) {
+                $.each(data, function (i, j) {
+                if (j.PlanCode=="01"){
+                $("#itemApp1").show();
+                }
+                if (j.PlanCode=="02"){
+                $("#itemApp2").show();
+                }                
+                if (j.PlanCode=="03"){
+                $("#itemApp3").show();
+                }               
+                 if (j.PlanCode=="04"){
+                $("#itemApp4").show();
+                }               
+                 if (j.PlanCode=="05"){
+                $("#itemApp5").show();
+                }               
+                 if (j.PlanCode=="06"){
+                $("#itemApp6").show();
+                }
+                if (j.PlanCode=="07"){
+                $("#itemApp7").show();
+                }
+                                 
+                                 
+               });
+                
+               },
+                error: function () {
+                mui.toast("网络错误，请稍后再试");
+                 }
+            })
+
+ }
+         
+
+ function getFamilyMemberList(username,topcount) {
+	
+	          $.ajax({
+             	url: domainUrl + "api/FamilyMember/getFamilyMemberList",
+                type: 'get',
+                dataType: "json",
+                data: {UserName:username,topcount:topcount},
+                success: function (data) {
+                var inner = '';
+                $.each(data, function (i, j) {
+                inner += '<li>';
+                inner += '<a href="javascript:ShowMemberInfo(' + j.Id + ');" title="">';
+                inner += '<div class="m_cell_hd"><img src="' + j.headpic + '"></div>';
+
+                inner += '<div class="m_cell_hd m_cell_primary">';
+                inner += '<h4>' + j.BindUser + '</h4>';
+                inner += '<p>' + j.RoleName + '</p>';
+                inner += '</div>';
+                inner += '<div class="m_cell_ft">';
+                inner += '<p>编辑信息</p>';
+                inner += '</div>';
+                inner += '</a>';
+                inner += '</li>';
+                });
+                $("#FamilyMemberList").html(inner);    
+               },
+                error: function () {
+                mui.toast("网络错误，请稍后再试");
+                 }
+            })
+
+ }
+
+
+ 
+
+document.getElementById("openmenu").addEventListener('tap',function(){	
+$("#personal-main").addClass("moved");
+getFamilyMemberList(username,20);
+}); 
+
+document.getElementById("slidePerson").addEventListener('tap',function(){	
+$("#personal-main").removeClass("moved");
+}); 
+
+document.getElementById("more").addEventListener('tap',function(){	
+$("#more-list").slideToggle();
+$("#more").hide();
+$("#changeOne").show();
+}); 
+
+document.getElementById("changeBack").addEventListener('tap',function(){	
+$("#more-list").slideToggle();
+$("#more").show();
+$("#changeOne").hide();
+}); 
+
+document.getElementById("click01").addEventListener('tap',function(){	
+$(".p_plan-list").slideToggle();
+}); 
+
+document.getElementById("click02").addEventListener('tap',function(){	
+$(".p_news_list").slideToggle();
+}); 
+
+document.getElementById("click03").addEventListener('tap',function(){	
+$(".p_plan_list01").slideToggle();
+}); 
+
+
+
+mui(".p_plan_list01").on('tap', '.p_con01 li img', function (event) {
+$(this).parents(".p_con01").find("div").slideToggle();
+});
+
+document.getElementById("share").addEventListener('tap',function(){	
+$(".box").toggle(100);
+}); 
+
+document.getElementById("personmenu").addEventListener('tap',function(){	
+$(".box").toggle(100);
+}); 
+
+
+
+
+document.getElementById("MedSetList").addEventListener('tap',function(){	
+clicked('member/MedSetList.html',true);
+}); 
+
+
+function showNewsContent(id){
+
+	 var nwaiting = plus.nativeUI.showWaiting();
+    webviewShow = plus.webview.create("member/NewsContent.html?id="+id,"NewsContent",{render:'always'});
+    
+    webviewShow.addEventListener("loaded", function() { //注册新webview的载入完成事件
+        nwaiting.close(); //新webview的载入完毕后关闭等待框
+        webviewShow.show("slide-in-right",150); //把新webview窗体显示出来，显示动画效果为速度150毫秒的右侧移入动画
+    }, false);
+    
+   }
+
+
+ function showTopicContent(id){
+
+ mui.openWindow({
+url:"member/TopicContent.html?id="+id,
+id:'TopicContent',
+
+show: {  
+        autoShow: true, //页面loaded事件发生后自动显示，默认为true  
+        aniShow:'zoom-fade-out', //页面显示动画，默认为”slide-in-right“；  
+        duration: 300 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；  
+    }, 
+waiting:{
+      autoShow:true,//自动显示等待框，默认为true
+      title:'正在加载...',//等待对话框上显示的提示内容
+      options:{
+        width:"100%",//等待框背景区域宽度，默认根据内容自动计算合适宽度
+        height:"100%",//等待框背景区域高度，默认根据内容自动计算合适高度
+      }
+     }
+});	
+ 
+ 
+ 
+};
+
+
+    var first = null;
+    mui.back = function () {
+        if (!first) {
+            first = new Date().getTime();
+            mui.toast('再按一次退出系统!');
+            setTimeout(function () {
+                first = null;
+            }, 2000);
+        } else {
+            if (new Date().getTime() - first < 2000) {
+                plus.runtime.quit();
+
+            }
+        }
+    };
+
+</script>
+
+</body>
+</html>

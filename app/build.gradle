@@ -5,8 +5,8 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.HBuilder.integrate"
-        minSdkVersion 15
+        applicationId "com.foxchen.qbs"
+        minSdkVersion 16
         targetSdkVersion 23
     }
 
@@ -54,8 +54,8 @@ dependencies {
     compile files('libs/file.jar')
     compile files('libs/gallery.jar')
     /*compile files('libs/geolocation-baidu.jar')
-        compile files('libs/geolocation-system.jar')
-        compile files('libs/geolocation.jar')*/
+                        compile files('libs/geolocation-system.jar')
+                        compile files('libs/geolocation.jar')*/
     compile files('libs/GetuiExt-2.0.3.jar')
     compile files('libs/GetuiSDK2.7.0.0.jar')
     compile files('libs/invocation.jar')
@@ -106,6 +106,9 @@ dependencies {
     compile files('libs/taixin.jar')
     compile files('libs/stetho-1.1.1-fatjar.jar')
     compile files('libs/gson-2.2.2.jar')
-    compile files('libs/lswificonfig.jar')/*
-    compile files('libs/Native_Libs2.jar')*/
+    compile files('libs/lswificonfig.jar')
+    /*
+                    compile files('libs/Native_Libs2.jar')*/
+    compile files('libs/lifesense_ble_module_v1.1.8.jar')
+    compile project(':lib')
 }

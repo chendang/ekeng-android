@@ -3,7 +3,7 @@ package com.cnnet.otc.health.util;
 import android.content.Context;
 import android.util.Log;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 

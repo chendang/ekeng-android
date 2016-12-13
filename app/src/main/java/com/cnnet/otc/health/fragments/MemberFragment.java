@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.cnnet.otc.health.MainActivity;
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.activities.AddMemberActivity;
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.comm.CommConst;

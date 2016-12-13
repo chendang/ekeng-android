@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bluetooth.MyMarkerView;
 import com.cnnet.otc.health.comm.SysApp;

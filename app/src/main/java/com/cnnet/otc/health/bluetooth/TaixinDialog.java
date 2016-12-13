@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.DeviceListItem;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.comm.CheckType;

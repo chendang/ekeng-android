@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 

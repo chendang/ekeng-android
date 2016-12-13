@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.data.WeightData;
 import com.cnnet.otc.health.bluetooth.DeviceDialog;

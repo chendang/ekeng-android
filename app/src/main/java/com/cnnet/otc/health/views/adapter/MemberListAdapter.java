@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.HBuilder.integrate.R;
+import com.foxchen.qbs.R;
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.util.StringUtil;

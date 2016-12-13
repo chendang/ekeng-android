@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">稳和云健康</string>
+    <string name="app_name">健康Q博士</string>
 
     <string name="USER">用户</string>
     <string name="USER_NAME">用户：</string>

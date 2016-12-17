@@ -572,7 +572,7 @@ public class RequestManager {
     public static void getLSDeviceInfo(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,Map parammap,
                                         String... paramsStr) {
         StringBuilder sb = new StringBuilder();
-        sb.append("http://open.lifesense.com/deviceopenapi_service/device/api");
+        sb.append(CommConst.LS_GETDEIVCE_SERVER_URL);
 //        sb.append("http://qa.sports.lifesense.com/operators_service/v1/api");
         sb.append("/getDeviceinfo?");
         if (paramsStr.length == 4) {

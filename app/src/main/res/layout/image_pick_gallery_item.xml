@@ -7,7 +7,7 @@
             android:id="@+id/imgQueue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/dcloud_gallery_app_name"
             android:scaleType="centerCrop"
             android:src="@drawable/image_pick_no_media" />
 

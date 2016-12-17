@@ -57,6 +57,9 @@
             android:layout_height="match_parent" />
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -257,4 +260,5 @@
             </LinearLayout>
         </TableRow>
     </TableLayout>
+    </ScrollView>
 </LinearLayout>

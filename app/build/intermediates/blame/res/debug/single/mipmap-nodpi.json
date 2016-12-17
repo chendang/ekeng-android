@@ -1,78 +1,78 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_ns_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_ns_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_search.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\ic_search.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xz_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xz_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tz_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_tz_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xy_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xy_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tp_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_tp_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tp_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_tp_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_browser.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\ic_browser.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tp_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_tp_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_setting.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\ic_setting.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xt_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xt_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xt_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xt_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_browser.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\ic_browser.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_bp_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_bp_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_setting.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\ic_setting.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_ns_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_ns_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xt_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xt_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xz_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xz_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\marker2.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\marker2.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\marker2.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\marker2.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_server_setting.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\ic_server_setting.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tp_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_tp_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_search.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\ic_search.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_bp_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_bp_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tz_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_tz_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xy_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xy_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xy_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xy_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_ns_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_ns_normal.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_bp_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_bp_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xy_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xy_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tz_pressed.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_tz_pressed.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xz_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xz_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_ns_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_ns_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xt_pressed.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_xt_pressed.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_bp_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_bp_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\ic_server_setting.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\ic_server_setting.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_xz_normal.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-nodpi\\btn_xz_normal.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-nodpi\\btn_tz_normal.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-nodpi\\btn_tz_normal.png"
     }
 ]

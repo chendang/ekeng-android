@@ -14,6 +14,8 @@ public class CommConst {
 	public static final int DB_DATA_PAGE = 20;  //数据库中分析数据
 	public static final int HEAD_IMG_W = 500;
 	public static final int REQUEST_TIMEOUT_TIME = 30000;
+   //获取乐心设备信息地址
+	public static final String LS_GETDEIVCE_SERVER_URL="http://open.lifesense.com/deviceopenapi_service/device/api";
 	/***************************************************************/
 
 	/**

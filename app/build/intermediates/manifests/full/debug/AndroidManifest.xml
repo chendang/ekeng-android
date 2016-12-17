@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.HBuilder.integrate"
-    android:versionCode="570"
-    android:versionName="5.7.0" >
+    package="com.foxchen.qbs"
+    android:versionCode="100"
+    android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="14"
         android:targetSdkVersion="23" />
 
     <supports-screens
@@ -135,7 +135,7 @@
     <uses-permission android:name="getui.permission.GetuiService.com.HBuilder.integrate" />
 
     <permission
-        android:name="getui.permission.GetuiService.com.HBuilder.integrate"
+        android:name="getui.permission.GetuiService.com.foxchen.qbs"
         android:protectionLevel="normal" />
     <!-- Push(推送)-个推    end -->
 
@@ -151,7 +151,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <!-- Share - 微信分享 -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!-- Push(推送)   end -->
@@ -177,19 +177,30 @@
     <!-- Statistic(统计)  end -->
 
 
+    <!-- 小米分享 -->
+    <uses-permission android:name="com.xiaomi.permission.AUTH_SERVICE" />
+    <!-- 小米分享 end -->
+
+
     <!-- otc add start -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- otc add end -->
+    <!-- android:theme="@android:style/Theme.Light.NoTitleBar" -->
     <application
+        android:name="com.cnnet.otc.health.comm.SysApp"
+        android:allowBackup="true"
         android:allowClearUserData="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/CustomTheme" >
         <activity
-            android:name="com.HBuilder.integrate.SDK_WebView"
+            android:name="com.foxchen.qbs.SDK_WebApp"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -201,24 +212,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.HBuilder.integrate.SDK_Runtime"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="sensor" >
-        </activity>
-        <activity
-            android:name="com.HBuilder.integrate.SDK_WebApp"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="user"
-            android:theme="@android:style/Theme.Translucent" >
-        </activity>
-        <!--
-        <activity
-            android:name="com.HBuilder.integrate.SDK_WebView"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="sensor" >
-        </activity>
-        -->
         <activity
             android:name="io.dcloud.PandoraEntryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -249,15 +242,17 @@
         <!-- meta-data节点android:name="UMENG_CHANNEL"项中android:value值为发行渠道标识，可任意取值，用于各种发行渠道效果统计 -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="%UMENG_APPKEY%" />
+            android:value="5854ba0ec8957670e9000cd1" />
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="googleplay" />
+            android:value="foxchen" />
         <!-- 友盟统计  配置  end -->
 
 
         <!-- Maps(地图) begin -->
+        <!-- Maps(地图) begin -->
         <!-- meta-data节点android:name="com.baidu.lbsapi.API_KEY"项中android:value值为百度地图应用的Appkey -->
+        <!--
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Z3erUvGIwBCBQdBl6CArCAGT" >
@@ -268,6 +263,7 @@
             android:enabled="true"
             android:process=":remote" >
         </service>
+        -->
         <!-- Maps(地图) end -->
 
 
@@ -337,41 +333,32 @@
         <!-- meta-data节点android:name="appkey"项中android:value值为个推服务器上申请的APPKEY -->
         <!-- meta-data节点android:name="appsecret"项中android:value值为个推服务器上申请的APPSECRET -->
         <!-- 个推 aps配置  begin -->
-        <receiver android:name="io.dcloud.feature.apsGt.PushMessageReceiver" >
-            <intent-filter>
-                <action android:name="com.igexin.sdk.action.bBPiGM1VQ66mhMI3d9tG0A" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.HBuilder.integrate.__CREATE_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__REMOVE_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION" />
-                <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION" />
-            </intent-filter>
-        </receiver>
-
         <meta-data
             android:name="PUSH_APPID"
-            android:value="bBPiGM1VQ66mhMI3d9tG0A" />
+            android:value="pNc2cy1kHZ9ykjPCFKofB1" />
         <meta-data
             android:name="PUSH_APPKEY"
-            android:value="uS09ESNrE46NQgnHmSYjL2" />
+            android:value="XTilEHCdLc7WEVuRInTU69" />
         <meta-data
             android:name="PUSH_APPSECRET"
-            android:value="nG809brIPr7aTF7o0VpZM1" />
+            android:value="nrUJW90VeKAw8JP0aj2AG3" />
 
         <service
             android:name="com.igexin.sdk.PushService"
             android:exported="true"
             android:label="NotificationCenter"
             android:process=":pushservice" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message" />
+            </intent-filter>
         </service>
         <service
             android:name="com.igexin.sdk.PushServiceUser"
             android:exported="true"
             android:label="NotificationCenterUser" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.user.message" />
+            </intent-filter>
         </service>
 
         <receiver android:name="com.igexin.sdk.PushReceiver" >
@@ -399,8 +386,14 @@
             android:exported="false"
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.igexin.sdk.GActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.igexin.download.DownloadService"
@@ -414,41 +407,24 @@
 
         <provider
             android:name="com.igexin.download.DownloadProvider"
-            android:authorities="downloads.com.HBuilder.integrate"
+            android:authorities="downloads.com.foxchen.qbs"
             android:exported="true"
             android:process=":pushservice" />
 
-        <activity
-            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
-            android:configChanges="orientation|keyboard|keyboardHidden"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:process=":pushservice"
-            android:taskAffinity="android.task.myServicetask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.igexin.sdk.GActivity"
-            android:excludeFromRecents="true"
-            android:exported="true"
-            android:process=":pushservice"
-            android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <receiver
-            android:name="com.igexin.getuiext.service.PayloadReceiver"
-            android:exported="false" >
+        <receiver android:name="io.dcloud.feature.apsGt.PushMessageReceiver" >
             <intent-filter>
-                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
-                <action android:name="com.igexin.sdk.action.bBPiGM1VQ66mhMI3d9tG0A" />
+                <action android:name="com.igexin.sdk.action.pNc2cy1kHZ9ykjPCFKofB1" />
             </intent-filter>
         </receiver>
-
-        <service
-            android:name="com.igexin.getuiext.service.GetuiExtService"
-            android:process=":pushservice" />
-
-        <!-- Push(推送)-个推  end -->
-
+        <receiver android:name="io.dcloud.feature.apsGt.GTNotificationReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.foxchen.qbs.__CREATE_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__REMOVE_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__CLEAR_NOTIFICATION" />
+                <action android:name="com.foxchen.qbs.__CLILK_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
 
         <!-- Share(分享) begin -->
         <!-- Share - 新浪微博分享 -->
@@ -463,6 +439,25 @@
             android:name="SINA_APPKEY"
             android:value="_%新浪微博开放平台申请应用的Appkey，注意前面要添加下划线%" />
 
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <!-- 分享 -->
+        <activity
+            android:name="com.HBuilder.integrate.SinaCallbackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+            <intent-filter> <!-- 唤起新浪微博客户端分享后的回调处理intent -->
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <!-- Share - 腾讯微博分享 -->
         <!-- 官方网站：http://dev.t.qq.com/ -->
         <meta-data
@@ -488,7 +483,7 @@
             android:value="wx0411fa6a39d61297" />
 
         <activity
-            android:name="com.HBuilder.integrate.wxapi.WXEntryActivity"
+            android:name="com.foxchen.qbs.wxapi.WXEntryActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
@@ -522,7 +517,7 @@
 
         <!-- 微信支付配置 start -->
         <activity
-            android:name="com.HBuilder.integrate.wxapi.WXPayEntryActivity"
+            android:name="io.dcloud.HBuilder.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
@@ -531,9 +526,73 @@
             android:value="wx0411fa6a39d61297" />
 
         <!-- 微信支付配置end -->
+        <!-- 小米分享 -->
+        <meta-data
+            android:name="MIUI_APPID"
+            android:value="_%小米分享的APPID%" />
+        <meta-data
+            android:name="MIUI_APPSECRET"
+            android:value="%小米分享的appSecret%" />
+        <meta-data
+            android:name="MIUI_REDIRECT_URI"
+            android:value="%小米分享的回调地址%" />
+
+        <activity android:name="com.xiaomi.account.openauth.AuthorizeActivity" />
+        <!-- 小米分享 end -->
+
+
+        <!-- 小米推送 -->
+
+
+        <!--
+        <meta-data android:name="PUSH_APPID" android:value="_%小米推送的APPID%"/>
+        <meta-data android:name="PUSH_APPKEY" android:value="_%小米推送的APPKEY%"/>
+        <service android:enabled="true" android:process=":pushservice" android:name="com.xiaomi.push.service.XMPushService"/>
+        <service android:name="com.xiaomi.push.service.XMJobService" android:enabled="true" android:exported="false" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler"/>
+        <service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService"/>
+        <receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:process=":pushservice" android:name="com.xiaomi.push.service.receivers.PingReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="io.dcloud.feature.apsXm.XMMessageReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="io.dcloud.feature.apsXm.XMNotificationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.HBuilder.integrate.__CREATE_NOTIFICATION"/>
+                <action android:name="com.HBuilder.integrate.__REMOVE_NOTIFICATION"/>
+                <action android:name="com.HBuilder.integrate.__CLEAR_NOTIFICATION"/>
+                <action android:name="com.HBuilder.integrate.__CLILK_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        -->
+
+
+        <!-- 小米推送 end -->
 
 
         <!-- 蓝牙设备数据获取 -->
+        <!-- 7点血糖检测界面 -->
+        <activity
+            android:name="com.cnnet.otc.health.activities.DetectBle2Activity"
+            android:screenOrientation="portrait" />
         <!-- 蓝牙3.0设备检测界面 -->
         <activity
             android:name="com.cnnet.otc.health.activities.DetectBle3Activity"
@@ -542,6 +601,33 @@
         <activity
             android:name="com.cnnet.otc.health.activities.DetectBle4Activity"
             android:screenOrientation="portrait" />
+
+        <!-- wifi 连接 start -->
+        <activity
+            android:name="com.foxchen.qbs.health.activities.DetectWifiGuideActivity"
+            android:label="@string/title_activity_detect_wifi" />
+        <!-- wifi 连接 end -->
+        <activity
+            android:name="com.foxchen.qbs.health.activities.DetectWifiActivity"
+            android:label="@string/title_activity_detect_wifi" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.LSBLueDeviceListActivity"
+            android:label="@string/title_activity_lsblue_device_list" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.LSBlueDeviceAddActivity"
+            android:label="@string/title_activity_lsblue_device_add" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.DetectWifiSerchActivity"
+            android:label="@string/title_activity_detect_wifi_serch" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.DetectWifiSuccActivity"
+            android:label="@string/title_activity_detect_wifi_succ" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.DetectWifiFailureActivity"
+            android:label="@string/title_activity_detect_wifi_failure" />
+        <activity
+            android:name="com.foxchen.qbs.health.activities.LSBlueAddSyncActivity"
+            android:label="@string/title_activity_lsblue_add_sync" />
     </application>
 
 </manifest>

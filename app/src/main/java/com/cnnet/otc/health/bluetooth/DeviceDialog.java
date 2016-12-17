@@ -20,7 +20,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -40,8 +39,7 @@ import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 import com.example.blelib.MyData;
-import com.foxchen.qbs.SDK_WebApp;
-
+import android.support.v4.app.ActivityCompat;
 public class DeviceDialog extends Dialog {
 	
 	private final String TAG = "DeviceDialog";

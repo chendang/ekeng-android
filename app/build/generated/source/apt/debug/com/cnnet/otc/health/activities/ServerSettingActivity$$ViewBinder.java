@@ -8,12 +8,12 @@ import butterknife.ButterKnife.ViewBinder;
 public class ServerSettingActivity$$ViewBinder<T extends com.cnnet.otc.health.activities.ServerSettingActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131558538, "field 'ivBackBtn'");
-    target.ivBackBtn = finder.castView(view, 2131558538, "field 'ivBackBtn'");
-    view = finder.findRequiredView(source, 2131558539, "field 'etServerUrl'");
-    target.etServerUrl = finder.castView(view, 2131558539, "field 'etServerUrl'");
-    view = finder.findRequiredView(source, 2131558540, "field 'btnServerSetting'");
-    target.btnServerSetting = finder.castView(view, 2131558540, "field 'btnServerSetting'");
+    view = finder.findRequiredView(source, 2131624097, "field 'ivBackBtn'");
+    target.ivBackBtn = finder.castView(view, 2131624097, "field 'ivBackBtn'");
+    view = finder.findRequiredView(source, 2131624098, "field 'etServerUrl'");
+    target.etServerUrl = finder.castView(view, 2131624098, "field 'etServerUrl'");
+    view = finder.findRequiredView(source, 2131624099, "field 'btnServerSetting'");
+    target.btnServerSetting = finder.castView(view, 2131624099, "field 'btnServerSetting'");
   }
 
   @Override public void unbind(T target) {

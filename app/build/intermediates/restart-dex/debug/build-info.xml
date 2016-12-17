@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    api-level="19"
-    density="hdpi"
+    api-level="21"
+    density="xxhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="21013611738562"
-    token="5596365712098644980"
+    timestamp="27641804504944"
+    token="4117738597468873717"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1320" />
+        duration="14865" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="87" />
+        duration="17665" />
     <task
         name="verifier"
-        duration="2" />
+        duration="2209" />
 
     <artifact
-        location="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\outputs\apk\app-debug.apk"
+        location="F:\hkb_workspace_android_new\HealthQDoctor\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="21013611738562"
+        timestamp="27641804504944"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="F:\hkb_workspace_android_new\HBuilder-Integrate1\app\build\outputs\apk\app-debug.apk"
+            location="F:\hkb_workspace_android_new\HealthQDoctor\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
 

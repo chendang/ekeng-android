@@ -1,438 +1,438 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\snow_black_progress.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\snow_black_progress.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_title_icon_def.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_title_icon_def.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_top_gray_bg.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_top_gray_bg.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dcloud_snow_black_progress.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\dcloud_snow_black_progress.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_01.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_01.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_cancel.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\ic_cancel.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_cancel.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\ic_cancel.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\list_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\list_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnleft_press.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnleft_press.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnsingle_press.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnsingle_press.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_tp_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_tp_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnsingle_press.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnsingle_press.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\while_stroke_grey.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\while_stroke_grey.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnright_press.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnright_press.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_ns_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_ns_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_member.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\tag_member.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_empty.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_empty.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_title_icon_def.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_title_icon_def.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_gradient_detect.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\bg_gradient_detect.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_empty.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_empty.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_06.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_06.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\list_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\list_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_white_grey_stroke.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_white_grey_stroke.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_main_btn_back.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\login_main_btn_back.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_title_divider_line.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_title_divider_line.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xml_listview_item_bg.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\xml_listview_item_bg.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xml_listview_item_bg.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\xml_listview_item_bg.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_white_grey_stroke.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_white_grey_stroke.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_tz_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_tz_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_choice.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_choice.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dcloud_snow_black_progress.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\dcloud_snow_black_progress.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_04.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_04.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_07.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_07.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\my_checkbox.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\my_checkbox.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_04.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_04.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue_corner_press.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\blue_corner_press.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue_corner_press.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\blue_corner_press.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\grey_corner.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\grey_corner.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_bottom_gray_bg.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_bottom_gray_bg.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\snow_white_progress.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\snow_white_progress.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_area_bg.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_area_bg.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xt_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_xt_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xt_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_xt_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xz_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_xz_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_09.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_09.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_updivider.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_updivider.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnright_press.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnright_press.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_blue.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_blue.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_03.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_03.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_unchoice.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_unchoice.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_03.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_03.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_bottom_gray_bg.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_bottom_gray_bg.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_09.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_09.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_divider.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_divider.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dcloud_snow_white_progress.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\dcloud_snow_white_progress.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_bp_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_bp_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\grey_corner.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\grey_corner.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_loading.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_loading.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\long_button_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\long_button_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_07.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_07.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_active.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_active.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_normal.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_normal.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_10.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_10.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_tp_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_tp_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_tz_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_tz_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btnleft_press.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btnleft_press.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_10.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_10.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\stream_running_progress.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\stream_running_progress.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_member.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\tag_member.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xml_login_main_btn_back.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\xml_login_main_btn_back.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_pressed_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_loading.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_loading.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_updivider.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_updivider.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_06.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_06.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xlistview_arrow.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\xlistview_arrow.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\grey_stroke.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\grey_stroke.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_home.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\tag_home.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_blue.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_blue.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_error.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_error.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\grey_stroke.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\grey_stroke.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_divider.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_divider.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue_corner.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\blue_corner.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_normal.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_normal.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_focused.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_focused.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\red_dot.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\red_dot.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_bp_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_bp_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_middledivider.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_middledivider.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_gridview_item.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\bg_gridview_item.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xy_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\btn_xy_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_area_bg.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_area_bg.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\my_checkbox.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\my_checkbox.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btncenter_press.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btncenter_press.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btncenter_press.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btncenter_press.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_normal.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_normal.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_title_divider_line.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_title_divider_line.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_gridview_item.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\bg_gridview_item.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_btn_middledivider.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_btn_middledivider.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_12.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_12.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\snow_black_progress.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\snow_black_progress.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_active.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_active.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_device.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\tag_device.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio2.9.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio2.9.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_ns_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_ns_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\red_dot.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\red_dot.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_pressed_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_01.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_01.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xlistview_arrow.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\xlistview_arrow.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_unchoice.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_unchoice.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_device.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\tag_device.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_12.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_12.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\snow_white_progress.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\snow_white_progress.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xy_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_xy_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_normal.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_textinput_normal.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_gradient_detect.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\bg_gradient_detect.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_main_btn_back.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\login_main_btn_back.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_11.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_11.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_pressed_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_edittext_focused.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\bg_edittext_focused.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_focused_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\stream_running_progress.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\stream_running_progress.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_error.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\xlistview_autoload\\unspecified\\res\\drawable-hdpi-v4\\ic_error.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_08.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_08.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_11.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_11.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_05.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_05.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue_corner.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\blue_corner.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_choice.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_radiobtn_choice.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\long_button_selector.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\long_button_selector.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_02.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_02.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_holo_dark.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_light.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_light.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_02.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_02.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio2.9.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_alertex_dlg_select_item_pressed_radio2.9.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dcloud_snow_white_progress.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\dcloud_snow_white_progress.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_xz_selector.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_xz_selector.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_05.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_05.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xml_login_main_btn_back.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\xml_login_main_btn_back.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\loading_08.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\loading_08.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_pressed_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\while_stroke_grey.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\while_stroke_grey.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tag_home.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\drawable-hdpi\\tag_home.xml"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_top_gray_bg.xml",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\drawable-hdpi\\btn_top_gray_bg.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_off_disabled_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_light.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_radio_on_disabled_holo_light.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_dark.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\exploded-aar\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_off_disabled_focused_holo_dark.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_dark.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\exploded-aar\\HealthQDoctor\\mcustom-HerilyAlertDialog-library\\unspecified\\res\\drawable-hdpi-v4\\herily_btn_check_on_disabled_focused_holo_dark.png"
     }
 ]

@@ -30,7 +30,7 @@ Eclipse projects. Here's how the projects were restructured:
 
 * AndroidManifest.xml => lsBluetoothDemo\src\main\AndroidManifest.xml
 * assets\ => lsBluetoothDemo\src\main\assets
-* libs\lifesense_ble_module_v1.1.8.jar => lsBluetoothDemo\libs\lifesense_ble_module_v1.1.8.jar
+* libs\lifesense_ble_module_v1.2.2.jar => lsBluetoothDemo\libs\lifesense_ble_module_v1.2.2.jar
 * res\ => lsBluetoothDemo\src\main\res\
 * src\ => lsBluetoothDemo\src\main\java\
 

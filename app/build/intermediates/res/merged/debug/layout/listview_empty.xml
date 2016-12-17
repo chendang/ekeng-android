@@ -12,7 +12,7 @@
         android:id="@+id/textViewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:drawableTop="@drawable/ic_empty"
         android:drawablePadding="20dp"
         android:textColor="@color/text_grey"
         android:textAppearance="?android:attr/textAppearanceMedium"

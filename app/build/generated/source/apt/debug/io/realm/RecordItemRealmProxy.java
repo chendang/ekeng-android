@@ -38,18 +38,28 @@ public class RecordItemRealmProxy extends RecordItem
         public final long sourceIndex;
         public final long iConcluisonIndex;
         public final long desc1Index;
+        public final long desc2Index;
+        public final long desc3Index;
+        public final long desc4Index;
+        public final long desc5Index;
         public final long value2Index;
         public final long value3Index;
         public final long value4Index;
         public final long value5Index;
+        public final long value1TxtIndex;
+        public final long value2TxtIndex;
+        public final long value3TxtIndex;
+        public final long value4TxtIndex;
+        public final long value5TxtIndex;
         public final long createTimeIndex;
         public final long insNameIndex;
         public final long insUnitIndex;
         public final long insValueRangeIndex;
         public final long stateIndex;
+        public final long testCodeIndex;
 
         RecordItemColumnInfo(String path, Table table) {
-            final Map<String, Long> indicesMap = new HashMap<String, Long>(18);
+            final Map<String, Long> indicesMap = new HashMap<String, Long>(28);
             this.iIdIndex = getValidColumnIndex(path, table, "RecordItem", "iId");
             indicesMap.put("iId", this.iIdIndex);
 
@@ -77,6 +87,18 @@ public class RecordItemRealmProxy extends RecordItem
             this.desc1Index = getValidColumnIndex(path, table, "RecordItem", "desc1");
             indicesMap.put("desc1", this.desc1Index);
 
+            this.desc2Index = getValidColumnIndex(path, table, "RecordItem", "desc2");
+            indicesMap.put("desc2", this.desc2Index);
+
+            this.desc3Index = getValidColumnIndex(path, table, "RecordItem", "desc3");
+            indicesMap.put("desc3", this.desc3Index);
+
+            this.desc4Index = getValidColumnIndex(path, table, "RecordItem", "desc4");
+            indicesMap.put("desc4", this.desc4Index);
+
+            this.desc5Index = getValidColumnIndex(path, table, "RecordItem", "desc5");
+            indicesMap.put("desc5", this.desc5Index);
+
             this.value2Index = getValidColumnIndex(path, table, "RecordItem", "value2");
             indicesMap.put("value2", this.value2Index);
 
@@ -88,6 +110,21 @@ public class RecordItemRealmProxy extends RecordItem
 
             this.value5Index = getValidColumnIndex(path, table, "RecordItem", "value5");
             indicesMap.put("value5", this.value5Index);
+
+            this.value1TxtIndex = getValidColumnIndex(path, table, "RecordItem", "value1Txt");
+            indicesMap.put("value1Txt", this.value1TxtIndex);
+
+            this.value2TxtIndex = getValidColumnIndex(path, table, "RecordItem", "value2Txt");
+            indicesMap.put("value2Txt", this.value2TxtIndex);
+
+            this.value3TxtIndex = getValidColumnIndex(path, table, "RecordItem", "value3Txt");
+            indicesMap.put("value3Txt", this.value3TxtIndex);
+
+            this.value4TxtIndex = getValidColumnIndex(path, table, "RecordItem", "value4Txt");
+            indicesMap.put("value4Txt", this.value4TxtIndex);
+
+            this.value5TxtIndex = getValidColumnIndex(path, table, "RecordItem", "value5Txt");
+            indicesMap.put("value5Txt", this.value5TxtIndex);
 
             this.createTimeIndex = getValidColumnIndex(path, table, "RecordItem", "createTime");
             indicesMap.put("createTime", this.createTimeIndex);
@@ -103,6 +140,9 @@ public class RecordItemRealmProxy extends RecordItem
 
             this.stateIndex = getValidColumnIndex(path, table, "RecordItem", "state");
             indicesMap.put("state", this.stateIndex);
+
+            this.testCodeIndex = getValidColumnIndex(path, table, "RecordItem", "testCode");
+            indicesMap.put("testCode", this.testCodeIndex);
 
             setIndicesMap(indicesMap);
         }
@@ -121,15 +161,25 @@ public class RecordItemRealmProxy extends RecordItem
         fieldNames.add("source");
         fieldNames.add("iConcluison");
         fieldNames.add("desc1");
+        fieldNames.add("desc2");
+        fieldNames.add("desc3");
+        fieldNames.add("desc4");
+        fieldNames.add("desc5");
         fieldNames.add("value2");
         fieldNames.add("value3");
         fieldNames.add("value4");
         fieldNames.add("value5");
+        fieldNames.add("value1Txt");
+        fieldNames.add("value2Txt");
+        fieldNames.add("value3Txt");
+        fieldNames.add("value4Txt");
+        fieldNames.add("value5Txt");
         fieldNames.add("createTime");
         fieldNames.add("insName");
         fieldNames.add("insUnit");
         fieldNames.add("insValueRange");
         fieldNames.add("state");
+        fieldNames.add("testCode");
         FIELD_NAMES = Collections.unmodifiableList(fieldNames);
     }
 
@@ -268,6 +318,74 @@ public class RecordItemRealmProxy extends RecordItem
 
     @Override
     @SuppressWarnings("cast")
+    public String getDesc2() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.desc2Index);
+    }
+
+    @Override
+    public void setDesc2(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.desc2Index);
+            return;
+        }
+        row.setString(columnInfo.desc2Index, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getDesc3() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.desc3Index);
+    }
+
+    @Override
+    public void setDesc3(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.desc3Index);
+            return;
+        }
+        row.setString(columnInfo.desc3Index, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getDesc4() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.desc4Index);
+    }
+
+    @Override
+    public void setDesc4(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.desc4Index);
+            return;
+        }
+        row.setString(columnInfo.desc4Index, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getDesc5() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.desc5Index);
+    }
+
+    @Override
+    public void setDesc5(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.desc5Index);
+            return;
+        }
+        row.setString(columnInfo.desc5Index, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
     public float getValue2() {
         realm.checkIfValid();
         return (float) row.getFloat(columnInfo.value2Index);
@@ -316,6 +434,91 @@ public class RecordItemRealmProxy extends RecordItem
     public void setValue5(float value) {
         realm.checkIfValid();
         row.setFloat(columnInfo.value5Index, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getValue1Txt() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.value1TxtIndex);
+    }
+
+    @Override
+    public void setValue1Txt(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.value1TxtIndex);
+            return;
+        }
+        row.setString(columnInfo.value1TxtIndex, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getValue2Txt() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.value2TxtIndex);
+    }
+
+    @Override
+    public void setValue2Txt(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.value2TxtIndex);
+            return;
+        }
+        row.setString(columnInfo.value2TxtIndex, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getValue3Txt() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.value3TxtIndex);
+    }
+
+    @Override
+    public void setValue3Txt(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.value3TxtIndex);
+            return;
+        }
+        row.setString(columnInfo.value3TxtIndex, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getValue4Txt() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.value4TxtIndex);
+    }
+
+    @Override
+    public void setValue4Txt(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.value4TxtIndex);
+            return;
+        }
+        row.setString(columnInfo.value4TxtIndex, value);
+    }
+
+    @Override
+    @SuppressWarnings("cast")
+    public String getValue5Txt() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.value5TxtIndex);
+    }
+
+    @Override
+    public void setValue5Txt(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.value5TxtIndex);
+            return;
+        }
+        row.setString(columnInfo.value5TxtIndex, value);
     }
 
     @Override
@@ -398,6 +601,23 @@ public class RecordItemRealmProxy extends RecordItem
         row.setLong(columnInfo.stateIndex, value);
     }
 
+    @Override
+    @SuppressWarnings("cast")
+    public String getTestCode() {
+        realm.checkIfValid();
+        return (java.lang.String) row.getString(columnInfo.testCodeIndex);
+    }
+
+    @Override
+    public void setTestCode(String value) {
+        realm.checkIfValid();
+        if (value == null) {
+            row.setNull(columnInfo.testCodeIndex);
+            return;
+        }
+        row.setString(columnInfo.testCodeIndex, value);
+    }
+
     public static Table initTable(ImplicitTransaction transaction) {
         if (!transaction.hasTable("class_RecordItem")) {
             Table table = transaction.getTable("class_RecordItem");
@@ -410,15 +630,25 @@ public class RecordItemRealmProxy extends RecordItem
             table.addColumn(ColumnType.INTEGER, "source", Table.NOT_NULLABLE);
             table.addColumn(ColumnType.STRING, "iConcluison", Table.NULLABLE);
             table.addColumn(ColumnType.STRING, "desc1", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "desc2", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "desc3", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "desc4", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "desc5", Table.NULLABLE);
             table.addColumn(ColumnType.FLOAT, "value2", Table.NOT_NULLABLE);
             table.addColumn(ColumnType.FLOAT, "value3", Table.NOT_NULLABLE);
             table.addColumn(ColumnType.FLOAT, "value4", Table.NOT_NULLABLE);
             table.addColumn(ColumnType.FLOAT, "value5", Table.NOT_NULLABLE);
+            table.addColumn(ColumnType.STRING, "value1Txt", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "value2Txt", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "value3Txt", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "value4Txt", Table.NULLABLE);
+            table.addColumn(ColumnType.STRING, "value5Txt", Table.NULLABLE);
             table.addColumn(ColumnType.DATE, "createTime", Table.NULLABLE);
             table.addColumn(ColumnType.STRING, "insName", Table.NULLABLE);
             table.addColumn(ColumnType.STRING, "insUnit", Table.NULLABLE);
             table.addColumn(ColumnType.INTEGER, "insValueRange", Table.NOT_NULLABLE);
             table.addColumn(ColumnType.INTEGER, "state", Table.NOT_NULLABLE);
+            table.addColumn(ColumnType.STRING, "testCode", Table.NULLABLE);
             table.setPrimaryKey("");
             return table;
         }
@@ -428,11 +658,11 @@ public class RecordItemRealmProxy extends RecordItem
     public static RecordItemColumnInfo validateTable(ImplicitTransaction transaction) {
         if (transaction.hasTable("class_RecordItem")) {
             Table table = transaction.getTable("class_RecordItem");
-            if (table.getColumnCount() != 18) {
-                throw new RealmMigrationNeededException(transaction.getPath(), "Field count does not match - expected 18 but was " + table.getColumnCount());
+            if (table.getColumnCount() != 28) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field count does not match - expected 28 but was " + table.getColumnCount());
             }
             Map<String, ColumnType> columnTypes = new HashMap<String, ColumnType>();
-            for (long i = 0; i < 18; i++) {
+            for (long i = 0; i < 28; i++) {
                 columnTypes.put(table.getColumnName(i), table.getColumnType(i));
             }
 
@@ -519,6 +749,42 @@ public class RecordItemRealmProxy extends RecordItem
             if (!table.isColumnNullable(columnInfo.desc1Index)) {
                 throw new RealmMigrationNeededException(transaction.getPath(), "Field 'desc1' is required. Either set @Required to field 'desc1' or migrate using io.realm.internal.Table.convertColumnToNullable().");
             }
+            if (!columnTypes.containsKey("desc2")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'desc2' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("desc2") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'desc2' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.desc2Index)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'desc2' is required. Either set @Required to field 'desc2' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("desc3")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'desc3' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("desc3") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'desc3' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.desc3Index)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'desc3' is required. Either set @Required to field 'desc3' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("desc4")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'desc4' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("desc4") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'desc4' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.desc4Index)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'desc4' is required. Either set @Required to field 'desc4' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("desc5")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'desc5' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("desc5") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'desc5' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.desc5Index)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'desc5' is required. Either set @Required to field 'desc5' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
             if (!columnTypes.containsKey("value2")) {
                 throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value2' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
             }
@@ -554,6 +820,51 @@ public class RecordItemRealmProxy extends RecordItem
             }
             if (table.isColumnNullable(columnInfo.value5Index)) {
                 throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value5' does support null values in the existing Realm file. Use corresponding boxed type for field 'value5' or migrate using io.realm.internal.Table.convertColumnToNotNullable().");
+            }
+            if (!columnTypes.containsKey("value1Txt")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value1Txt' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("value1Txt") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'value1Txt' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.value1TxtIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value1Txt' is required. Either set @Required to field 'value1Txt' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("value2Txt")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value2Txt' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("value2Txt") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'value2Txt' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.value2TxtIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value2Txt' is required. Either set @Required to field 'value2Txt' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("value3Txt")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value3Txt' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("value3Txt") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'value3Txt' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.value3TxtIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value3Txt' is required. Either set @Required to field 'value3Txt' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("value4Txt")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value4Txt' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("value4Txt") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'value4Txt' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.value4TxtIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value4Txt' is required. Either set @Required to field 'value4Txt' or migrate using io.realm.internal.Table.convertColumnToNullable().");
+            }
+            if (!columnTypes.containsKey("value5Txt")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'value5Txt' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("value5Txt") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'value5Txt' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.value5TxtIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'value5Txt' is required. Either set @Required to field 'value5Txt' or migrate using io.realm.internal.Table.convertColumnToNullable().");
             }
             if (!columnTypes.containsKey("createTime")) {
                 throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'createTime' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
@@ -599,6 +910,15 @@ public class RecordItemRealmProxy extends RecordItem
             }
             if (table.isColumnNullable(columnInfo.stateIndex)) {
                 throw new RealmMigrationNeededException(transaction.getPath(), "Field 'state' does support null values in the existing Realm file. Use corresponding boxed type for field 'state' or migrate using io.realm.internal.Table.convertColumnToNotNullable().");
+            }
+            if (!columnTypes.containsKey("testCode")) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Missing field 'testCode' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("testCode") != ColumnType.STRING) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Invalid type 'String' for field 'testCode' in existing Realm file.");
+            }
+            if (!table.isColumnNullable(columnInfo.testCodeIndex)) {
+                throw new RealmMigrationNeededException(transaction.getPath(), "Field 'testCode' is required. Either set @Required to field 'testCode' or migrate using io.realm.internal.Table.convertColumnToNullable().");
             }
             return columnInfo;
         } else {
@@ -681,6 +1001,34 @@ public class RecordItemRealmProxy extends RecordItem
                 obj.setDesc1((String) json.getString("desc1"));
             }
         }
+        if (json.has("desc2")) {
+            if (json.isNull("desc2")) {
+                obj.setDesc2(null);
+            } else {
+                obj.setDesc2((String) json.getString("desc2"));
+            }
+        }
+        if (json.has("desc3")) {
+            if (json.isNull("desc3")) {
+                obj.setDesc3(null);
+            } else {
+                obj.setDesc3((String) json.getString("desc3"));
+            }
+        }
+        if (json.has("desc4")) {
+            if (json.isNull("desc4")) {
+                obj.setDesc4(null);
+            } else {
+                obj.setDesc4((String) json.getString("desc4"));
+            }
+        }
+        if (json.has("desc5")) {
+            if (json.isNull("desc5")) {
+                obj.setDesc5(null);
+            } else {
+                obj.setDesc5((String) json.getString("desc5"));
+            }
+        }
         if (json.has("value2")) {
             if (json.isNull("value2")) {
                 throw new IllegalArgumentException("Trying to set non-nullable field value2 to null.");
@@ -707,6 +1055,41 @@ public class RecordItemRealmProxy extends RecordItem
                 throw new IllegalArgumentException("Trying to set non-nullable field value5 to null.");
             } else {
                 obj.setValue5((float) json.getDouble("value5"));
+            }
+        }
+        if (json.has("value1Txt")) {
+            if (json.isNull("value1Txt")) {
+                obj.setValue1Txt(null);
+            } else {
+                obj.setValue1Txt((String) json.getString("value1Txt"));
+            }
+        }
+        if (json.has("value2Txt")) {
+            if (json.isNull("value2Txt")) {
+                obj.setValue2Txt(null);
+            } else {
+                obj.setValue2Txt((String) json.getString("value2Txt"));
+            }
+        }
+        if (json.has("value3Txt")) {
+            if (json.isNull("value3Txt")) {
+                obj.setValue3Txt(null);
+            } else {
+                obj.setValue3Txt((String) json.getString("value3Txt"));
+            }
+        }
+        if (json.has("value4Txt")) {
+            if (json.isNull("value4Txt")) {
+                obj.setValue4Txt(null);
+            } else {
+                obj.setValue4Txt((String) json.getString("value4Txt"));
+            }
+        }
+        if (json.has("value5Txt")) {
+            if (json.isNull("value5Txt")) {
+                obj.setValue5Txt(null);
+            } else {
+                obj.setValue5Txt((String) json.getString("value5Txt"));
             }
         }
         if (json.has("createTime")) {
@@ -747,6 +1130,13 @@ public class RecordItemRealmProxy extends RecordItem
                 throw new IllegalArgumentException("Trying to set non-nullable field state to null.");
             } else {
                 obj.setState((int) json.getInt("state"));
+            }
+        }
+        if (json.has("testCode")) {
+            if (json.isNull("testCode")) {
+                obj.setTestCode(null);
+            } else {
+                obj.setTestCode((String) json.getString("testCode"));
             }
         }
         return obj;
@@ -822,6 +1212,34 @@ public class RecordItemRealmProxy extends RecordItem
                 } else {
                     obj.setDesc1((String) reader.nextString());
                 }
+            } else if (name.equals("desc2")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setDesc2(null);
+                } else {
+                    obj.setDesc2((String) reader.nextString());
+                }
+            } else if (name.equals("desc3")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setDesc3(null);
+                } else {
+                    obj.setDesc3((String) reader.nextString());
+                }
+            } else if (name.equals("desc4")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setDesc4(null);
+                } else {
+                    obj.setDesc4((String) reader.nextString());
+                }
+            } else if (name.equals("desc5")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setDesc5(null);
+                } else {
+                    obj.setDesc5((String) reader.nextString());
+                }
             } else if (name.equals("value2")) {
                 if (reader.peek() == JsonToken.NULL) {
                     reader.skipValue();
@@ -849,6 +1267,41 @@ public class RecordItemRealmProxy extends RecordItem
                     throw new IllegalArgumentException("Trying to set non-nullable field value5 to null.");
                 } else {
                     obj.setValue5((float) reader.nextDouble());
+                }
+            } else if (name.equals("value1Txt")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setValue1Txt(null);
+                } else {
+                    obj.setValue1Txt((String) reader.nextString());
+                }
+            } else if (name.equals("value2Txt")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setValue2Txt(null);
+                } else {
+                    obj.setValue2Txt((String) reader.nextString());
+                }
+            } else if (name.equals("value3Txt")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setValue3Txt(null);
+                } else {
+                    obj.setValue3Txt((String) reader.nextString());
+                }
+            } else if (name.equals("value4Txt")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setValue4Txt(null);
+                } else {
+                    obj.setValue4Txt((String) reader.nextString());
+                }
+            } else if (name.equals("value5Txt")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setValue5Txt(null);
+                } else {
+                    obj.setValue5Txt((String) reader.nextString());
                 }
             } else if (name.equals("createTime")) {
                 if (reader.peek() == JsonToken.NULL) {
@@ -890,6 +1343,13 @@ public class RecordItemRealmProxy extends RecordItem
                 } else {
                     obj.setState((int) reader.nextInt());
                 }
+            } else if (name.equals("testCode")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    obj.setTestCode(null);
+                } else {
+                    obj.setTestCode((String) reader.nextString());
+                }
             } else {
                 reader.skipValue();
             }
@@ -917,15 +1377,25 @@ public class RecordItemRealmProxy extends RecordItem
         realmObject.setSource(newObject.getSource());
         realmObject.setiConcluison(newObject.getiConcluison());
         realmObject.setDesc1(newObject.getDesc1());
+        realmObject.setDesc2(newObject.getDesc2());
+        realmObject.setDesc3(newObject.getDesc3());
+        realmObject.setDesc4(newObject.getDesc4());
+        realmObject.setDesc5(newObject.getDesc5());
         realmObject.setValue2(newObject.getValue2());
         realmObject.setValue3(newObject.getValue3());
         realmObject.setValue4(newObject.getValue4());
         realmObject.setValue5(newObject.getValue5());
+        realmObject.setValue1Txt(newObject.getValue1Txt());
+        realmObject.setValue2Txt(newObject.getValue2Txt());
+        realmObject.setValue3Txt(newObject.getValue3Txt());
+        realmObject.setValue4Txt(newObject.getValue4Txt());
+        realmObject.setValue5Txt(newObject.getValue5Txt());
         realmObject.setCreateTime(newObject.getCreateTime());
         realmObject.setInsName(newObject.getInsName());
         realmObject.setInsUnit(newObject.getInsUnit());
         realmObject.setInsValueRange(newObject.getInsValueRange());
         realmObject.setState(newObject.getState());
+        realmObject.setTestCode(newObject.getTestCode());
         return realmObject;
     }
 
@@ -971,6 +1441,22 @@ public class RecordItemRealmProxy extends RecordItem
         stringBuilder.append(getDesc1() != null ? getDesc1() : "null");
         stringBuilder.append("}");
         stringBuilder.append(",");
+        stringBuilder.append("{desc2:");
+        stringBuilder.append(getDesc2() != null ? getDesc2() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{desc3:");
+        stringBuilder.append(getDesc3() != null ? getDesc3() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{desc4:");
+        stringBuilder.append(getDesc4() != null ? getDesc4() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{desc5:");
+        stringBuilder.append(getDesc5() != null ? getDesc5() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
         stringBuilder.append("{value2:");
         stringBuilder.append(getValue2());
         stringBuilder.append("}");
@@ -985,6 +1471,26 @@ public class RecordItemRealmProxy extends RecordItem
         stringBuilder.append(",");
         stringBuilder.append("{value5:");
         stringBuilder.append(getValue5());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{value1Txt:");
+        stringBuilder.append(getValue1Txt() != null ? getValue1Txt() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{value2Txt:");
+        stringBuilder.append(getValue2Txt() != null ? getValue2Txt() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{value3Txt:");
+        stringBuilder.append(getValue3Txt() != null ? getValue3Txt() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{value4Txt:");
+        stringBuilder.append(getValue4Txt() != null ? getValue4Txt() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{value5Txt:");
+        stringBuilder.append(getValue5Txt() != null ? getValue5Txt() : "null");
         stringBuilder.append("}");
         stringBuilder.append(",");
         stringBuilder.append("{createTime:");
@@ -1005,6 +1511,10 @@ public class RecordItemRealmProxy extends RecordItem
         stringBuilder.append(",");
         stringBuilder.append("{state:");
         stringBuilder.append(getState());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{testCode:");
+        stringBuilder.append(getTestCode() != null ? getTestCode() : "null");
         stringBuilder.append("}");
         stringBuilder.append("]");
         return stringBuilder.toString();

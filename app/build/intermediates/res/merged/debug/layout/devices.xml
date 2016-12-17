@@ -41,7 +41,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/bt_bottombar"
-        android:layout_below="@id/devices"
         android:layout_marginTop="25dp"
         android:layout_weight="1.0"
         android:background="#ff5cc2f2" />

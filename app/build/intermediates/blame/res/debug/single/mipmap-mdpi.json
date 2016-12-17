@@ -1,10 +1,14 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\otc.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-mdpi\\otc.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\otc_omnihealth.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-mdpi\\otc_omnihealth.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\otc.png",
+        "source": "F:\\hkb_workspace_android_new\\HealthQDoctor\\app\\src\\main\\res\\mipmap-mdpi\\otc.png"
     }
 ]

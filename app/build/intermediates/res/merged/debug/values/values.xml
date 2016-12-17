@@ -8,6 +8,8 @@
         <item>血脂</item>
         <item>体重</item>
         <item>尿酸</item>
+        <item>乐心血压计</item>
+        <item>乐心体重秤</item>
     </string-array>
     <string-array name="devices">
         <item>Blood glucose</item>
@@ -17,6 +19,8 @@
         <item>Lipid</item>
         <item>Weight</item>
         <item>Uric acid</item>
+        <item>LS WIFI BLOOD PRESSURE</item>
+        <item>LS WIFI WEIGHT</item>
     </string-array>
     <string-array name="gender_text">
         <item>男</item>
@@ -50,12 +54,15 @@
     <color name="alertex_dlg_checkbox_text_color">#ff646464</color>
     <color name="alertex_dlg_content_text_color">#ff313131</color>
     <color name="alertex_dlg_edit_text_color">#ff1f1f1f</color>
-    <color name="alertex_dlg_title_text_color">#ff008fdf</color>
+    <color name="alertex_dlg_title_text_color">#cdf599</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="black">#000000</color>
+    <color name="book_loading_background">#ffffff</color>
+    <color name="book_loading_book">#ff33b5e5</color>
+    <color name="book_loading_page">#ffffff</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -71,10 +78,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="color_limit_line">#FFB176</color>
     <color name="color_line_xy">#FF986E</color>
+    <color name="dadada">#DADADA</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="e4e4e4">#E4E4E4</color>
+    <color name="ffffff">#FFFFFF</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="grey">#666666</color>
@@ -137,6 +147,7 @@
     <declare-styleable name="AppCompatTextView"><attr format="reference|boolean" name="textAllCaps"/><attr name="android:textAppearance"/></declare-styleable>
     <declare-styleable name="ButtonBarLayout"><attr format="boolean" name="allowStacking"/></declare-styleable>
     <declare-styleable name="CompoundButton"><attr name="android:button"/><attr format="color" name="buttonTint"/><attr name="buttonTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
+    <declare-styleable name="CradleBall"><attr format="color" name="cradle_ball_color"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="HerilyAlertDialog"><attr format="reference|color" name="fullDark"/><attr format="reference|color" name="topDark"/><attr format="reference|color" name="centerDark"/><attr format="reference|color" name="bottomDark"/><attr format="reference|color" name="fullBright"/><attr format="reference|color" name="topBright"/><attr format="reference|color" name="centerBright"/><attr format="reference|color" name="bottomBright"/><attr format="reference|color" name="bottomMedium"/><attr format="reference|color" name="centerMedium"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
@@ -147,6 +158,7 @@
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
+    <declare-styleable name="RotateLoading"><attr format="dimension" name="loading_width"/><attr format="color" name="loading_color"/><attr format="integer" name="shadow_position"/><attr format="integer" name="loading_speed"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="reference" name="track"/><attr name="android:textOn"/><attr name="android:textOff"/><attr format="dimension" name="thumbTextPadding"/><attr format="reference" name="switchTextAppearance"/><attr format="dimension" name="switchMinWidth"/><attr format="dimension" name="switchPadding"/><attr format="boolean" name="splitTrack"/><attr format="boolean" name="showText"/></declare-styleable>
@@ -234,6 +246,8 @@
     <dimen name="action_bar_title_text_size">18dp</dimen>
     <dimen name="action_button_min_width">56dip</dimen>
     <dimen name="activity_chooser_popup_min_width">200dip</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="add_member_et_margin">5dp</dimen>
     <dimen name="add_member_head_margin">10dp</dimen>
     <dimen name="add_member_head_w_h">80dip</dimen>
@@ -244,6 +258,8 @@
     <dimen name="app_comm_size">15sp</dimen>
     <dimen name="app_icon_size">48dip</dimen>
     <dimen name="app_main_title_size">18.0sp</dimen>
+    <dimen name="book_border">10dp</dimen>
+    <dimen name="book_padding">15dp</dimen>
     <dimen name="btn_grid_item_padding_h">12dip</dimen>
     <dimen name="btn_grid_item_padding_v">12dip</dimen>
     <dimen name="btn_grid_state_margin">13dip</dimen>
@@ -328,6 +344,7 @@
     <dimen name="notification_subtext_size">12dp</dimen>
     <dimen name="notification_text_size">14dp</dimen>
     <dimen name="notification_title_text_size">18dp</dimen>
+    <dimen name="page_border">5dp</dimen>
     <dimen name="password_keyboard_horizontalGap">3dip</dimen>
     <dimen name="password_keyboard_key_height_alpha">56dip</dimen>
     <dimen name="password_keyboard_key_height_numeric">56dip</dimen>
@@ -430,6 +447,8 @@
     <string name="LOGIN_INPUT_PASSWORD">Please enter the password</string>
     <string name="LOGIN_INPUT_USERNAME">Please enter the account</string>
     <string name="LOW">diastolic pressure</string>
+    <string name="LS_WIFI_BLOOD_PRESSURE">LS_WIFI_BLOOD_PRESSURE</string>
+    <string name="LS_WIFI_WEIGHT">LS_WIFI_WEIGHT</string>
     <string name="NO.">No.</string>
     <string name="NO_USABLE_DEVICE">Unusable bluetooth devices</string>
     <string name="NULL_DEVICE">No matched\nPlease search again…</string>
@@ -501,10 +520,11 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action_settings">Settings</string>
     <string name="add_member_title">New Member</string>
     <string name="address">Address</string>
     <string name="anamnesis">Anamnesis</string>
-    <string name="app_name">健康Q博士</string>
+    <string name="app_name">HealthQDoctor</string>
     <string name="birthday">Birthday</string>
     <string name="birthday_is_not_null">Date of birth can not be empty</string>
     <string name="bp_height_not_null">Systolic blood pressure can not be empty</string>
@@ -519,6 +539,7 @@
     <string name="click_to_upload_image">Click Upload Photos</string>
     <string name="cloud_add_member_failed">Members submit information failed, please try again</string>
     <string name="confirm">Confirm</string>
+    <string name="dcloud_gallery_app_name">@string/app_name</string>
     <string name="device_info_title">%1$s：Equipment List</string>
     <string name="device_lipid_instrument">Lipid instrument</string>
     <string name="device_meter_blood_glucose">Blood glucose meter</string>
@@ -539,6 +560,8 @@
     <string name="dialog_error_title">Error</string>
     <string name="dialog_exit_add_member">You sure you want to exit the Add member?</string>
     <string name="dialog_exit_login">You sure you want to log off?</string>
+    <string name="dialog_glu_no_testitem_set">The test item has not been set?</string>
+    <string name="dialog_glu_select_testitem">Please select the test item</string>
     <string name="dialog_input_bp_title">Please enter the blood pressure values</string>
     <string name="dialog_input_chol_trig_title">Please enter the total cholesterol and triglyceride</string>
     <string name="dialog_input_height_waist_title">Please enter height and waist</string>
@@ -558,6 +581,9 @@
     <string name="head_image_is_not_null">Photos can not be empty</string>
     <string name="height_is_fanwei">Back height only 50cm to 255cm between</string>
     <string name="height_not_null">Height can not be empty</string>
+    <string name="hint_input_idnumber">Enter your identity card number</string>
+    <string name="hint_input_mobile">Enter your cell phone</string>
+    <string name="hint_input_name">Enter your name</string>
     <string name="home_title">Start Detection</string>
     <string name="idnumber">ID number</string>
     <string name="inPwd">Please enter your password</string>
@@ -598,6 +624,7 @@
     <string name="native_save_member_success">Membership information stored locally successful, please upload local networking information as soon as possible</string>
     <string name="native_update_member_failed">Modify membership information locally generated failed, please refresh Member List</string>
     <string name="network_error">Network anomalies, check the network is smooth or contact customer service</string>
+    <string name="nickname">Nick name</string>
     <string name="no_permission">No permission</string>
     <string name="operFail">operation failed</string>
     <string name="pwdErr">Password must be greater than equal to 6 and less than 20</string>
@@ -612,6 +639,19 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="sync_success">Synchronization success</string>
     <string name="syncing">Syncing \u2026</string>
+    <string name="title_activity_detect_ble2">DetectBle2Activity</string>
+    <string name="title_activity_detect_wifi" translatable="false">DetectWifiActivity</string>
+    <string name="title_activity_detect_wifi_failure">DetectWifiFailureActivity</string>
+    <string name="title_activity_detect_wifi_serch">DetectWifiSerchActivity</string>
+    <string name="title_activity_detect_wifi_succ">DetectWifiSuccActivity</string>
+    <string name="title_activity_lsblue_add_sync" translatable="false">LSBlueAddSyncActivity</string>
+    <string name="title_activity_lsblue_device_add" translatable="false">LSBlueDeviceAddActivity</string>
+    <string name="title_activity_lsblue_device_list" translatable="false">LSBLueDeviceListActivity</string>
+    <string name="title_ls_wifi_blood_pressure">title_ls_wifi_blood_pressure</string>
+    <string name="title_ls_wifi_blood_pressure_failure">title_ls_wifi_blood_pressure_failure</string>
+    <string name="title_ls_wifi_blood_pressure_guide">title_ls_wifi_blood_pressure_guide</string>
+    <string name="title_ls_wifi_blood_pressure_serch">title_ls_wifi_blood_pressure_serch</string>
+    <string name="title_ls_wifi_blood_pressure_succ">title_ls_wifi_blood_pressure_succ</string>
     <string name="today">Today</string>
     <string name="ua_is_fanwei">Uric acid value range must be between 0 ~ 700mmol / dL</string>
     <string name="ua_not_null">Uric acid can not be empty</string>
@@ -671,13 +711,13 @@
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1614,9 +1654,9 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
-    <style name="CustomTheme" parent="android:Theme">
+    <style name="CustomTheme" parent="android:Theme.Light">
         <item name="android:windowNoTitle">true</item>
-        <!-- <item name="android:windowIsTranslucent">true</item> -->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
     <style name="DCloudTheme" parent="@style/DeviceDefault.Light">
     </style>
@@ -1635,6 +1675,13 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:alertDialogStyle">@style/alertDialogStyle</item>
+    </style>
+    <style name="NotificationText" parent="android:TextAppearance.StatusBar.EventContent">
+        <item name="android:textColor">#bb000000</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title">
+        <item name="android:textColor">#bb000000</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1780,9 +1827,6 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
-    <style name="SplashTheme" parent="@android:style/Theme.Translucent">
-        <item name="android:windowNoTitle">true</item>
-    </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>
@@ -1880,7 +1924,7 @@
     <style name="TranslucentTheme" parent="@android:style/Theme.DeviceDefault.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@null</item>
     </style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
@@ -1992,26 +2036,31 @@
         <item name="android:windowExitAnimation">@anim/dcloud_slide_out_to_top</item>
     </style>
     <style name="dcloud_defalut_dialog">
-        <item name="android:windowBackground">@color/image_pick_title_btn_normal</item> 
-		<item name="android:backgroundDimEnabled">false</item>
-		<item name="android:layout_gravity">top</item>
-		<item name="android:windowIsFloating">true</item>
-		<item name="android:layout_width">match_parent</item>
-	</style>
+        <item name="android:windowBackground">@color/image_pick_title_btn_normal</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
     <style name="featureLossDialog" parent="@android:style/Theme.Holo.Dialog">
-        <item name="android:windowBackground">@color/image_pick_title_btn_normal</item> 
-		<item name="android:backgroundDimEnabled">false</item>
-		<item name="android:windowIsFloating">true</item>
-		<item name="android:layout_width">match_parent</item>
+        <item name="android:windowBackground">@color/image_pick_title_btn_normal</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
     <style name="myTextView">
         <item name="android:textSize">@dimen/app_comm_size</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:gravity">center</item>
+    </style>
+    <style name="streamDelete19Dialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 </resources>

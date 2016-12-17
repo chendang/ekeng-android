@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Environment;
+import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
@@ -25,7 +26,9 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SysApp extends Application{
+import io.dcloud.application.DCloudApplication;
+
+public class SysApp extends DCloudApplication {
 
 	public static int SCREEN_WIDTH;   //屏幕宽度
 	public static int SCREEN_HEIGHT;  //屏幕高度
@@ -131,7 +134,11 @@ public class SysApp extends Application{
 		Intent intent = new Intent (CommConst.INTENT_ACTION_EXIT_APP);
 		ctx.sendBroadcast(intent);
 	}
-
+	@Override
+	protected void attachBaseContext(Context base) {
+		super.attachBaseContext(base);
+		MultiDex.install(this);
+	}
 	/**
 	 * 获取并初始化线程池
 	 * @return

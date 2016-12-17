@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="devices">
+    <string-array name="device_codes">
         <item>血糖</item>
         <item>血压</item>
         <item>体温</item>
@@ -9,9 +9,24 @@
         <item>体重</item>
         <item>尿酸</item>
     </string-array>
+    <string-array name="devices">
+        <item>血糖</item>
+        <item>血压</item>
+        <item>体温</item>
+        <item>血氧</item>
+        <item>血脂</item>
+        <item>体重</item>
+        <item>尿酸</item>
+        <item>乐心血压计</item>
+        <item>乐心体重秤</item>
+    </string-array>
     <string-array name="gender_text">
         <item>男</item>
         <item>女</item>
+    </string-array>
+    <string-array name="gender_value">
+        <item>M</item>
+        <item>F</item>
     </string-array>
     <string name="ABOUT">关于</string>
     <string name="AT">在</string>
@@ -58,6 +73,8 @@
     <string name="LOGIN_INPUT_PASSWORD">请输入密码</string>
     <string name="LOGIN_INPUT_USERNAME">请输入账号</string>
     <string name="LOW">低压</string>
+    <string name="LS_WIFI_BLOOD_PRESSURE">乐心血压计</string>
+    <string name="LS_WIFI_WEIGHT">乐心体重秤</string>
     <string name="NO.">序号</string>
     <string name="NO_USABLE_DEVICE">无可用蓝牙设备</string>
     <string name="NULL_DEVICE">沒有設備已經配對\n稍後請重新搜索</string>
@@ -110,9 +127,11 @@
     <string name="YOUR_OBJECT_TEMPERATURE">您的物体温度测试结果为</string>
     <string name="YOUR_SYSTOLIC">您的血压测试结果为：高压=</string>
     <string name="YOUR_TEMPERATURE">您的体温测试结果为</string>
+    <string name="action_settings">Settings</string>
     <string name="add_member_title">新增会员</string>
     <string name="address">住址</string>
     <string name="anamnesis">既往病史</string>
+    <string name="app_name">健康Q博士</string>
     <string name="birthday">出生日期</string>
     <string name="birthday_is_not_null">出生日期不能为空</string>
     <string name="bp_height_not_null">收缩压不能为空</string>
@@ -127,9 +146,12 @@
     <string name="click_to_upload_image">点击上传头像</string>
     <string name="cloud_add_member_failed">提交会员信息失败，请重新再试</string>
     <string name="confirm">确定</string>
+    <string name="dcloud_gallery_app_name">@string/app_name</string>
     <string name="device_info_title">%1$s：设备列表</string>
     <string name="device_lipid_instrument">血脂仪</string>
     <string name="device_meter_blood_glucose">血糖仪</string>
+    <string name="device_not_open_ble">设备蓝牙未开启</string>
+    <string name="device_not_surport_ble4">设备不支持蓝牙4.0</string>
     <string name="device_pulse_oximter">血氧仪</string>
     <string name="device_sphygmomanometers">血压计</string>
     <string name="device_thermometer">体温计</string>
@@ -147,6 +169,8 @@
     <string name="dialog_error_title">错误</string>
     <string name="dialog_exit_add_member">确定要退出添加会员吗？</string>
     <string name="dialog_exit_login">确定要退出登录吗？</string>
+    <string name="dialog_glu_no_testitem_set">接收到血糖数据，但你没有选择检查项目</string>
+    <string name="dialog_glu_select_testitem">请选择血糖检查项目</string>
     <string name="dialog_input_bp_title">请输入血压值</string>
     <string name="dialog_input_chol_trig_title">请输入总胆固醇和甘油三酯</string>
     <string name="dialog_input_height_waist_title">请输入身高和腰围</string>
@@ -205,10 +229,11 @@
     <string name="name_hint">请输入手机号</string>
     <string name="name_is_not_null">姓名不能为空</string>
     <string name="native_add_member_failed">本地生成会员信息失败，请重新再试</string>
-    <string name="native_add_member_has_same">添加会员失败，存在相同手机号的会员</string>
+    <string name="native_add_member_has_same">添加会员失败，存在相同手机号的同名会员</string>
     <string name="native_save_member_success">本地保存会员信息成功，请尽快联网上传本地信息</string>
     <string name="native_update_member_failed">本地生成修改会员信息失败，请刷新会员列表</string>
     <string name="network_error">网络异常，请检查网络是否通畅或联系客服</string>
+    <string name="nickname">登录名</string>
     <string name="no_permission">暂无权限</string>
     <string name="operFail">操作失败</string>
     <string name="pwdErr">密码需大于等于6位，小于20位</string>
@@ -222,11 +247,21 @@
     <string name="ssn">社保卡号</string>
     <string name="sync_success">同步成功</string>
     <string name="syncing">正在同步数据中中\u2026</string>
+    <string name="title_activity_detect_ble2">DetectBle2Activity</string>
+    <string name="title_activity_detect_wifi_failure">DetectWifiFailureActivity</string>
+    <string name="title_activity_detect_wifi_serch">DetectWifiSerchActivity</string>
+    <string name="title_activity_detect_wifi_succ">DetectWifiSuccActivity</string>
+    <string name="title_ls_wifi_blood_pressure">确认家庭WIFI</string>
+    <string name="title_ls_wifi_blood_pressure_failure">配网失败</string>
+    <string name="title_ls_wifi_blood_pressure_guide">设置乐心设备</string>
+    <string name="title_ls_wifi_blood_pressure_serch">添加设备中</string>
+    <string name="title_ls_wifi_blood_pressure_succ">配网成功</string>
     <string name="today">今天</string>
     <string name="ua_is_fanwei">尿酸范围必须在0~700mmol/dL之间</string>
     <string name="ua_not_null">尿酸不能为空</string>
     <string name="upload_file_error">上传文件失败</string>
     <string name="upload_image_fail">图片保存成功，但上传失败</string>
+    <string name="url">URL</string>
     <string name="url_format_is_incorrect">URL格式不正确</string>
     <string name="url_is_not_end_with_slash">不能以“/”结尾</string>
     <string name="url_is_not_null">URL不能为空</string>

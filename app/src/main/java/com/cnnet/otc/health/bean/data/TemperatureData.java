@@ -3,7 +3,7 @@ package com.cnnet.otc.health.bean.data;
 import android.content.Context;
 import android.util.Log;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.cnnet.otc.health.bean.MemberRecord;

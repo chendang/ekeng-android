@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.data.WeightData;
 import com.cnnet.otc.health.bluetooth.DeviceDialog;
@@ -24,7 +24,7 @@ import com.cnnet.otc.health.events.BTConnetEvent;
 import com.cnnet.otc.health.managers.BtNormalManager;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
-import com.example.blelib.MyData;
+import com.cnnet.otc.health.bean.data.MyData;
 
 import de.greenrobot.event.EventBus;
 
@@ -267,7 +267,7 @@ public class BluetoothService {
 		mReadThread = new ReadThread();
 		mReadThread.start();
 		// sendThread = new SendThread();
-		// sendThread.start();
+		// sendThread.init();
 		outStream = socket.getOutputStream();
 		sendInfoHandler.removeCallbacks(sendMessage);
 		sendInfoHandler.post(sendMessage);
@@ -550,7 +550,7 @@ public class BluetoothService {
 			try {
 				byte[] send = weightData.getSendWeightBytes();
 				if(send != null) {
-					outStream.write(weightData.getSendWeightBytes());
+					outStream.write(send);
 					Log.d(TAG, "sendWeightCmd ..........." + StringUtil.byteToHexString(send));
 					return false;
 				}

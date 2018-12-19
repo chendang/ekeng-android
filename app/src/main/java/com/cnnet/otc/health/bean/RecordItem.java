@@ -138,7 +138,7 @@ public class RecordItem extends RealmObject {
     }
 
     public String getDesc1() {
-        return desc1;
+        return (desc1==null)? "":desc1;
     }
 
     public void setDesc1(String desc1) {

@@ -3,7 +3,7 @@ package com.cnnet.otc.health.bean.data;
 import android.content.Context;
 import android.util.Log;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
@@ -16,7 +16,7 @@ import com.cnnet.otc.health.tasks.UploadAllNewInfoTask;
 import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class OximetryData implements MyCommData {
 
     private byte spo2,pi ,pr;
     private byte d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11;
-    private byte [] Data = new byte[10];
+    private CircleBuffer buffer = new CircleBuffer();
     private int todoDisconnected_failed, todoDisconnected ;
     private boolean cloudSample = false;
 
@@ -68,36 +68,77 @@ public class OximetryData implements MyCommData {
         this.mUniqueKey=mUniqueKey;
     }
 
-    @Override
-    public void todo(byte[] data) {
-        if (data.length == OXIM_DATA_LENGTH)
+    /*public void log_finish()
+    {
+        if(log_file==null)
         {
-			/*pr, pi, spo2*/
-            pr =data[6];
-            spo2 = data[7];
-            pi = data[8];
-            Log.d(TAG, "onCharacteristicChanged_characteristic : " + data[7] + "_" + data[8] + "_" + data[6]);
-
-            Log.d(TAG, "OximetryData spo2 pi, pr ---- " + data[7] + "_" + data[8] + "_" + data[6]);
+            log_finish();
         }
-        else
-        {
-            d1 =data[5]; d2 =data[6]; d3 =data[7]; d4 =data[8]; d5 =data[9]; d6 =data[10]; d7 =data[11];
-            d8 =data[12];d9 =data[13];d10 =data[14];d11=data[15];
-			/*D0 ... D10*/
-            int j =15;
-            for(int i = 0 ; i<10;i++){
-                Data [i]=data[j--];
+    }*/
+
+    byte [] parse()
+    {
+        byte [] datas=buffer.readData();
+        CircleBuffer data_buffer=new CircleBuffer(500);
+        for(byte b:datas) {
+            int val = b & 0xff;
+            if (seg_buf_cnt== 0) {
+                if (val == 0xfe) {
+                    seg_buf[seg_buf_cnt++]=b;
+                    continue;
+                }
+            } else {
+                if ((seg_buf_cnt == 1) && (val != 0x6a)) {
+                    seg_buf_cnt=0;
+                    continue;
+                }
+                else if ((val == 0xfe) && (seg_buf_cnt== 10 || seg_buf_cnt == 17)) {
+                    if(seg_buf_cnt==10)
+                    {
+                        pr=seg_buf[6];
+                        spo2=seg_buf[7];
+                        pi=seg_buf[8];
+                    }
+                    else if(seg_buf_cnt==17)
+                    {
+                        int j=15;
+                        byte[] byts=new byte[10];
+                        for (int i = 0; i < 10; i++) {
+                            byts[i]=seg_buf[j--];
+                        }
+                        data_buffer.addData(byts);
+                    }
+                    seg_buf_cnt=1;
+                    seg_buf[0]=b;
+                    continue;
+                }
+                else if (seg_buf_cnt>= 17) {
+                    seg_buf_cnt=0;
+                    continue;
+                } else {
+                    seg_buf[seg_buf_cnt++]=b;
+                }
             }
-            Log.d(TAG, "OximetryData D0 ... D10 ---- " + data[5] + "_" + data[6] + "_" + data[7]+ "_" + data[8]+ "_" + data[9]+ "_" + data[10]+ "_" + data[11]+ "_" + data[12]+ "_" + data[13]+ "_" + data[14]+ "_" + data[15]);
-
-            Log.d(TAG, "onCharacteristicChanged_characteristic : " + data[5] + "_" + data[6] + "_" + data[7]+ "_" + data[8]+ "_" + data[9]+ "_" + data[10]+ "_" + data[11]+ "_" + data[12]+ "_" + data[13]+ "_" + data[14]+ "_" + data[15]);
         }
+        byte [] tmp_datas=data_buffer.readData();
+        return tmp_datas;
+    }
+
+    byte[] seg_buf=new byte[18];
+    int seg_buf_cnt=0;
+
+    public void todo(byte[] data) {
+
+            buffer.addData(data);
     }
 
     @Override
     public void todoConnected() {
 //		todoConnected=2;
+        if(buffer!=null)
+        {
+            buffer.reset();
+        }
         Log.d(TAG, "todoConnected");
     }
 
@@ -130,7 +171,7 @@ public class OximetryData implements MyCommData {
 
     @Override
     public List<RecordItem> getRecordAllList(String mUniqueKey) {
-        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey,DATA_SPO2,DATA_PI,DATA_PR);
+        return SysApp.getMyDBManager().getRecordAllInfoByType(mUniqueKey,DATA_SPO2, DATA_PI, DATA_PR);
     }
 
     @Override
@@ -151,14 +192,8 @@ public class OximetryData implements MyCommData {
 
     @Override
     public void refreshRealTime() {
-        if(getdata() != null) {
-            /*for (int i = getdata().length - 1; i >= 0; i--) {
-//                EventBus.getDefault().post(new BleEvent(CommConst.FLAG_REFRESH_REAL_TIME_DATA, getdata()[i]));
-                myLineView.refreshRealTimeView(getdata()[i]);
-            }*/
-            myLineView.refreshRealTimeByMP(getdata());
-        }
 
+           // myLineView.refreshRealTimeByMP(getdata());
     }
 
     @Override
@@ -241,8 +276,7 @@ public class OximetryData implements MyCommData {
         } else {
             ToastUtil.TextToast(ctx, R.string.sample_error, 2000);
         }
-
-        return true;
+        return false;
     }
 
 
@@ -270,8 +304,12 @@ public class OximetryData implements MyCommData {
     }
 
     public byte[] getdata(){
-
-        return Data;
+        byte [] plot_data=parse();
+        /*if(log_file!=null)
+        {
+            log_file.write(plot_data);
+        }*/
+        return plot_data;
     }
 
     public int getdata1(){
@@ -318,4 +356,54 @@ public class OximetryData implements MyCommData {
         int i = d11&0xff;
         return i;
     }
+}
+
+class CircleBuffer
+{
+    int BUF_LENGTH=3000;
+    byte [] buf;
+    int write_idx=0;
+    int read_idx=0;
+    public void addData(byte [] byts)
+    {
+        synchronized (this) {
+            for(int i=0;i<byts.length;i++) {
+                buf[write_idx++] = byts[i];
+                write_idx = write_idx % BUF_LENGTH;
+            }
+        }
+    }
+
+    public CircleBuffer()
+    {
+        buf=new byte[BUF_LENGTH];
+    }
+
+    public CircleBuffer(int buf_len)
+    {
+        BUF_LENGTH=buf_len;
+        buf=new byte[BUF_LENGTH];
+    }
+
+    public void reset()
+    {
+        write_idx=read_idx=0;
+    }
+
+    public byte[] readData() {
+        int sz;
+        synchronized (this) {
+             sz= (write_idx - read_idx + BUF_LENGTH) % BUF_LENGTH;
+        }
+        if(sz==0)
+            return new byte[0];
+        byte[] datas = new byte[sz];
+        for (int i = 0; i < sz; i++) {
+            datas[i] = buf[read_idx++];
+            if (read_idx == BUF_LENGTH)
+                read_idx = 0;
+        }
+        return datas;
+    }
+
 }

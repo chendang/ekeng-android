@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.FetalHeart;
 
 public class TaixinAdapter extends ArrayAdapter<TaixinTextandImage> {

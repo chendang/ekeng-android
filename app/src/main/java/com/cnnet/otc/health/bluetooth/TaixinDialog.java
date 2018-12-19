@@ -13,33 +13,33 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.DeviceListItem;
 import com.cnnet.otc.health.bean.MyBlueToothDevice;
-import com.cnnet.otc.health.comm.CheckType;
-import com.cnnet.otc.health.comm.SysApp;
-import com.cnnet.otc.health.managers.BleManager;
+import com.cnnet.otc.health.ble.BleScanner;
+import com.cnnet.otc.health.ble.LeScanCallbackExt;
+import com.cnnet.otc.health.ble_middle.BleController;
+//import com.cnnet.otc.health.managers.WavePlotManager;
 import com.cnnet.otc.health.util.StringUtil;
 
 public class TaixinDialog extends Dialog implements
 		View.OnClickListener {
 	
 	private final String TAG = "TaixinDialog";
-
-	private HashMap<String, String> map = new HashMap<String, String>();
 	private Button seachButton, stopButton;
 
 	private Context mContext;
@@ -47,31 +47,16 @@ public class TaixinDialog extends Dialog implements
 	public ProgressDialog progressDialog;
 
 
-	private String TaixinAddress;
-	private BleManager mBleManager;
+	//private WavePlotManager mBleManager;
 	private ListView mListView;
 	private DeviceListAdapter mAdapter;
 	private ArrayList<MyBlueToothDevice>list;
 	private String Sharepare;
-
-	public TaixinDialog(Context context, int theme,String sharepare, BleManager mBle) {
+	public TaixinDialog(Context context, int theme,String sharepare) {
 		super(context, theme);
 		setContentView(R.layout.devices);
-		this.mBleManager = mBle;
-		this.mBleManager.setLeScanCallBack(mLestartScanCallback);
 		mContext = context;
 		Sharepare = sharepare;
-		if(Build.VERSION.SDK_INT >= 23){
-			//6.0以上设备
-			int hasPermission = ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
-			if(hasPermission != PackageManager.PERMISSION_GRANTED) {
-				Log.d(TAG, "mayRequestLocation: 请求粗略定位的权限");
-				ActivityCompat.requestPermissions((Activity) mContext,
-						new String[]{
-								android.Manifest.permission.ACCESS_COARSE_LOCATION},0);
-
-			}
-		}
 		init();
 	}
 
@@ -89,45 +74,44 @@ public class TaixinDialog extends Dialog implements
 		mListView.setOnItemClickListener(mDeviceClickListener);
 		seachButton = (Button) findViewById(R.id.start_seach);
 		stopButton = (Button) findViewById(R.id.stop_seach);
+		switchButton(false);
 		seachButton.setOnClickListener(this);
 		stopButton.setOnClickListener(this);
 		setTitle(Sharepare);
+		mHandlerslist.post(TimerProcess1);
 
+	}
+
+	void switchButton(boolean isSearching)
+	{
+		int search_bnt_color=isSearching? 0xFF808080:0xFFFFFFFF;
+		int stop_bnt_color=isSearching?   0xFFFFFFFF:0xFF808080;
+		seachButton.setEnabled(!isSearching);
+		seachButton.setTextColor(search_bnt_color);
+		stopButton.setEnabled(isSearching);
+		stopButton.setTextColor(stop_bnt_color);
 	}
 
 	@Override
 	public void onClick(View v) {
+		BleScanner scanner=BleScanner.getInstance(getContext());
 		switch (v.getId()) {
-
-		case R.id.start_seach:
-			mBleManager.startScan();
-
-			mAdapter.notifyDataSetChanged();
-			mListView.setSelection(list.size() - 1);
-
-
-			mHandlerslist.post(TimerProcess1);
-
-			break;
-		case R.id.stop_seach:
-			mBleManager.stopScan();
-			mHandlerslist.removeCallbacks(TimerProcess1);
-			map.clear();
-			break;
+			case R.id.start_seach:
+				list.clear();
+				mAdapter.notifyDataSetChanged();
+				switchButton(true);
+				//mBleManager.startScan();
+				scanner.setmCallerScanCallback(mScanCallbackExt);
+                scanner.scan(15000);
+				break;
+			case R.id.stop_seach:
+			    scanner.stop_scan();
+				switchButton(false);
+				break;
 
 		}
 
 	}
-
-	Handler mHandlerslist = new Handler();
-	private Runnable TimerProcess1 = new Runnable() {
-		public void run() {
-			//
-			mAdapter.notifyDataSetChanged();
-			mListView.setSelection(list.size() - 1);
-			mHandlerslist.postDelayed(this, 1000);
-		}
-	};
 
 	private OnItemClickListener mDeviceClickListener = new OnItemClickListener() {
 		@Override
@@ -148,15 +132,8 @@ public class TaixinDialog extends Dialog implements
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 
-							seachButton.setText(getContext().getString(
-									R.string.REDISCOVERY));
-							Log.i(TAG, "mEngineManager当前连接状态" + mBleManager.getConnectState());
-
-							mBleManager.setConnectAddress(item.getName(), item.getAddress());
-
-							map.clear();
-
-							mBleManager.disConnectBle();
+							BleController ble_controller=BleController.getInstance();
+                            ble_controller.addBleDeviceToList(item);
 							TaixinDialog.this.dismiss();
 						}
 					});
@@ -167,25 +144,41 @@ public class TaixinDialog extends Dialog implements
 		}
 	};
 
-	// 获取蓝牙设备列表
-	@SuppressLint("NewApi")
-	private BluetoothAdapter.LeScanCallback mLestartScanCallback = new BluetoothAdapter.LeScanCallback() {
-
-		@Override
-		public void onLeScan(final BluetoothDevice device, final int rssi,
-				byte[] scanRecord) {
-			String address = device.getAddress();
-			if (!map.containsKey(address)) {
-				map.put(address, address);
-				Log.i(TAG, "ss  -- " + device.getName() + " _" + device.getAddress());
-				MyBlueToothDevice item = new MyBlueToothDevice(device.getName(),  device.getName());
-				item.setName(device.getName());
-				item.setAddress(device.getAddress());
-				list.add(item);
-			}
-
+	Handler mHandlerslist = new Handler();
+	private Runnable TimerProcess1 = new Runnable() {
+		public void run() {
+			//
+			mAdapter.notifyDataSetChanged();
+			mListView.setSelection(list.size() - 1);
+			mHandlerslist.postDelayed(this, 1000);
 		}
 	};
 
-	
+
+	// 获取蓝牙设备列表
+	@SuppressLint("NewApi")
+	LeScanCallbackExt mScanCallbackExt=new LeScanCallbackExt()
+	{
+		@Override
+		public void onLeScan(BluetoothDevice device, int i, byte[] bytes) {
+			String address = device.getAddress();
+            for(MyBlueToothDevice item:list)
+			{
+				if(item.getAddress().equals(address))
+				{
+					item.setName(device.getName());
+					return;
+				}
+			}
+			MyBlueToothDevice new_item = new MyBlueToothDevice(device.getName(),  device.getName());
+			new_item.setName(device.getName());
+			new_item.setAddress(device.getAddress());
+			list.add(new_item);
+		}
+
+		@Override
+		public void on_scan_finish() {
+			switchButton(false);
+		}
+	};
 }

@@ -12,7 +12,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 
 public class EmptyLayout {
     private Context ctx;

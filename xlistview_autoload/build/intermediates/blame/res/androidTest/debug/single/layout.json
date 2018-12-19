@@ -1,14 +1,14 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\xlistview_header.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\xlistview_header.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\xlistview_header.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\xlistview_header.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wait_progress_bar.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\wait_progress_bar.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wait_progress_bar.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\wait_progress_bar.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\xlistview_footer.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\xlistview_footer.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\xlistview_footer.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\layout\\xlistview_footer.xml"
     }
 ]

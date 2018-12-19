@@ -2,6 +2,7 @@ package com.cnnet.otc.health.activities;
 
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,9 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cnnet.otc.health.MainActivity;
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.comm.BaseActivity;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
@@ -23,6 +25,9 @@ import com.cnnet.otc.health.tasks.LoginRequest;
 import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
+
+import java.io.File;
+import java.io.InputStream;
 
 import de.greenrobot.event.EventBus;
 
@@ -42,6 +47,24 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private Context mContext;
 
+   void printGID()
+   {
+    try {
+            java.lang.Process process=Runtime.getRuntime().exec("id");
+            InputStream input=process.getInputStream();
+            byte[] bytes =new byte[1204];
+            int len;
+            while ((len=(input.read(bytes)))>0)
+            {
+                System.out.print(new String(bytes,0,len));
+            }
+            input.close();
+    }
+    catch(Exception e)
+    {
+        System.out.println(e.getLocalizedMessage());
+    }
+   }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,6 +72,38 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         setContentView(R.layout.activity_login);
         mContext = this;
         userLayout = (LinearLayout) findViewById(R.id.linearLayout1);
+        TextView v=(TextView) findViewById(R.id.login_title);
+        v.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final AlertDialog.Builder normalDialog =
+                        new AlertDialog.Builder(LoginActivity.this);
+                normalDialog.setTitle("重建数据库");
+                normalDialog.setMessage("点击【重建数据库】按钮将重建数据库，本地保存的数据将丢失,程序将关闭。");
+                normalDialog.setPositiveButton("重建数据库",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog,int which)
+                    {
+                        File oldfile = new File("/data/data/com.cnnet.otc.health/databases/otc.db");
+                        if(oldfile.exists())
+                        {
+                            oldfile.delete();
+                            System.exit(0);
+                        }
+                    }
+                });
+                normalDialog.setNegativeButton("取消",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog,int which)
+                    {
+                        dialog.cancel();
+                    }
+                });
+                normalDialog.show();
+                return true;
+            }
+        });
+        printGID();
         init();
     }
 

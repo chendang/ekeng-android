@@ -1,18 +1,18 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_loading.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_loading.png"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_loading.png",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_loading.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_error.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_error.png"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_empty.png",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_empty.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\xlistview_arrow.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\xlistview_arrow.png"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\xlistview_arrow.png",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\xlistview_arrow.png"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_empty.png",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_empty.png"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_error.png",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\xlistview_autoload\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_error.png"
     }
 ]

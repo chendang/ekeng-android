@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.GridView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 
 public class MyGridView extends GridView {
     public MyGridView(Context context, AttributeSet attrs) {

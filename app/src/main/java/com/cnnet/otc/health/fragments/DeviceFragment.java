@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.activities.DeviceInfoAcitivty;
 import com.cnnet.otc.health.comm.CheckType;
 import com.cnnet.otc.health.comm.CommConst;

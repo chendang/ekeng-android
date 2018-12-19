@@ -3,7 +3,7 @@ package com.cnnet.otc.health.bluetooth;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;

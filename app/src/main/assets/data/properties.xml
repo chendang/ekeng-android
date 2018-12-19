@@ -54,11 +54,19 @@
 			<module name="OAuth-MiUi" value="io.dcloud.feature.oauth.miui.MiUiOAuthService"/>
 			<module name="OAuth-Qihoo" value="io.dcloud.oauth.qihoo.QihooOAuthService"/>
 		</feature>
+		<feature
+			name="plugintest"
+			value="com.foxchen.ekeng.health.plugin.PGPlugintest" />
+		<feature
+			name="sleepdata"
+			value="com.foxchen.ekeng.health.plugin.sleepdata" />
+
 	</features>
 	<services> 
 		<service name="Downloader" value="io.dcloud.net.DownloaderBootImpl"/>
 		<service name="Statistic" value="io.dcloud.feature.statistics.StatisticsBootImpl"/>
 		<!--<service name="Maps" value="io.dcloud.js.map.MapInitImpl"/>-->
-		<service name="push" value="io.dcloud.feature.aps.APSFeatureImpl"/> 
+		<service name="push" value="io.dcloud.feature.aps.APSFeatureImpl"/>
+		<!--<service name="plugintest" value="com.example.H5PlusPlugin.PGPlugintest" />-->
 	</services> 
 </properties>

@@ -19,7 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.BloodPressureData;
 import com.cnnet.otc.health.bean.data.LipidData;
@@ -199,7 +199,7 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
         if(mHeight <= 0) {
             //初始化身高，腰围用来做是否开启蓝牙检测功能
             WeightData weightData = (WeightData) btNormalManager.getData();
-            RecordItem hegithItem = SysApp.getMyDBManager().getOneRecordItem(nativeRecordId, weightData.DATA_HEIGHT);
+            /*RecordItem hegithItem = SysApp.getMyDBManager().getOneRecordItem(nativeRecordId, weightData.DATA_HEIGHT);
             RecordItem waistItem = SysApp.getMyDBManager().getOneRecordItem(nativeRecordId, weightData.DATA_WAIST);
 
             if(hegithItem != null && hegithItem.getValue1() > 0) {
@@ -207,7 +207,7 @@ public class DetectBle3Activity extends BaseActivity implements OnChartValueSele
             }
             if(waistItem != null && waistItem.getValue1() > 0) {
                 mWaist = (int)waistItem.getValue1();
-            }
+            }*/
         }
 
         LayoutInflater inflater = LayoutInflater.from(this);

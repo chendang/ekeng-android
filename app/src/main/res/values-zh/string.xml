@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">健康Q博士</string>
+    <string name="app_name">e康云</string>
 
     <string name="USER">用户</string>
     <string name="USER_NAME">用户：</string>
@@ -243,6 +243,10 @@
     <string name="device_uric_acid_analyzer">尿酸仪</string>
     <string name="male">男</string>
     <string name="female">女</string>
+    <string name="explain_ble_requires_gps">自Android 6.0开始需要打开位置权限才可以搜索到Ble设备</string>
+    <string name="can_not_search_ble">无法搜索BLE设备</string>
+    <string name="dialog_ble_empty_title">注意!!</string>
+    <string name="dialog_ble_empty">系统尚未连接过支持的血氧设备,是否扫描环境中的血氧仪</string>
 
      <!--wifi设置 名称字段-->
     <string name="title_ls_wifi_blood_pressure_guide">设置乐心设备</string>

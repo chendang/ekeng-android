@@ -143,16 +143,14 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <include
-        layout="@layout/view_main_topbar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/top_bar_hight" />
-
     <FrameLayout
         android:id="@+id/main_fragment_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/rl_cloud_opeate_bar_bottom" />
+
+    <include
+        layout="@layout/view_main_topbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_hight" />
 </RelativeLayout>

@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/dcloud_pd_root"
         android:layout_width="wrap_content"
-        android:background="@drawable/longding_bg"
+        android:background="@drawable/dcloud_longding_bg"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_height="wrap_content">

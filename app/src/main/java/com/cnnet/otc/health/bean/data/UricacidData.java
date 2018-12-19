@@ -16,6 +16,7 @@ import com.cnnet.otc.health.util.StringUtil;
 import com.cnnet.otc.health.util.ToastUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -164,7 +165,9 @@ public class UricacidData implements MyCommData {
                     //十六进制转十进制
                     int int_vv = Integer.parseInt(vv_Value, 16);
 
-                    int vv = (int)(int_vv * 100 / 16.81f);
+                    float vv = (float)(int_vv/(10*16.81f));
+                    vv=new BigDecimal(vv).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
+
                     nativeRecordId=new Date().getTime();
                     SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_UA, vv, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());

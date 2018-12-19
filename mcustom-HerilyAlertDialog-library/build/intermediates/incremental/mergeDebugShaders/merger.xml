@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\hkb_workspace_android_new\HBuilder-Integrate1\mcustom-HerilyAlertDialog-library\src\main\shaders"/></dataSet><dataSet config="debug"><source path="F:\hkb_workspace_android_new\HBuilder-Integrate1\mcustom-HerilyAlertDialog-library\build-types\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="H:\hkb_workspace_android_new\ekeng\mcustom-HerilyAlertDialog-library\src\main\shaders"/></dataSet><dataSet config="debug"><source path="H:\hkb_workspace_android_new\ekeng\mcustom-HerilyAlertDialog-library\build-types\debug\shaders"/></dataSet></merger>

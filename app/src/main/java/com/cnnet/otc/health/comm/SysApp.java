@@ -14,7 +14,17 @@ import com.cnnet.otc.health.db.MyDBManager;
 import com.cnnet.otc.health.interfaces.IUser;
 import com.cnnet.otc.health.managers.RequestManager;
 import com.cnnet.otc.health.managers.SpManager;
+import com.espressif.iot.esptouch.EsptouchModuleV4Impl;
 import com.facebook.stetho.Stetho;
+//import com.het.basic.utils.GsonUtil;
+//import com.het.bind.logic.api.bind.ModuleManager;
+//import com.het.open.lib.api.HetCodeConstants;
+//import com.het.open.lib.api.HetSdk;
+//import com.het.open.lib.model.ConfigModel;
+import com.het.bind.logic.api.bind.ModuleManager;
+import com.het.open.lib.api.HetCodeConstants;
+import com.het.open.lib.api.HetSdk;
+import com.het.open.lib.model.ConfigModel;
 import com.nostra13.universalimageloader.cache.disc.impl.LimitedAgeDiscCache;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -53,7 +63,6 @@ public class SysApp extends DCloudApplication {
 	public static String LOCAL_ROOT_FLODER = "";  //根目录
 	public static String LOCAL_HEAD_FLODER = "";  //头像目录
 	private static String mUniqueKey; //用户会员号
-
 	public static String getmUniqueKey() {
 		return mUniqueKey;
 	}
@@ -80,7 +89,11 @@ public class SysApp extends DCloudApplication {
 							.build());
 		}
 		initImageLoader(this);
+       //初始化clife sdk
+		initClifeSdk();
+
 	}
+
 
 	public static MyDBManager getMyDBManager() {
 		if(myDBManager == null) {
@@ -88,6 +101,7 @@ public class SysApp extends DCloudApplication {
 		}
 		return myDBManager;
 	}
+
 
 	/**
 	 * 获取SpManager对象
@@ -99,7 +113,21 @@ public class SysApp extends DCloudApplication {
 		}
 		return spManager;
 	}
+	public void  initClifeSdk(){
+		//空气净化器模块添加
+		try {
+			ModuleManager.getInstance().registerModule(EsptouchModuleV4Impl.class, getApplicationContext());//乐鑫信息科技(esptouchmodule)
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
+
+		ConfigModel configModel = new ConfigModel();
+		configModel.setLog(true); //是否开启log信息
+		configModel.setHost(HetCodeConstants.TYPE_PRODUCE_HOST); //TYPE_PRODUCE_HOST HetCodeConstants.TYPE_LOCAL_HOST
+		//configModel.setH5UIconfig(GsonUtil.getInstance().toJson(uiJsonConfig));
+		HetSdk.getInstance().init(this, "30722", "985142dccacc4697b152aa82cb774406", configModel);
+	}
 	public static void setLoginUser(IUser user) {
 		accountBean = user;
 	}
@@ -133,6 +161,8 @@ public class SysApp extends DCloudApplication {
 		ImageLoader.getInstance().destroy();
 		Intent intent = new Intent (CommConst.INTENT_ACTION_EXIT_APP);
 		ctx.sendBroadcast(intent);
+
+		//HetSdk.getInstance().destroy();
 	}
 	@Override
 	protected void attachBaseContext(Context base) {

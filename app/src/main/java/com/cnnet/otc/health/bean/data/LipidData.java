@@ -13,6 +13,7 @@ import com.cnnet.otc.health.views.MyLineChartView;
 
 import com.cnnet.otc.health.db.DBHelper;
 
+import java.util.Date;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -156,8 +157,13 @@ public class LipidData implements MyCommData {
                     }
                 }
                 boolean bFound = false;
+
                 for (LipidDataItem itm : my_test.getLipid_data_items().values()) {
                     if (itm.val != LipidDataItem.NONE_VALUE) {
+                        if(!bFound){
+                            nativeRecordId=new Date().getTime();
+                            SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
+                        }
                         bFound = true;
                         SysApp.getMyDBManager().addRecordItemWithDescr(nativeRecordId, itm.typeStr, itm.val, itm.getDescr(), DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     }

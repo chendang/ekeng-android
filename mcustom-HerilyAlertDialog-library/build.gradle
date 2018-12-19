@@ -1,21 +1,20 @@
-buildscript {
+/*buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
     }
-}
+}*/
 apply plugin: 'android-library'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+    compile fileTree(include: '*.jar', dir: 'libs')
 }
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
-
+    buildToolsVersion '23.0.3'
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -37,6 +36,12 @@ android {
         // Adding new build types or product flavors should be accompanied
         // by a similar customization.
         debug.setRoot('build-types/debug')
-        release.setRoot('build-types/release')
+        //release.setRoot('build-types/release')
+    }
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 23
+    }
+    productFlavors {
     }
 }

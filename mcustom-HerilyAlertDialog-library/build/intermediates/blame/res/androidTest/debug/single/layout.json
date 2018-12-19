@@ -1,38 +1,38 @@
 [
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_singlechoice.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_singlechoice.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_layout.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_layout.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\progress_dialog_spinner_original.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\progress_dialog_spinner_original.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_progress_spinner.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_progress_spinner.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_item.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_item.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_multichoice.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_multichoice.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_progress_spinner.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_progress_spinner.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_item.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_item.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_layout.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_layout.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_progress_horizontal.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_progress_horizontal.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_custom_frame_layout.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_custom_frame_layout.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_custom_frame_layout.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_custom_frame_layout.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_multichoice.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_multichoice.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\progress_dialog_spinner_original.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\progress_dialog_spinner_original.xml"
     },
     {
-        "merged": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dialog_progress_horizontal.xml",
-        "source": "F:\\hkb_workspace_android_new\\HBuilder-Integrate1\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dialog_progress_horizontal.xml"
+        "merged": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\herily_alertex_dlg_select_singlechoice.xml",
+        "source": "H:\\hkb_workspace_android_new\\ekeng\\mcustom-HerilyAlertDialog-library\\build\\intermediates\\bundles\\debug\\res\\layout\\herily_alertex_dlg_select_singlechoice.xml"
     }
 ]

@@ -1,14 +1,14 @@
 package com.cnnet.otc.health.interfaces;
 
 import com.cnnet.otc.health.bean.RecordItem;
-import com.example.blelib.MyData;
+import com.cnnet.otc.health.bean.data.MyData;
 
 import java.util.List;
 
 /**
  * Created by SZ512 on 2016/1/16.
  */
-public interface MyCommData extends MyData{
+public interface MyCommData extends MyData {
 
     List<RecordItem>[] getRecordList(String mUniqueKey);
 

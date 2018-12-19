@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.comm.BaseActivity;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.util.DialogUtil;

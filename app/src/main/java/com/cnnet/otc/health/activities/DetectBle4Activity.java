@@ -1,26 +1,38 @@
 package com.cnnet.otc.health.activities;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
+import com.cnnet.otc.health.bean.MyBlueToothDevice;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.data.OximetryData;
+import com.cnnet.otc.health.bluetooth.TaixinDialog;
 import com.cnnet.otc.health.comm.BaseActivity;
 import com.cnnet.otc.health.comm.CheckType;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
 import com.cnnet.otc.health.events.BleEvent;
-import com.cnnet.otc.health.managers.BleManager;
+import com.cnnet.otc.health.util.DialogUtil;
 import com.cnnet.otc.health.views.MyLineChartView;
 import com.cnnet.otc.health.views.adapter.DetectRecordListAdapter;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-
+import java.util.Date;
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,23 +42,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
+import com.cnnet.otc.health.ble_middle.BleController;
+
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
-public class DetectBle4Activity extends BaseActivity implements OnChartValueSelectedListener, OnClickListener {
+public class DetectBle4Activity extends BaseActivity implements OnChartValueSelectedListener, OnClickListener{
 
 	private TextView title=null;   //标题
 	private MyLineChartView myLineView = null;  //绘图View
 	private Button sampleBtn = null;  //采集
-
+    private boolean hasShowAlert=false;
 	private ListView listview;
-
 	/**
 	 * 4.0蓝牙管理中心
 	 */
-	private BleManager bleManager = null;
 	/**
 	 * 红色数组（r）
 	 */
@@ -144,20 +155,154 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 
 		findViewById(R.id.btn_back).setOnClickListener(this);
 		findViewById(R.id.bt_detect_connect).setOnClickListener(this);
-
-		bleManager = new BleManager(this, null, myLineView, nativeRecordId, hasReal,mUniqueKey);
-		bleManager.startConnectBtDevice(null);
 		listview = (ListView) findViewById(R.id.listview);
+		BleController ble_controller=BleController.getInstance();
+		ble_controller.setmContext(this);
+		switch (SysApp.check_type) {
+			case OXIMETRY:   //血氧仪
+				ble_controller.setData(new OximetryData(this, myLineView,nativeRecordId,mUniqueKey));
+				break;
+		}
 		setData();
 	}
 
+	int prev_state= -1;
+
+	Handler refreshHandler=new Handler();
+	Runnable refreshRunnable=null;
+
+	void doFlash() {
+		BleController ble_controller = BleController.getInstance();
+		myLineView.setTitleTextColor();
+		int cur_state = ble_controller.getConnStatus();
+		if (cur_state != prev_state) {
+			String state_title = "";
+			switch (cur_state) {
+				case BluetoothProfile.STATE_DISCONNECTED:
+					state_title = getString(R.string.StateClose);
+					break;
+				case BluetoothProfile.STATE_CONNECTING:
+					state_title = getString(R.string.StateConnecting);
+					break;
+			}
+			myLineView.setTitleText(state_title);
+			prev_state = cur_state;
+		}
+	}
+
+	private static final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 1;
+
+	boolean checkLocationPermission()
+	{
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {//如果 API level 是大于等于 23(Android 6.0) 时
+			//判断是否具有权限
+			if (ContextCompat.checkSelfPermission(this,
+					Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+				//判断是否需要向用户解释为什么需要申请该权限
+				if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+						Manifest.permission.ACCESS_COARSE_LOCATION)) {
+					Toast.makeText(getContext(),R.string.explain_ble_requires_gps,Toast.LENGTH_SHORT);
+				}
+				//请求权限
+				ActivityCompat.requestPermissions(this,
+						new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+						REQUEST_CODE_ACCESS_COARSE_LOCATION);
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Location service if enable
+	 *
+	 * @param context
+	 * @return location is enable if return true, otherwise disable.
+	 */
+	public static final boolean isLocationEnable(Context context) {
+		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		boolean networkProvider = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+		boolean gpsProvider = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		if (networkProvider || gpsProvider) return true;
+		return false;
+	}
+
+	private static final int REQUEST_CODE_LOCATION_SETTINGS = 2;
+
+	private void setLocationService() {
+		Intent locationIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		this.startActivityForResult(locationIntent, REQUEST_CODE_LOCATION_SETTINGS);
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		if (requestCode == REQUEST_CODE_ACCESS_COARSE_LOCATION) {
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				checkGPS();
+			}
+			else
+			{
+				Toast.makeText(this,R.string.can_not_search_ble,Toast.LENGTH_SHORT);
+			}
+		} else {
+			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+	}
+
+	void checkGPS()
+	{
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {//如果 API level 是大于等于 23(Android 6.0) 时
+			showScanDialog();
+			return;
+		}
+		if(!isLocationEnable(this))
+		{
+			setLocationService();
+		}
+		else
+		{
+			showScanDialog();
+		}
+	}
+
+	void showScanDialog()
+	{
+		BleController ble_controller=BleController.getInstance();
+		ble_controller.pause_controller();
+		TaixinDialog deviceDialog = new TaixinDialog(this, R.style.dialog, devices[SysApp.check_type.ordinal()]);
+		deviceDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface dialog) {
+				reinit();
+			}
+		});
+		deviceDialog.show();
+	}
+
+
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE_LOCATION_SETTINGS) {
+			if (isLocationEnable(this)) {
+				showScanDialog();
+			}
+			else
+			{
+				Toast.makeText(this,R.string.can_not_search_ble,Toast.LENGTH_SHORT);
+			}
+		}
+		else super.onActivityResult(requestCode, resultCode, data);
+	}
+
 	private void setData() {
-		List<RecordItem>[] list = bleManager.getData().getRecordList(mUniqueKey);
-		myLineView.addData(list, bleManager.getData().getInsName());
+		BleController ble_controller=BleController.getInstance();
+		List<RecordItem>[] list = ble_controller.getData().getRecordList(mUniqueKey);
+		myLineView.addData(list, ble_controller.getData().getInsName());
 
 		DetectRecordListAdapter listAdapter = new DetectRecordListAdapter(this,
-				bleManager.getData().getRecordAllList(mUniqueKey)
-				,bleManager.getData());
+				ble_controller.getData().getRecordAllList(mUniqueKey)
+				, ble_controller.getData());
 		listview.setAdapter(listAdapter);
 	}
 
@@ -166,39 +311,83 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 		setData();
 		myLineView.invalidate();
 	}
-	
+
+	void reinit() {
+
+		/*plotManager.startRunable();
+		if(!ble_controller.isConnected())
+		{
+			flashTimer.schedule(getFlashTask(),100,100);
+		}*/
+		BleController ble_controller = BleController.getInstance();
+		ble_controller.run_controller(2000);
+		if (refreshRunnable == null) {
+			refreshRunnable = new Runnable() {
+				@Override
+				public void run() {
+					BleController ble_controller = BleController.getInstance();
+					if (!ble_controller.isConnected()) {
+						doFlash();
+					} else {
+						if (hasReal && SysApp.check_type == CheckType.OXIMETRY) {
+							OximetryData so2_data = (OximetryData) ble_controller.getData();
+							myLineView.refreshRealTimeByMP(so2_data.getdata());
+						}
+					}
+					refreshHandler.postDelayed(refreshRunnable, 100);
+				}
+			};
+		}
+		refreshHandler.removeCallbacks(refreshRunnable);
+		refreshHandler.postDelayed(refreshRunnable, 100);
+
+	}
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		bleManager.startRunable();
+		BleController ble_controller = BleController.getInstance();
+		if(ble_controller.isBleStoreEmpty()&&!hasShowAlert)
+		{
+			hasShowAlert=true;
+			DialogUtil.Confirm(this, R.string.dialog_ble_empty_title, R.string.dialog_ble_empty,
+					R.string.confirm, new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							if(checkLocationPermission())
+							{
+								checkGPS();
+							}
+						}
+					}, R.string.cancel, null);
+		}
+		else {
+			reinit();
+		}
 	}
 	
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		if(bleManager != null) {
-			bleManager.removeCallback();
+		if(refreshRunnable!=null) {
+			refreshHandler.removeCallbacks(refreshRunnable);
 		}
+		BleController ble_controller = BleController.getInstance();
+		ble_controller.pause_controller();
+
 	}
 	
 	public void onEventMainThread(BleEvent event) {
 		switch (event.getBleEvent()) {
-			case CommConst.FLAG_BLE_CONNECT_UPDATE_SCAN:  //
-				myLineView.setTitleTextColor();
-				break;
-			case CommConst.FLAG_BLE_CONNECT_UPDATE_STATE:
-				myLineView.setTitleText(event.getBlueStateStr());
-				break;
 			case CommConst.FLAG_BLE_CONNECT_SCUESS:
 				myLineView.setTitleText(event.getBlueStateStr());
 				myLineView.getTitleView().setTextColor(Color.GREEN);
+				prev_state=BluetoothProfile.STATE_CONNECTED;
+				myLineView.resetBarChart();
 				break;
-			case CommConst.FLAG_REFRESH_REAL_TIME_DATA:
-				myLineView.refreshRealTimeByMP(event.getDatas());
-				break;
-		default:
+			default:
 			break;
 		}
 	}
@@ -206,10 +395,6 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if(bleManager != null) {
-				bleManager.destory();
-				bleManager = null;
-			}
 			finishAndSendBack();
 		}
 		return super.onKeyUp(keyCode, event);
@@ -218,9 +403,17 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		BleController ble_controller=BleController.getInstance();
 		switch (v.getId()) {
 			case R.id.bt_detect_connect:
-				bleManager.initConnectView(devices[SysApp.check_type.ordinal()]);
+				if(checkLocationPermission())
+				{
+					checkGPS();
+				}
+				else
+				{
+					Toast.makeText(this,R.string.can_not_search_ble,Toast.LENGTH_SHORT);
+				}
 				break;
 			case R.id.btn_back:
 				finishAndSendBack();
@@ -228,7 +421,8 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 			case R.id.bt_click_sample:
 				boolean isSuccess= false;
 				if(SysApp.check_type == CheckType.OXIMETRY) {
-					isSuccess = ((OximetryData)bleManager.getData()).saveSampleInfo();
+
+					isSuccess = ((OximetryData) ble_controller.getData()).saveSampleInfo();
 				}
 				if(isSuccess) {
 					refreshLineByData();// 重新设置ListView的数据适配器
@@ -258,11 +452,10 @@ public class DetectBle4Activity extends BaseActivity implements OnChartValueSele
 
 	@Override
 	protected void onDestroy() {
+
 		super.onDestroy();
-		if(bleManager != null) {
-			bleManager.destory();
-			bleManager = null;
-		}
+		BleController ble_controller=BleController.getInstance();
+		ble_controller.reset_controller();
 		//反注册EventBus
 		EventBus.getDefault().unregister(this);
 	}

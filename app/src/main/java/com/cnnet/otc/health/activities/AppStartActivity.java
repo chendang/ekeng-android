@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.MainActivity;
 
 import com.cnnet.otc.health.comm.BaseActivity;

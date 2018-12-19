@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.os.Looper;
 import android.util.Log;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;

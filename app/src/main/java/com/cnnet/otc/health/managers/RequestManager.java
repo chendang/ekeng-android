@@ -3,25 +3,35 @@ package com.cnnet.otc.health.managers;
 import android.content.Context;
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.Response.Listener;
 import com.android.volley.Response.ErrorListener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cnnet.otc.health.bean.FormImage;
+import com.cnnet.otc.health.bean.FormText;
 import com.cnnet.otc.health.bean.Member;
 import com.cnnet.otc.health.bean.MemberRecord;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bean.RoleUser;
 import com.cnnet.otc.health.comm.CommConst;
 import com.cnnet.otc.health.comm.SysApp;
+import com.cnnet.otc.health.comm.volleyRequest.FormRequest;
 import com.cnnet.otc.health.comm.volleyRequest.JsonStringRequest;
+import com.cnnet.otc.health.comm.volleyRequest.PostFormRequest;
 import com.cnnet.otc.health.comm.volleyRequest.PostUploadRequest;
 import com.cnnet.otc.health.util.DateUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -593,5 +603,78 @@ public class RequestManager {
         jsonStringRequest.setTag(ctx);
         requestQueue.add(jsonStringRequest);
     }
+    /**
+     * 提交乐心记录信息
+     * @param ctx
+     * @param listener
+     * @param errorListener
+     * @param paramsStr
+     */
+    public static void postLSRecordInfo(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,Map parammap,
+                                       String... paramsStr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(CommConst.OTC_PUSH_SERVER_URL);
+        sb.append("/device/api/Lx");
+        sb.append(parammap.get("RecordType")+"Push");
+        String url = sb.toString();
+        Log.d(TAG, "postLSRecordInfo: url(" + url + ")");
+        JSONObject params=new JSONObject(parammap);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, params.toString(), listener, errorListener);
 
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
+    }
+    /**
+     * 提交记体脂称录信息
+    * @param ctx
+    * @param listener
+    * @param errorListener
+    * @param paramsStr
+    */
+    public static void postTZCRecordInfo(Context ctx, Listener<JSONObject> listener, ErrorListener errorListener,Map parammap,
+                                        String... paramsStr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SysApp.getSpManager().getServerUrl());
+        sb.append("/api/HItemRecord/PostQNBodyInsRecord");
+        String url = sb.toString();
+        Log.d(TAG, "postTZCRecordInfo: url(" + url + ")");
+        JSONObject params=new JSONObject(parammap);
+        JsonStringRequest jsonStringRequest = new JsonStringRequest(url, params.toString(), listener, errorListener);
+
+        jsonStringRequest.setTag(ctx);
+        requestQueue.add(jsonStringRequest);
+    }
+
+    /**
+     * 空气净化器 发送clife 云平台 获取    "accessToken"
+     */
+    public static void postClifeToken(Context ctx,String action,  Listener<String> listener, ErrorListener errorListener,  Map parammap) {
+        StringBuilder sb = new StringBuilder();
+        //sb.append(SysApp.getSpManager().getServerUrl());
+        sb.append("https://open.api.clife.cn/v1/cloud/");
+        sb.append(action);
+        String url = sb.toString();
+        Log.d(TAG, "postClifeToken: url(" + url + ")");
+
+
+        FormRequest formRequest = new FormRequest(url, parammap,  listener, errorListener);
+        formRequest.setTag("formrequest");
+
+//        List<FormText> formTextList = new ArrayList<FormText>() ;
+//        formTextList.add(new FormText(" test",value));
+//        Request request = new PostFormRequest(url,formTextList,new String().getClass(),listener) ;
+//        StringRequest sr = new StringRequest(Request.Method.POST, url,listener, errorListener){
+//
+//                        protected Map<String, String> getParams() throws AuthFailureError {
+//
+//                                  return parammap;
+//                            }
+//               };
+        //JSONObject params=new JSONObject(parammap);
+        //JsonStringRequest jsonStringRequest = new JsonStringRequest(url, params.toString(), listener, errorListener);
+
+        // jsonStringRequest.setTag(ctx);
+//        request.setTag("formrequest");
+        requestQueue.add(formRequest);
+    }
 }

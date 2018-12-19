@@ -5,7 +5,8 @@ public class CommConst {
 	public final static String APP_HEAND_NAME = APP_FOLDER_NAME + "/head/";
 
 	public static final String SERVER_URL = "http://otc.kzjk360.com";//"http://192.168.1.112:8081";
-	public static final String OTC_PUSH_SERVER_URL = "http://healthapi.kzjk360.com";//"http://192.168.1.112:8081";
+	public static final String OTC_PUSH_SERVER_URL = "http://healthapi.ekeng.com.cn";//"http://192.168.1.112:8081";
+	public static final String EKeng_SERVER_URL= "http://healthapi.ekeng.com.cn";
 	public static final String SUFIX = "HAVA";
 	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_COMM"; //更新APP路径
 //	public static final String UPDATE_CHECK_URL = SERVER_URL + "/action/client/checkSoftwareVersion?softname=Android&product=OTC_WENHE"; //更新APP路径
@@ -116,6 +117,8 @@ public class CommConst {
 	public static final int FLAG_BLE_CONNECT_SCUESS = 2;    //蓝牙连接成功
 
 	public static final int FLAG_REFRESH_REAL_TIME_DATA = 3;    //刷新实时数据
+
+	public static final int FLAG_BLE_DISCONNECTED= 4;    //刷新实时数据
 
 	/************************************************蓝牙类型*********************************************************/
 

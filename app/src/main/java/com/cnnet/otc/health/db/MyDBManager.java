@@ -677,7 +677,7 @@ public class MyDBManager {
                     item.setTestCode(c.getString(10));
                 }
                 c.close();
-                if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
+                //if(!item.getDesc1().equals(CommConst.VALUE_STRANGE))
                     return item;
             }
         }

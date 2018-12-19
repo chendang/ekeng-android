@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.foxchen.qbs.R;
+import com.foxchen.ekeng.R;
 import com.cnnet.otc.health.bean.RecordItem;
 import com.cnnet.otc.health.bluetooth.MyMarkerView;
 import com.cnnet.otc.health.comm.SysApp;
@@ -311,9 +311,19 @@ public class MyLineChartView extends LinearLayout {
         }
     }
 
+    public void resetBarChart()
+    {
+        if(barChart!=null)
+        {
+            barCharLinear.removeView(barChart);
+        }
+        barChart=null;
+        initBarView();
+    }
+
     public void refreshRealTimeByMP(byte[] datas) {
         initBarView();
-        if(datas != null) {
+        if(datas != null&&datas.length>0) {
             for (int i = datas.length - 1; i >= 0; i--) {
                 if(barIndex >= REAL_DATA_LENGTH){
                     barIndex=0;
@@ -324,6 +334,7 @@ public class MyLineChartView extends LinearLayout {
                 entity.setVal(value);
                 barIndex++;
             }
+            barChart.notifyDataSetChanged();
             barChart.invalidate();
         }
 
@@ -349,7 +360,7 @@ public class MyLineChartView extends LinearLayout {
 
             // if more than 200 entries are displayed in the chart, no values will be
             // drawn
-            barChart.setMaxVisibleValueCount(200);
+            barChart.setMaxVisibleValueCount(REAL_DATA_LENGTH);
 
             // scaling can now only be done on x- and y-axis separately
             barChart.setPinchZoom(false);
@@ -376,6 +387,7 @@ public class MyLineChartView extends LinearLayout {
             leftAxis.setGridColor(0x7DCCCCCC);
             leftAxis.setTextSize(0);
             leftAxis.setAxisLineWidth(0.5f);
+            leftAxis.setDrawGridLines(false);
             leftAxis.setDrawLabels(false);
 
             barChart.getAxisRight().setEnabled(false);
@@ -392,9 +404,11 @@ public class MyLineChartView extends LinearLayout {
             }
 
             BarDataSet set1 = new BarDataSet(yBarVals1, "realtime");
-            set1.setBarSpacePercent(35f);
-            set1.setColor(Color.YELLOW);
-            set1.setBarSpacePercent(1);
+            //set1.setBarSpacePercent(35f);
+            //set1.setColor(Color.YELLOW);
+            set1.setColor(Color.argb(0x80,0xFF,0xFF,0x0));
+            //set1.setBarSpacePercent(1);
+            set1.setBarSpacePercent(0f);
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
 

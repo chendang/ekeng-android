@@ -94,7 +94,7 @@ public class WeightData implements MyCommData {
         } else if (hexData.contains(GET_ERROR_DATA)) {  //数据错误
             EventBus.getDefault().post(new BleEvent(CommConst.FLAG_BLE_CONNECT_UPDATE_STATE,"发送数据有误，请检查数据是否正确！"));
         } else if (bytes.length >= DATA_LENGTH) { // 正确数据
-            Log.i(TAG, "start checking......");
+            Log.i(TAG, "init checking......");
             //====================正确数据，开始解析====================
             //<协议解析>
             boolean catchOneData = false;//是否找到一个完整的数据帧,
@@ -130,11 +130,23 @@ public class WeightData implements MyCommData {
                     float BMIValue = StringUtil.getDecimalsOne(fWValue / Math.pow(height, 2));  //体质指数
 
                     System.out.println(fWValue + "; " + iBFPValue + "; " + BMIValue);
+
+                    //腰圍數據暫時這麼處理
+                    RecordItem item = SysApp.getMyDBManager().getOneRecordItem(nativeRecordId, DATA_WAIST);
+                    int waist;
+                    if(item != null) {
+                        waist=(int)item.getValue1();
+                    }else
+                        waist = -1;
                     nativeRecordId=new Date().getTime();
                     SysApp.getMyDBManager().addWaitForInspector(nativeRecordId,mUniqueKey,mUniqueKey,mUniqueKey);
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_WEIGHT, fWValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BFP, BFPValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
                     SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_BMI, BMIValue, DBHelper.RI_SOURCE_DEVICE, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+                    SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_HEIGHT, height*100f, DBHelper.RI_SOURCE_MANAUAL, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+                    if(item != null){
+                        SysApp.getMyDBManager().addRecordItem(nativeRecordId, DATA_WAIST, waist, DBHelper.RI_SOURCE_MANAUAL, SysApp.btDevice.getAddress(), SysApp.check_type.ordinal());
+                    }
                     Log.d(TAG, "value is ..... " + fWValue + "kg;  ");
                     UploadAllNewInfoTask.submitOneRecordInfo(ctx,mUniqueKey, nativeRecordId,
                             new SubmitServerListener() {
@@ -143,10 +155,10 @@ public class WeightData implements MyCommData {
                                     DialogUtil.cancelDialog();
                                     if (result == 0) { //success
                                     } else if(result == -2){
-                                        ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
-                                    } else {
-                                        ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
-                                    }
+                                    ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                } else {
+                                    ToastUtil.TextToast(ctx.getApplicationContext(), "提交失败，请检查网络是否正常...", 2000);
+                                }
                                 }
                             });
                     EventBus.getDefault().post(new BTConnetEvent(CommConst.FLAG_CONNECT_EVENT_UPDATE, "体重结果为" + fWValue + "kg"));
@@ -228,17 +240,19 @@ public class WeightData implements MyCommData {
     }
 
     public byte[] getSendWeightBytes() {
+        byte[] send = new byte[8];
         int height;
         RecordItem item = SysApp.getMyDBManager().getOneRecordItem(nativeRecordId, DATA_HEIGHT);
         if(item != null) {
             height = (int) item.getValue1();
             if (gender < 0) {
-                Member member = SysApp.getMyDBManager().getWaitInspectorMemberInfo(SysApp.getAccountBean().getUniqueKey(), nativeRecordId);
+                //Member member = SysApp.getMyDBManager().getWaitInspectorMemberInfo(mUniqueKey, nativeRecordId);
+                Member member =null;
                 if (member != null) {
                     gender = StringUtil.getGenderInt(member.getSex());
                     age = DateUtil.getAgeByBirthDayStr(member.getmBrithday());
                 } else {
-                    height = 0;
+                   // height = 0;
                     gender = 1;
                 }
             }
@@ -246,13 +260,13 @@ public class WeightData implements MyCommData {
             //HEX数据：FE  03   01      00   AA   19   01    B0
             //BYTE8 校验和：BYTE2-BYTE7的校验和
 
-            byte[] send = new byte[8];
+
             send[0] = (byte) 0xFE;
             send[1] = (byte) 0x00;    //组别
-            send[2] = (byte) gender;  //性别字段
+            send[2] = (byte) 0x01;  //性别字段
             send[3] = (byte) 0x00;     //运动员级别
-            send[4] = (byte) height;   //身高
-            send[5] = (byte) age;     //年龄
+            send[4] = (byte) Integer.parseInt(Integer.toHexString(height),16);   //身高
+            send[5] = (byte) 0x1e;     //年龄
             send[6] = (byte) 0x01;     //体重单位：01（kg）
             send[7] = (byte) 0xB0;     //异或校验和(byte2-byte7)
             int total = send[1] & 0xFF;
@@ -263,6 +277,6 @@ public class WeightData implements MyCommData {
             send[7] = (byte) total;
             return send;
         }
-        return null;
+        return send;
     }
 }

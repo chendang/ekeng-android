@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="speech_ifly">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/speech_ifly.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

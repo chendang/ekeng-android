@@ -45,7 +45,7 @@
 					
 					<!-- funcs -->
 
-					<!--<div class="sec order">
+					<div class="sec order">
                     <h3>
                         <span>我的订单 <em>[重要安全提示]</em></span>
                         <i class="active" id="i_order"></i>
@@ -53,20 +53,20 @@
                     
                     <div class="order_main">
                         <ul class="ul_order">
-                            <li><a href="javascript:location.href='../mall/OrderList.html?tab=1';">待付款</a></li>
-                            <li><a href="javascript:location.href='../mall/OrderList.html?tab=2';">待发货<i>2</i></a></li>
-                            <li><a href="javascript:location.href='../mall/OrderList.html?tab=3';">待收货</a></li>
-                            <li><a href="javascript:location.href='../mall/OrderList.html?tab=4';">评价</a></li>
+                            <li><a @click="goOrder('1');">待付款</a></li>
+                            <li><a @click="goOrder('2');">待发货<i>2</i></a></li>
+                            <li><a @click="goOrder('3');">待收货</a></li>
+                            <li><a @click="goOrder('4');">评价</a></li>
                         </ul>
                     </div>
-                </div>-->
+                </div>
 					<!-- order -->
 
 					<div class="sec wallet" id="wallet">
-						<!--<h3>
+					<h3>
                         <span>我的钱包</span>
                         <i class="active" id="i_wallet"></i>
-                    </h3>-->
+                    </h3>
 
 						<div class="wallet_main">
 							<ul class="ul_wallet">
@@ -139,20 +139,33 @@
                 
 				<div class="sec binding">
                     
-                    <a href="javascript:clicked('MedicalRecord.html','MedicalRecord.html','zoom-fade-out','案例分享');">
-                        <span style="background: url(../img/index_link_7.png) no-repeat left center /1.6rem auto;">案例分享</span>
+                    <a href="javascript:clicked('FavoriteArticleRecord.html','FavoriteArticleRecord.html','zoom-fade-out','我的收藏');">
+                        <span style="background: url(../img/index_link_7.png) no-repeat left center /1.6rem auto;">我的收藏</span>
                         <i></i>
                     </a>
                     
                 </div> 
-
-					<!--<div class="sec binding">
-                    <a href="javascript:location.href='../Mall/AddressList.html';">
-                        <span style="background: url(../img/s5.png) no-repeat left center /1.6rem auto;">收货地址</span>
+                <div class="sec binding">
+                    <a href="javascript:clicked('EditPerInfo.html','EditPerInfo.html','slide-in-left','基本资料修改');">	
+                        <span style="background: url(../img/12_04.png) no-repeat left center /1.6rem auto;">个人资料</span>
                         <i></i>
                     </a>
-                    
-                </div>  -->
+                </div>
+                <div class="sec binding">
+                    <a href="javascript:clicked('EditPassword.html','EditPassword.html','slide-in-left','密码修改');">	
+                        <span style="background: url(../img/7-06.jpg) no-repeat left center /1.6rem auto;">密码修改</span>
+                        <i></i>
+                    </a>
+                </div>  
+                <div class="sec binding">
+                    <a href="javascript:clickedNoHead('../Mall/AddressList.html','AddressList.html','slide-in-left');">	
+                        <span style="background: url(../img/7-05.jpg) no-repeat left center /1.6rem auto;">收货地址</span>
+                        <i></i>
+                    </a>
+                   
+                </div>
+
+                
 
 					<div class="sec binding">
 						<a @click="logout">
@@ -456,6 +469,13 @@
 
 					goPerson: function() {
 						
+					},
+					
+					goOrder: function(tab) {
+					var parm = {
+						"tab": tab
+					}
+					clickedParm('../mall/OrderList.html', 'OrderList.html', 'zoom-fade-out', parm,'我的订单列表');
 					},
 
 					goPower: function(menux) {

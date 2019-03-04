@@ -15,9 +15,11 @@
 		<link href="css/lib/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/lib/huimin.css">
 		<link rel="stylesheet" type="text/css" href="css/lib/CSSRESET.css">
-		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/common2.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-
+		<link rel="stylesheet" type="text/css" href="css/indexNew.css">
+        <link rel="stylesheet" type="text/css" href="css/topMsgTip.css" rel="stylesheet" />
+        
 		<style type="text/css">
 			[v-cloak] {
 				display: none;
@@ -26,13 +28,57 @@
 			p {
     color:white;
 }
+			.circle {
+				display: block;
+				float: left;
+				padding: 1px;
+				margin-left: 2px;
+				width: 15%;
+			}
+			
+			.circles-text {
+				margin-top: -6px;
+			}
+			
+			a:link {
+				text-decoration: none;
+				color: #8295B3;
+			}
+			
+			a:visited {
+				text-decoration: none;
+			}
+			
+			a:hover {
+				text-decoration: none;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			
+						.list_3{ margin:0.8rem 0; padding:0.5rem 0.3rem; font-size: 0; background: #fff; }
+			.list_3 li{ /*width:33.3333%;*/width:50%; display: inline-block; padding:0.3rem;  position: relative; box-sizing: border-box; }
+			.list_3 a{ display: block; }
+			.list_3 img{  width:100%; border-radius: 0.5rem;}
+			.list_3 div{ width:100%; height: 100%; position: absolute; top:0; left:0; padding:1.0rem; box-sizing: border-box; }
+			.list_3 h5{ font-size: 1.4rem; color:#222; font-weight: bold; margin-bottom: 0.4rem; }
+			.list_3 h6{ font-size: 1.1rem; color:#777; }
+			.list_3 p{ font-size: 1.1rem; position: absolute; bottom:1rem; }
+			.list_3 em{ font-size: 1.6rem; padding-right:0.6rem; color:inherit; }
+			.list_3 strong{ font-size: 1.8rem; padding-right:0.6rem; color:inherit; }
 			
 		</style>
 	</head>
 
 	<body>
 		<div class="_container clear" id="bodyinfo">
-
+			<!--<div class="hpn_top_container" style="display:none;top:0px;">
+				<span class="hpn_top_icon">
+		<img class="rms_img" src="img/xixi.png">
+	</span>
+				<span class="hpn_top_desc" @click="GoTask">您有健康任务要完成哦,去完成!</span>
+			</div>-->
 			<article class="wrapper" v-cloak>
 				<div class="main">
 
@@ -40,8 +86,8 @@
 						<div class="msg_left">
 							<img v-bind:src="HeadPic" alt="" id="btnFamily" />
 							<div>
-								<a href="javascript:;">{{UserName}}</a>
-								<p>{{NickName}}</p>
+								<a href="javascript:;" v-cloak>{{UserName}}</a>
+								<p v-cloak>{{NickName}}</p>
 							</div>
 						</div>
 
@@ -51,25 +97,19 @@
 
 					<!-- title -->
 
-					<div class="welcome">爱谷者体验馆</div>
+					<div class="welcome">e康欢迎您!</div>
 
 					<div class="gray">
 						<div class="funcs">
 							<ul class="ul_funcs clearfix">
 								<li>
-								<a @click="PowerCardActive(1);">
+								<a href="javascript:clicked('member/MemberDataIndex.html', 'MemberDataIndex.html', 'slide-in-left', '健康数据');">
 									<span><img src="img/index_func_1.png" alt=""></span>
 									<p>健康数据</p>
 								</a>
 							</li>
-								<!--<li>
-									<a href="javascript:clicked('member/NewsIndex.html','NewsIndex.html','slide-in-left','健康资讯');">
-										<span><img src="img/index_link_5.png" alt=""></span>
-										<p>健康资讯</p>
-									</a>
-								</li>-->
 								<li>
-								<a @click="PowerCardActive(2);">
+								<a href="javascript:clicked('member/UploadCaseFiles.html', 'UploadCaseFiles.html', 'slide-in-left', '病历上传');">
 									<span><img src="img/index_func_2.png" alt=""></span>
 									<p>病历上传</p>
 								</a>
@@ -88,69 +128,79 @@
 									<p>健康评估</p>
 								</a>
 							  </li>
-							  <!--<li>
-								<a @click="PowerCardActive(5);">
+							  <li>
+								<a href="javascript:clicked('member/MyProjectRecord.html','TestMenu.html','zoom-fade-out','健康方案');">
 									<span><img src="img/index_func_7.png" alt=""></span>
 									<p>健康方案</p>
 								</a>
-							</li>-->
-								<!--<li>
-								<a href="javascript:clicked('member/TestMenu.html','TestMenu.html','zoom-fade-out','健康评测');">
-									<span><img src="img/index_link_6.png" alt=""></span>
-									<p>健康自评</p>
-								</a>
-							   </li>
-								
+							  </li>
 								<li>
-								<a href="javascript:clicked('member/MedicalRecord.html','MedicalRecord.html','zoom-fade-out','案例分享');">	
+								<a href="javascript:clicked('member/AskedQuestionRecord.html','AskedQuestionRecord.html','zoom-fade-out','百问百答');">	
+									<span><img src="img/index_link_5.png" alt=""></span>
+									<p>百问百答</p>
+								</a>
+							  </li>
+								<li>
+								<a href="javascript:clicked('member/CaseShareRecord.html','CaseShareRecord.html','zoom-fade-out','案例分享');">	
 									<span><img src="img/index_link_7.png" alt=""></span>
 									<p>案例分享</p>
 								</a>
 							  </li>
 
-								<li>
-									<a href="javascript:clicked('member/PlanIndex.html','PlanIndex.html','zoom-fade-out','健康日志');">
+							   <li>
+									<a href="javascript:clickedNoHead('member/DeviceList.html', 'DeviceList.html', 'slide-in-left');">
 										<span><img src="img/_index_menu_8.png" alt=""></span>
-										<p>健康日志</p>
+										<p>健康监测</p>
 									</a>
-								</li>-->
+								</li>
 								
-								<!--<li>
-									<a href="javascript:clicked('member/TestMenu.html','TestMenu.html','zoom-fade-out','健康评测');">
-										<span><img src="img/_index_menu_5.png" alt=""></span>
-										<p>健康自评</p>
-									</a>
-								</li>-->
-								
-								
-								
-							<!--<li>
-					
-								<a href="javascript:clicked('member/NewsIndex.html','NewsIndex.html','zoom-fade-out','健康资讯');">
-									<span><img src="img/index_link_5.png" alt=""></span>
-									<p>健康资讯</p>
-								</a>
-							</li>				-->
 
-
-							   	<!--<li>
-								<a href="javascript:clickedNoHead('member/MyCardBox.html','MyCardBox.html','slide-in-left','我的权益');">
-									<span><img src="img/index_link_7.png" alt=""></span>
-									<p>我的权益</p>
-								</a>
-							   </li>-->
-							<!--<li>
-								<a href="javascript:clicked('mall/MallIndex.html','MallIndex.html','zoom-fade-out','健康商城');">
-									<span><img src="img/index_link_8.png" alt=""></span>
-									<p>健康商城</p>
-								</a>
-							</li>								
-							-->
+						
 								
 							</ul>
 						</div>
 						<!-- funcs -->
+					<div class="daily" v-cloak v-show="CardPowerActive==1" @click="GoTask2">
+						<h3>我的健康日志</h3>
+						<h4>今天快完成了哦!加油</h4>
 
+						<div class="data" v-cloak>
+							<!--  data-value 值 为 0-100 -->
+							<div class="cprogress" v-cloak>
+
+								<div id="circles1" class="mui-icon" v-cloak></div>
+								<span v-cloak>运动</span>
+
+							</div>
+
+							<div class="cprogress" v-cloak>
+
+								<div id="circles2" class="mui-icon"></div>
+								<span>膳食</span>
+
+							</div>
+
+							<div class="cprogress" v-cloak>
+
+								<div id="circles3" class="mui-icon"></div>
+								<span>营养素</span>
+
+							</div>
+
+							<div class="cprogress" v-cloak>
+
+								<div id="circles4" class="mui-icon"></div>
+								<span>监测</span>
+
+							</div>
+						</div>
+
+					</div>
+					<div class="news" @click=GoTaskWelcome() v-show="CardPowerActive==0" v-cloak>
+
+						<div><img src="img/banner8s.jpg" alt="" width=100%/></div>
+
+					</div>
 						<div class="news">
 							<h2 class="cm_h2">
                             <span>健康资讯</span>
@@ -161,11 +211,10 @@
 								<li v-for="(Item,index) in NewsList" @click="ShowNewsContent(Item.NewsId)">
 									<div><img :src="Item.NewsPic" alt="" /></div>
 									<div>
-										<h4>{{Item.NewsTitle}}</h4>
+										<h4 v-cloak>{{Item.NewsTitle}}</h4>
 										<p>
-											<a href="javascript:;">{{Item.LikeCount}}赞同</a>·
-											<a href="javascript:;">{{Item.CommentCount}}评论</a>·
-											<a href="javascript:;">关注问题</a>
+											<a href="javascript:;" v-cloak>阅读 {{Item.click_number}}</a>·
+											<a href="javascript:;" v-cloak>{{Item.pubtime}}</a>
 										</p>
 									</div>
 								</li>
@@ -192,9 +241,19 @@
 	<script src="js/lib/vue20.min.js" type="text/javascript"></script>
 	<script src="js/lib/hui.js" type="text/javascript"></script>
 	<script src="js/public.js" type="text/javascript"></script>
+		<script src="js/lib/axios.min.js"></script>
+	<script src="js/lib/qs.js"></script>
+		<script src="js/circles.js"></script>
+	<script src="js/taskDataCircles.js"></script>
 	<script type="text/javascript">
 		var domainUrl = GetMvcApiDomain();
 		var mallDomainUrl = GetMallApiDomain();
+				var child1 = document.getElementById('circles1');
+		var child2 = document.getElementById('circles2');
+		var child3 = document.getElementById('circles3');
+		var child4 = document.getElementById('circles4');
+		
+		
 		var menu, _self, _main;
 
 		mui.init();
@@ -307,9 +366,10 @@
 
 					//	dblBackQuit();				
 
-					vum.getUserInfo();
-					vum.getUserAccount(objuser.UserName);
+					vum.getUserInfo(vum.UserName);
+					vum.getTaskData(vum.UserName);
 					vum.getNewsRecommendList('15', '10');
+
                     plus.navigator.closeSplashscreen();
 				}
 			 }
@@ -340,7 +400,10 @@
 			mounted: function() {
 
 				this.$nextTick(function() {
-
+					that=this;
+					setTimeout(function() {
+						that.closeTopMsg();
+					}, 5000);
 				})
 
 			},
@@ -388,15 +451,31 @@
 
 				},
 
-				getUserInfo: function() {
+				getUserInfo: function(username) {
+					
 					var objuser = JSON.parse(plus.storage.getItem('user'));
 					this.UserName = objuser.UserName;
 					this.NickName = objuser.NickName;
 					this.HeadPic = objuser.HeadPic;
+					
+						var that = this;
+						axios.get(domainUrl + 'api/MemberOperate/getUserInfoByCode', {
+								params: {
+									UserName: username,
+								}
+							})
+							.then(function(response) {
 
-				},
-				
-				getUserAccount: function(UserName) {
+									that.getUserAccount(username,response.data.userbs)
+
+
+							})
+							.catch(function(response) {
+								console.log(response);
+
+							});
+					},
+				getUserAccount: function(UserName,userbs) {
 					var that = this;
 					$.ajax({
 						url: mallDomainUrl + "api/Member/getUserAccount",
@@ -410,9 +489,20 @@
 						},
 						success: function(data) {
 							if(data.code == '200') {
-//								that.UserPoint = data.points;
-//								that.UserAmount = data.amount;
+								if (userbs>=5 && data.cardPower==0){
+                  			     that.SendCardActiveAuto(username,'2');
+                  		         }
+								else{
+									
+								
 								that.CardPowerActive = data.cardPower;
+								plus.storage.setItem('CardPowerActive', data.cardPower);
+                                if (that.CardPowerActive==1){
+                                	that.showTopMsg();
+                                }
+                               }
+								
+							console.log(that.CardPowerActive);
 								
 							}
 						},
@@ -427,6 +517,94 @@
 
 				},
 				
+				SendCardActiveAuto: function (UserName, OppState) {
+                var that = this;
+
+                axios.post(mallDomainUrl + 'api/CardPower/PostSendCardActiveAuto', Qs.stringify({
+				user_name: UserName,
+                oppstate:OppState
+				}))
+                
+                .then(function (response) {
+                  	if(response.data.code=='200'){
+                  		that.CardPowerActive=1;
+								plus.storage.setItem('CardPowerActive', that.CardPowerActive);
+                                if (that.CardPowerActive==1){
+                                	that.showTopMsg();
+                                }
+                  	}
+
+                })
+                .catch(function (response) {
+                  console.log(response);
+                 });
+
+            },
+            
+            getTaskData: function(UserName) {
+
+					var that = this;
+					axios.get(domainUrl + 'api/HItemRecord/getInsRecordNewData', {
+							params: {
+								UserName: UserName
+							}
+						})
+						.then(function(response) {
+
+							if(response.data.code == "200") {
+
+								//hui.loading('数据加载中');
+
+								that.SportVal = 85;
+								that.FoodVal = response.data.BPLow;
+								that.MedVal = response.data.BPPR;
+								that.Monitor = response.data.BPPR;
+
+								that.showItemData('Sport', that.SportVal, child1, getColor, getCircle);
+								that.showItemData('Food', that.FoodVal, child2, getColor, getCircle);
+								that.showItemData('Med', that.MedVal, child3, getColor, getCircle);
+								that.showItemData('Monitor', that.MedVal, child4, getColor, getCircle);
+
+								//hui.loading(false, true);
+							}
+
+						})
+
+						.catch(function(response) {
+							that.IsShow = 0;
+							console.log(response);
+						});
+
+				},
+            	showItemData: function(iType, insVal, circleId, FuncColor, FunCircle) {
+
+					if(insVal != '' && insVal != null && insVal != undefined) {
+						var colorVal = FuncColor(iType);
+						var maxVal = getCircleMaxValue(iType);
+
+						FunCircle(circleId, insVal, colorVal, maxVal);
+
+					}
+
+				},
+            	showTopMsg: function() {
+					if (this.CardPowerActive==1){
+						$(".hpn_top_container").slideDown(300);
+					}
+					
+				},
+				closeTopMsg: function() {
+					$(".hpn_top_container").slideUp(500);
+				},
+            	GoTask: function() {
+            		var parm = {
+						"FromUrl": "MsgTo"
+					}
+					clickedNoHeadParm('member/HealthTask.html', 'member/HealthTask.html', 'zoom-fade-out', parm);
+				},
+				GoTask2: function() {
+					clickedNoHead('member/HealthTask.html', 'HealthTask.html', 'slide-in-left');
+				},
 				getNewsRecommendList: function(newsClass, topcount) {
 					var that = this;
 					$.ajax({
@@ -448,6 +626,7 @@
 							var summary = "";
 							$.each(data, function(i, j) {
 								summary = j.summary + '...';
+								var pubtime = getDateDiff(getDateTimeStamp(j.create_date));
 								that.NewsList.push({
 									number: (i + 1),
 									NewsId: j.Id,
@@ -455,6 +634,7 @@
 									NewsContent: j.content,
 									summary: summary,
 									NewsPic: j.img_src,
+									pubtime: pubtime,
 									CommentCount: j.CommentCount,
 									LikeCount: j.LikeCount,
 									FollowCount: j.FollowCount,
@@ -595,7 +775,7 @@
 								clicked('member/MemberDataIndex.html', 'MemberDataIndex.html', 'slide-in-left', '健康数据');
 							}
 							if(goid == 2) {
-								clicked('member/UploadCaseFiles.html', 'UploadCaseFiles.html', 'slide-in-left', '病历上传')
+								clicked('member/UploadCaseFiles.html', 'UploadCaseFiles.html', 'slide-in-left', '病历上传');
 							}
 							if(goid == 3) {
 								clicked('member/DeviceList.html', 'DeviceList.html', 'slide-in-left', '监测设备绑定');

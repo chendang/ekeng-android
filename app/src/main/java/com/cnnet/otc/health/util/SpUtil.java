@@ -40,7 +40,7 @@ public class SpUtil {
         SpUtil spUtil = _utils.get(fileName);
 
         if (spUtil == null) {
-            spUtil = new SpUtil(ctx, fileName, 2);
+            spUtil = new SpUtil(ctx, fileName, Context.MODE_PRIVATE);
             _utils.put(fileName, spUtil);
         }
         return spUtil;

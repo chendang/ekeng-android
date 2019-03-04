@@ -14,7 +14,7 @@ import com.cnnet.otc.health.db.MyDBManager;
 import com.cnnet.otc.health.interfaces.IUser;
 import com.cnnet.otc.health.managers.RequestManager;
 import com.cnnet.otc.health.managers.SpManager;
-import com.espressif.iot.esptouch.EsptouchModuleV4Impl;
+import com.espressif.iot.esptouch.EsptouchModuleImpl;
 import com.facebook.stetho.Stetho;
 //import com.het.basic.utils.GsonUtil;
 //import com.het.bind.logic.api.bind.ModuleManager;
@@ -116,7 +116,7 @@ public class SysApp extends DCloudApplication {
 	public void  initClifeSdk(){
 		//空气净化器模块添加
 		try {
-			ModuleManager.getInstance().registerModule(EsptouchModuleV4Impl.class, getApplicationContext());//乐鑫信息科技(esptouchmodule)
+			ModuleManager.getInstance().registerModule(EsptouchModuleImpl.class, getApplicationContext());//乐鑫信息科技(esptouchmodule)
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
